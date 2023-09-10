@@ -1,1 +1,82 @@
-
+/* a lien total */
+.rich-link-card {
+    border: 2px solid purple;
+    margin: 0px 0;
+    border-radius: 10px !important;
+    width: 100%;
+    display: flex;
+    text-decoration: none !important;
+    background-color: rgba(255, 255, 255, 0.274);
+  }
+  /* div  container du lien total */
+  .rich-link-card-container {
+    position: relative;
+  }
+  
+  /* bordure inférieur du lien total */
+  .rich-link-card-container::after {
+    display: none !important;
+  }
+  
+  /* div container de l'image */
+  .rich-link-card .rich-link-image-container {
+    height: 100px;
+    width: 25%;
+    min-width: 80px;
+    overflow: hidden;
+    border-right: 1px solid purple;
+    border-radius: 10px !important;
+  }
+  
+  /* div avec l'image en background */
+  .rich-link-card .rich-link-image {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+    background-color: grey;
+  }
+  
+  /* div container de l'ensemble des textes */
+  .rich-link-card .rich-link-card-text {
+    padding: 7px;
+    width: 75%;
+    overflow: hidden;
+  }
+  
+  /*  h1 titre de la carte */
+  .rich-link-card .rich-link-card-title {
+    font-family: 'Comic Sans MS';
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: black;
+  }
+  
+  /* p description de la carte */
+  .rich-link-card .rich-link-card-description {
+    font-family: 'Tahoma';
+    font-size: 12px;
+    margin: 0;
+    color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* p lien de la carte */
+  .rich-link-card .rich-link-href {
+    font-family: 'Tahoma';
+    font-size: 12px;
+    margin: 0;
+    color: purple;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
