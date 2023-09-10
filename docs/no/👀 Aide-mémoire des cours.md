@@ -1,0 +1,414 @@
+---  
+aliases: []  
+nature: cours  
+tags:  
+  - cours  
+share: true  
+---  
+  
+  
+- cours CEFIM  
+	- Dataviz  
+		- definition: conversion d'une source de données brutes en représentation visuelle  
+		- cycle de la vie d'une visualisation  
+			- data(lignes)  
+			- transformations(tables)  
+			- visual mapping(structures)  
+			- transformations de vues(vues)  
+		- règles communes  
+			- visuel: obéir aux règles générales de la perception  
+			- universel: compréhensible par tous  
+			- clair et cohérent: éviter les redondances et la surcharge d'informations  
+		- composants  
+			- données : que veut-on montrer  
+			- esthétique: comment va t-on le montrer  
+			- échelle  
+			- objets géométriques: marqueurs visuels  
+			- statistique  
+			- facettes : 1 graphique = 1 facette  
+			- système de coordonnée: polaire, logarithmique, tridimensionnel  
+		- choix des propriétés graphiques selon type de variable  
+			- quantitatives discrète  
+				- taille  
+			- quantitative continue  
+				- intensité/luminosité  
+			- quantitative ordinale  
+				- grain  
+				- intensité/luminosité  
+			- qualitative nominale  
+				- couleur  
+				- grain  
+				- orientation  
+				- forme  
+		- type de diagrammes selon variable  
+			- barre ou histogramme  
+				- quantitative discrète  
+				- quantitative continue regroupées en classe  
+				- qualitative si beaucoup de classe  
+			- secteur  
+				- qualitative si pas beaucoup de classe  
+			- nuage de points (+ boite à mouche)  
+				- quantitative continue  
+		- méthodologie d'une dataviz  
+			- cadrer le projet avec les 5W  
+			- nettoyer et explorer les données  
+			- co-construire avec les métiers  
+			- simplifier et épurer  
+			- publier ou déployer et itérer (demander un feedback)  
+		- erreurs les plus courantes  
+			- erreurs mathématiques  
+			- omettre une partie des données  
+			- jouer sur les axes et échelles  
+			- jouer sur la taille des éléments graphiques  
+			- jouer sur les couleurs  
+			- preferer l'ésthetique à l'information  
+			- surcharger la visualisation  
+			- utiliser une représentation non adéquates ou non conforme aux données  
+	- Excel  
+		- fonctions  
+			- statistiques  
+				- somme  
+				- moyenne  
+				- min  
+				- max  
+				- médiane  
+				- nb : nombre de nombre  
+				- nbval : nombre de cellules non vides  
+				- ecartype  
+				- nb.vide : nombre de cellules vides  
+			- recherche  
+				- recherchev VRAI : recherche avec un intervalle  
+				- recherchev FAUX : recherche précise  
+				- equiv : recherche l'index  
+				- index : recherche avec l'index  
+			- logiques  
+				- si : retourne une valeur selon une condition  
+				- et/ou/non : combine plusieurs conditions  
+			- informations  
+				- esterreur : affiche si une valeur renvoie une erreur  
+				- sierreur : renvoie le résultat d'une formule , ou une autre valeur si erreur  
+			- agrégations  
+				- nbsi/sommesi/moyennesi : calcule selon une condition  
+				- nbsiens/sommesiens : calcule selon plusieurs conditions  
+				- sommeprod : somme des produits de 2 matrices  
+				- rang : renvoie le rang d'une valeur numérique dans une liste  
+		- formatage  
+			- format personnalisé de données  
+				- penser à mettre les espaces entre " " sinon c'est une division par 1000  
+			- mise en forme conditionnelle  
+				- format par contenu de cellules  
+				- échelle de couleurs par échelle de valeur  
+				- règles personnalisé  
+		- tableaux croisées dynamique  
+			- toujours transformer la base de données en tableau avant de faire des TCD  
+			- prérequis : base de données relationnelle  
+				- lignes représentant un enregistrement  
+				- colonnes représentant un champs de données  
+				- en-tête de colonnes dans la première ligne  
+			- champs calculé : pour ajouter un champ directement dans le TCD avec une formule  
+		- visualisations  
+			- courbe : changement dans la durée  
+			- barres/histogramme : comparer et classer des données  
+			- camembert/donut : représentation en pourcentage  
+			- rayon de soleils : rapport hiérarchique  
+			- combinaison de graphiques : evolution de plusieurs mesures ensemble  
+			- carte : pour une visualisation géographique  
+		- dashboards  
+			- slicers/timeline : filtres simplifiées pour les dashboards  
+			- bonnes pratiques  
+				- connaitre votre objectif et votre public  
+				- exploiter l'endroit le plus visité (supérieur gauche)  
+				- limiter le nombre de graphique (2 ou 3 max)  
+				- désencombrer la vue  
+				- limiter les couleurs  
+			- construction  
+				- structure avec des formes  
+				- rajouter les KPI dynamiques (chiffres clés)  
+				- ajouter les graphiques  
+		- règles du classeur  
+			- limiter les choix de l'utilisateur (validation de données)  
+			- nommer une cellule ou une plage de valeur si besoin réel  
+	- Analyse avec python  
+		- étapes  
+			- créer un environnement virtuel  
+			- créer le dossier de travail  
+			- définir un plan de classement  
+			- collecter/créer des fichiers  
+			- créer un programme python  
+				- expliquer le programme  
+				- programmer en python  
+					- définir la nomenclature des variables  
+		- bibliothèques  
+			- dir(bibliothèque) affiche toutes les méthodes que l'on peut utiliser  
+	- RGPD  
+		- les règles d'or  
+			- finalités du traitement  
+				- objectif en vue duquel les données sont collectées, enregistrées, exploitées, transmises, conservées  
+				- non-respect : détournement de finalité  
+				- elle peut évoluer en toute transparence et dans le respect des droits des personnes  
+				- 3 finalité jugées expressément compatible avec la finalité initiale  
+					- à des fins archivistes dans l'intéret public  
+					- à des fins de recherches scientifiques ou historiques  
+					- à des fins statistiques  
+			- licéité du traitement  
+				- base légale de la collecte  
+				- une des conditions doit être remplie  
+					- la personne concerné à consenti au traitement pour une ou plusieurs finalités spécifiques  
+						- consentement libre, spécifique(pouvoir choisir séparément pour plusieurs finalités), éclairé et univoque  
+					- le traitement est nécessaires à l'execution d'un contrat ou de mesures précontractuelles  
+					- le traitement est nécessaires au respect d'une obligation légale à laquelle le responsable de traitement est soumis  
+					- le traitement est nécessaire à la sauvegarde des intérêts vitaux de la personne  
+					- le traitement est nécessaire à l'execution d'une mission d'intérêt public ou relevant de l'exercice de l'autorité publique  
+					- le traitement est nécessaire aux fins des intérêts légitimes poursuivies par le responsables de traitement ou par un tiers  
+			- minimisation des données  
+				- découle de la finalité  
+				- les données doivent être:  
+					- adéquates  
+					- pertinentes  
+					- limitées  
+					- exactes  
+				- bonnes pratiques  
+					- faire le tri  
+					- se questionner sur les solutions alternatives  
+					- bannir les collectes préventives  
+					- pseudonomiser les données  
+					- limiter les zones de commentaires libres  
+			- protection des données sensibles  
+			- conservation limité des données  
+			- obligation de sécurité  
+			- transparence  
+			- droits des personnes  
+	- Statistiques descriptive  
+		- étapes  
+			- collecter les données utiles  
+			- trier, ordonner, calculer, analyser  
+			- visualiser les indicateurs pertinents  
+			- interprétez les résultats pour prendre les décisions adéquates  
+		- utilité  
+			- Le cerveau n'est pas capable de traiter une quantité volumineuse d'informations  
+			- L'analyse humaine induit des biais psychologiques comme le biais de confirmations  
+		- vocabulaire  
+			- population : ensemble concerné par une étude statistique  
+			- individu : un élément d'une population concerné  
+			- échantillon : sous-ensemble de la population sur lequel sont réalisé des tests  
+			- variable : information ou caractéristique dont on va recueillir la valeur pour chaque individu  
+			- variable aléatoire : variable qui peut prendre plusieurs valeurs possible  
+		- loi normale  
+			- courbe en forme de cloche  
+			- valeurs continues et symétriques  
+			- courbe caractérisé par son espérance et son écart-type  
+			- on peut calculer les probabilité d'une valeur facilement  
+		- propriété d'une population  
+			- position  
+				- moyenne : somme des valeurs / effectifs  
+				- médiane : partage la distribution en deux parties égales  
+				- mode : valeur la plus présente  
+				- fréquence : proportion d'une valeur dans la liste  
+				- effectif : nombre de données ayant cette valeur  
+			- forme  
+				- coefficient d'applatissement  
+				- coefficient de symétrie  
+			- dispersion  
+				- étendue : différence entre la plus petite et la plus grande valeur  
+				- variance : moyenne du carré des écarts à la moyenne des valeurs  
+				- écart-type : mesure la dispersion d'un ensemble de valeurs autour de la moyenne  
+				- quartile : valeurs qui partage une distribution en 4 parties égales  
+		- étapes d'une analyse univariée  
+			- dimension des données  
+			- nom et signification des variables  
+			- types de variables  
+			- présence des valeurs manquantes ou nulles  
+			- caractéristiques de forme/position/distribution  
+		- corrélation entre 2 variables  
+			- coefficient de corrélation ou de pearson  
+				- signe : sens de liaison  
+				- valeur absolue : intensité (1 absolue, 0 aucun)  
+			- nuage de points  
+			- matrice de corrélation entre plusieurs variables  
+		- Test du Khi2  
+			- corrélation avec des variables qualitatives  
+			- on pose 2 hypothèse  
+				- H0 : les 2 variables sont indépendantes  
+				- H1 : les 2 variables sont dépendantes  
+			- on calcule les totaux de chaque lignes et colonnes, puis les pourcentages  
+			- on calcule combien on devrait avoir si les pourcentages étaient respectés  
+			- on calcule le khi 2 pour chaque valeur : ((effectif observé - effectif théorique)²)/effectif théorique  
+			- on calcule le khi 2 total avec la somme  
+			- on regarde le khi 2 théorique avec les 2 paramètres  
+				- degré de liberté : (nombre de ligne - 1) * (nombre de colonne - 1)  
+				- seuil de significativité : ɑ souvent fixé à 0,05  
+			- on compare le khi2 théorique au khi2 calculé  
+				- Si Khi2 > Khi2 critique : on rejette l'hypthèse H0  
+				- Si Khi2 < Khi2 critique : on accepte l'hypothèse H1  
+	- Design Thinking  
+		- Définition  
+			- penser pour faire quelque chose qui sera fonctionnel  
+			- collaboration, intelligence collective  
+		- Méthode  
+			- brief  
+				- définir les attentes clients  
+				- comprendre les enjeux, objectifs  
+				- fixer les participants nécessaires  
+				- documents contractuels du projet  
+			- cadrage  
+				- clarifier la problématique/objectifs  
+				- vérifier les publics cibles et parties prenantes  
+				- mindmap  
+				- QQOQCCP  
+				- 5 pourquoi  
+			- empathie  
+				- observer, identifier, analyser le contexte, les besoins pour définir le problème  
+				- comprendre les usages des publics cibles, les situations, le contexte  
+				- dégager les irritants  
+				- benchmark, interview, persona, carte d'empathie, custom journey map  
+			- définition problématique  
+				- formuler pour l'attaquer sous le bon angle  
+				- problématiser les problèmes, pour les transformer en défi créatif  
+				- je -> nous  
+				- lien entre concept de problème et solutions opérationnelles  
+				- CPN: Comment pourrions-nous  
+			- idéation  
+				- formaliser et choisir les solutions  
+				- maximum d'idées sans filtres  
+				- opérer des synthèses  
+				- brainstorming post-it  
+				- trier et prioriser les idées  
+				- fiches projets  
+			- prototypage  
+				- outil de test, mise en oeuvre des tests  
+				- types: basse fidélité, haute fidélité, d'experience, parallèle  
+				- maquettes, story-board, croquis, scénarii  
+				- crazy height 8 écrans, 8 idées, 8 minutes  
+			- tests  
+				- éprouver la résistance de mise en oeuvre  
+				- tests par les utilisateurs  
+				- custom journey map  
+				- retours utilisateurs  
+			- pitch  
+				- nom  
+				- besoin utilisateur  
+				- bénéficiaire et acteurs  
+				- solution  
+				- vision: caractère innovant  
+				- ambition et péripéties  
+	- SQL  
+		- Notions  
+			- base de données relationnelles  
+				- reliés par des clés  
+			- clés  
+				- clés primaires  
+					- 1 table = 0 ou 1 clé primaire  
+					- 1 clé primaire = 1 ou plusieurs colonnes  
+					- identifiants uniques d'une table  
+					- valeurs nulles non possibles  
+				- clés étrangère  
+					- clé unique d'une autre table  
+				- clés uniques  
+					- possible d'avoir une valeur nulle  
+					- 1 table = 0, 1 ou plusieurs clés uniques  
+					- 1 clé unique = 1 ou plusieurs colonnes  
+			- modélisation  
+				- diagramme ER (Entité-Relation)  
+				- schémas relationnels  
+		- Types de données  
+			- données textuelles  
+				- char: longueur fixe (max 255)  
+				- varchar : longueur variable (max 65 535)  
+				- enum: choix sélectif parmi une liste  
+			- données numérique  
+				- int: nombre entier  
+				- décimal; nombre exact  
+				- float: valeur arrondie d'un nombre  
+			- autres types de données  
+				- date: YYYY-MM-DD  
+				- datetime: date + heure  
+				- timestamp  
+				- blob: fichier au format binaire  
+		- Commandes  
+			- DDL (data definition language) : définir ou modifier les éléments de la base de données  
+				- create: créer table ou données  
+				- drop: supprimer table  ou données  
+				- truncate: supprimer contenu d'une table  
+				- alter: modifier table et colonnes  
+				- rename: renommer objet ou table  
+			- DML (date manipulation language) : manipuler les données  
+				- insert to: insérer des données  
+				- update: modification de lignes existantes  
+				- delete: supprimer des lignes  
+			- DCL (data control language) : gérer les droits d'accès aux tables  
+				- grant: donne des permissions aux utilisateurs  
+				- revoke: supprime les permissions d'un utilisateur  
+			- TCL (transaction control language) : contrôler la bonne execution des transactions  
+				- commit: modifications définitives et visibles par tous  
+				- rollback: annulation des modifications de la transaction  
+			- Suppression  
+				- DROP: supprime la table  
+				- TRUNCATE: supprimer les données d'une table, refait l'auto-incrémentation  
+				- DELETE: supprime les données d'une table: garde l'auto-incrémentation  
+		- Syntaxe  
+			- SELECT  
+				- SELECT (obligatoire) nom_colonne  
+					- fonctions : (AVG, COUNT, MAX, MIN, SUM)  
+					- DISTINCT pour enlever les doubles  
+				- FROM(obligatoire) nom_table  
+				- WHERE conditions  
+					- Opérateur: =, >, <, >=, <=, !=  
+					- Prédicat: IN, BETWEEN, LIKE, IS NULL, IS NOT NULL  
+					- OR, AND, NOT  
+				- GROUP BY nom_colonne  
+				- HAVING conditions  
+				- ORDER BY nom_colonne (DESC)  
+				- LIMIT nombre  
+			- Création et utilisation base de données  
+				- `CREATE DATABASE IF NOT EXISTS nom_table; USE nom_table;`  
+			- Création d'une table avec clé primaire  
+				- `CREATE TABLE nom_table ( nom_colonne type_données PRIMARY KEY, nom_colonne type_données …);`  
+			- Ajout d'une clé étrangère dans une table  
+				- `ALTER TABLE nom_table ADD CONSTRAINT nom_colonne FOREIGN KEY (nom_colonne) REFERENCES nom_table(nom_colonne) ON DELETE CASCADE;`  
+			- Insertion de données dans la table  
+				- `INSERT INTO nom_table(nom_colonne1, nom_colonne2…) VALUES (value1, value2…);`  
+			- Ajout d'une valeur par default dans une colonne  
+				- `ALTER TABLE nom_table CHANGE COLUMN nom_colonne nom_colonne type_données DEFAULT valeur_par_defaut;`  
+			- Suppression d'une valeur par défaut pour une colonne  
+				- `ALTER TABLE nom_table ALTER COLUMN nom_colonne DROP DEFAULT;`  
+			- Insertion données d'une table dans une autre  
+				- `INSERT INTO nom_table (nom_colonne, nom_colonne…) SELECT nom_colonne, nom_colonne… FROM nom_table WHERE conditions;`  
+			- Modifier des lignes existantes  
+				- `UPADTE nom_table SET nom_colonne = valeur, nom_colonne = valeur WHERE conditions;`  
+- OpenClassroom  
+	- Nettoyer et analyser les données  
+		- Vocabulaire et tour d'horizon  
+		   - En statistiques, un jeu de données correspond à un échantillon d'une population globale étudiée.  
+		   - Un jeu de données est organisée sous forme de tableau où les lignes sont des individus et les colonnes des variables.  
+		   - Le domaine de la statistique est concentré sur l'explication et la description objective d'un phénomène passé.  
+		   - Le domaine de la probabilité est plus intéressé au futur potentiel d'un évènement à venir.  
+		      - Il existe 4 grands domaines de la statistique :  
+	            - 1. Les statistiques descriptives  
+	            - 2. L'analyse multidimensionnelle  
+	            - 3. Les statistiques inférentielles  
+	            - 4. La modélisation statistique  
+		- Les 4 types de variables  
+		   - Les variables quantitatives sont les valeurs numériques  
+		   - Une variable quantitative peux être continue si le nombre de valeurs possibles est potentiellement infinie, discrète sinon  
+		   - Les variables qualitatives caractérisent l'appartenance de l'individu à un groupe( ou une catégorie)  
+		   - Les valeurs possibles d'une variable qualitative sont des modalités  
+		   - Une variable qualitative peut être ordinale si les modalités peuvent ête ordonnées selon une hiérarchie ou importance, nominale sinon  
+		- Gérez Les Différentes Erreurs D'un Jeu De Données  
+		   - Pour traiter des valeurs manquantes, on peut chercher la vraie valeur, travailler avec un jeu de donnée à trou, oublier une variable ou des individus, essayer de deviner ou deviner à partir d'autres variables. Il faut préciser les méthodes utilisées dans les résultats d'analyse.  
+		   - Pour traiter des outliers, il faut regarder le contexte pour savoir s'il est possible de connaître la valeur réelle. Les méthodes "robustes" sont peu impactées par les outliers. Les outliers peuvent être cités dans l'analyse s'ils ont de l'intérêt.  
+		   - Pour éliminer les doublons, il faut se fier à la structure des données et savoir comment ils ont été détectés. Il est préférable de regrouper les doublons plutôt que de supprimer au hasard l'une des deux lignes.  
+		   - Toute modification des données introduit un biais qu'il faut prendre en compte lors de l'analyse.  
+		- repérez les différents types d'erreurs  
+		   - Nettoyer les données avant de les analyser est crucial.  
+		   - Les erreurs peuvent causer des plantages et des résultats inexacts.  
+		   - Différents types d'erreurs dans les données : valeurs manquantes, erreurs lexicales, erreurs d'irrégularités, erreurs de formatage, outlier, doublons.  
+		   - La gestion des erreurs dépend de l'utilisation des données.  
+		   - Des solutions pour gérer les différents types d'erreurs, telles que la suppression de valeurs erronées, la fixation d'un dictionnaire, la normalisation des unités, etc.  
+		   - Si une variable contient peu d'erreurs, il est possible de supprimer les erreurs, sinon, il est préférable de créer un programme pour corriger les erreurs.  
+		- Nettoyez Vos Données Avec Python  
+		   - Pour charger un fichier CSV dans un DataFrame, on utilise `pandas.read_csv()` et on peut afficher les premières ou les dernières lignes avec `head()` ou `tail()`.  
+		   - Pour détecter les valeurs manquantes, on utilise `.isnull().sum()`.  
+		   - Pour détecter les doublons, on peut utiliser `.duplicated()` et `.loc[]`.  
+		   - Pour traiter les erreurs, on peut utiliser des conditions et des masks pour sélectionner les lignes qui nécessitent des corrections. On peut aussi utiliser des listes de valeurs valides pour remplacer les valeurs non valides, et des méthodes spécifiques pour les chaînes de caractères ou les datetime.  
+		   - Pour modifier les colonnes d'un DataFrame, on utilise la syntaxe: `data['column_name'] = new_column`.  
+		   - Pour modifier seulement une partie de la colonne, on utilise un mask et la syntaxe: `data.loc[mask, 'column_name'] = new_values`.  
