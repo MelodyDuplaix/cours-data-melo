@@ -26,8 +26,6 @@ theme:
 markdown_extensions:
   - footnotes
   - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.magiclink
   - pymdownx.tasklist:
       custom_checkbox: true
   - def_list
