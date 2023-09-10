@@ -1,4 +1,4 @@
-site_name: cours data melo
+site_name: 'cours data melo'
 
 theme:
     name: 'material'
@@ -25,19 +25,12 @@ theme:
 # Extensions
 markdown_extensions:
   - footnotes
-  - attr_list
-  - abbr
-  - admonition
-  - md_in_html
-  - def_list
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highligh
   - pymdownx.superfences
   - pymdownx.details
   - pymdownx.magiclink
-  - pymdownx.betterem:
-      smart_enable: all
   - pymdownx.tasklist:
       custom_checkbox: true
   - def_list
@@ -67,4 +60,4 @@ extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js 
 
 extra_css:
-  - css/extra.css
+  - docs/css/extra.css
