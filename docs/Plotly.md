@@ -12,7 +12,7 @@ cssclasses:
 share: true  
 ---  
   
-[📑 Cours python](./%F0%9F%93%91%20Cours%20python.md#)  
+[Cours python](./Cours%20python.md#)  
   
 ---  
 > [!summary]+  
