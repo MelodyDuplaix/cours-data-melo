@@ -1,82 +1,2677 @@
+
+
+/* ----- banner image variants ----- */
+/* ---- majority done by efemkay ---- */
+
+body {
+  --banner-height: 150px;
+ }
+ 
+ /* ---- the code below is a slightly modified version of efemkay's banner image in this forum post: https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ ---- */
+ 
+ /* banner using css only -- https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ */
+ 
+     /* make the div (in LP) containing the image doesn't control the css box-sizing */
+     .internal-embed.image-embed[alt*="banner"] { 
+         display: contents; 
+     }
+     /* original forum post snippet with minor tweak */
+     .banner-image img[alt*="banner"] {
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: var(--banner-height);
+         width: 100%;
+         margin-right: auto;
+         margin-left: auto;
+         object-fit: cover;
+         object-position: 50% 50%;
+         overflow: hidden;
+         user-select: none;
+         border-radius: 0px;  
+      }
+      /* add option to adjust vertical position by adding the alt metadata "higher" or "lower" */
+      .banner-image img[alt*="banner"][alt*="higher"] { object-position: 50% 30%; }
+      .banner-image img[alt*="banner"][alt*="lower"] { object-position: 50% 70%; }
+     
+      
+ 
+      /* ---- note title placements --- */
+      .banner-title .banner-image .inline-title {
+          position: relative;
+          margin-top: calc(var(--banner-height) - 100px);
+          margin-bottom: 50px !important;
+          line-height: 1.2em ;
+          text-align: center;
+          color: white;
+          padding: 7px 0px 7px 20px !important;
+          background: radial-gradient(circle, rgba(0, 0, 0, 0.416) 0%, rgba(0, 0, 0, 0.233) 53%, rgba(0,0,0,0) 100%);    
+      }
+      
+      .banner-image .inline-title, .banner-fade .banner-image .inline-title{
+         position: relative;
+         padding-top: calc(var(--banner-height) - 60px);
+         z-index: 1;
+      }
+      .banner-image img[alt*="banner"], .banner-fade .banner-image img[alt*="banner"]{
+         -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+         mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+     }
+      .banner-title .banner-image img[alt*="banner"]{
+         -webkit-mask-image: none;
+         mask-image: none;
+      }
+ 
+ 
+      .banner-notion .banner-image img[alt*="banner"] {
+         -webkit-mask-image: none;
+         mask-image: none;
+      }
+      .banner-notion .banner-image .inline-title{
+         position: relative;
+         padding-top: calc(var(--banner-height) + 5px) !important;
+         line-height: 1em !important;
+         font-size: 2em !important;
+         padding-bottom: 0.3em;
+         z-index: 1;
+      }
+ 
+     
+ 
+ /* --- profile image --- */
+/*    img[alt*="cercle"], 
+ img[alt*="profile"],
+ img[alt*="cercle"] {
+     display: block;
+     border-radius: 100%;
+     aspect-ratio: 1/1;
+     object-fit: cover;
+     width: 60%;
+     position: 50% 50%;
+     margin-right: auto;
+     margin-left: auto;
+ } */
+ 
+ /* --- float images --- */
+/*    .markdown-rendered img[alt*="right"] {
+     display: flexbox;
+     float: right;
+     clear:right;
+     max-width: 40%;
+     margin-left: 15px;
+ }
+ .markdown-rendered img[alt*="left"] {
+     display: flexbox;
+     float: left;
+     clear:left;
+     max-width: 40%;
+     margin-right: 15px;
+ }
+  */
+ 
+ /* --- EXPERIMENTAL: icon image feature --- */
+ /* Uncomment the section below if you want to try it out */
+ /* To use, type `obsidian-icon` in the frontmatter and use the alt `icon` on an image. 
+  WARNING: icons may not respond to custom page widths in certain themes.*/
+ 
+ 
+ 
+ /* 
+ .obsidian-icon .inline-title {
+     position: relative;
+     margin-top: 175px;
+     z-index: 1;
+ }
+ 
+ .obsidian-icon img[alt*="icon"] {
+     position: absolute;
+     top: 2em;
+     left: 1.8em;
+     right: unset;
+     width: 9% !important;
+     object-fit: cover;
+     border-radius: 100%;
+     aspect-ratio: 1/1;
+     z-index: 1;
+ }
+ .obsidian-icon.is-readable-line-width img[alt*="icon"] {
+     top: 2em;
+     left: 26em;
+     width: 9%;
+ }
+ 
+ 
+ 
+ .banner-image.obsidian-icon .inline-title,
+ .banner-fade .banner-image.obsidian-icon .inline-title {
+     margin-top: 0px;
+ }
+ .banner-image.obsidian-icon img[alt*="icon"], .banner-fade .banner-image.obsidian-icon img[alt*="icon"]{
+     position: absolute;
+     top: 1.2em;
+     left: 1.8em;
+ }
+ .banner-image.obsidian-icon.obsidian-icon.is-readable-line-width img[alt*="icon"], 
+ .banner-fade .banner-image.obsidian-icon.is-readable-line-width img[alt*="icon"] {
+     position: absolute;
+     top: 2.5em;
+     left: 26em;
+     width: 7% !important;
+ }
+  
+ 
+ 
+ .banner-title .banner-image.obsidian-icon .inline-title {
+     margin-top: 3.94em;
+ }
+ .banner-title .banner-image.obsidian-icon img[alt*="icon"] {
+     top: 1.1em;
+     width: 10% !important;
+     left: 1.5em;
+ }
+ .banner-title .banner-image.obsidian-icon.obsidian-icon.is-readable-line-width img[alt*="icon"] {
+     top: 5.5em;
+     left: 25em;
+ }
+ 
+ 
+ .banner-notion .banner-image.obsidian-icon img[alt*="icon"] {
+     top: 6.65em;
+     width: 6% !important;
+     left: 1.5em;
+ }
+ .banner-notion .banner-image.obsidian-icon.obsidian-icon.is-readable-line-width img[alt*="icon"] {
+     top: 6.7em;
+     left: 25em;
+     width: 6% !important;
+ } */
+
+ 
+/* @settings
+
+name: Image Features
+id: image-features
+description: Change the banner style.
+settings:
+  - 
+      id: banner-type
+      title: Banner Style
+      type: class-select
+      allowEmpty: false
+      default: banner-fade
+      options:
+          - 
+              label: Fancy Title
+              value: banner-title
+          -
+              label: Fade
+              value: banner-fade
+          - 
+              label: Notion
+              value: banner-notion
+  -
+      id: banner-height
+      title: Banner Height
+      type: variable-number-slider
+      default: 250
+      min: 100
+      max: 350
+      step: 5
+      format: px
+*/
+
+
+.theme-dark, .theme-light {
+  /*Sizes*/
+  --radius: 0px;
+  --tiny: 100px;
+  --small: 200px;
+  --small-med: 300px;
+  --med-small: 400px;
+  --medium: 500px;
+  --med-tall: 600px;
+  --tall: 700px;
+}
+
+/*----Embed Adjustments----*/
+.internal-embed {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.internal-embed[alt*="inline"]{
+  display: inline;
+}
+.internal-embed[alt*="block"]{
+  display: block !important;
+}
+
+/*Embed Link Hide/Move*/
+.internal-embed[alt*="lk-hvr"]:not(:hover) .markdown-embed-link,
+.internal-embed[alt*="nlk"] .markdown-embed-link {
+  display: none;
+}
+.internal-embed[alt*="lk-l"] .markdown-embed-link {
+  left: 10px;
+  right: unset;
+}
+.internal-embed[alt*="lk-clear"] .markdown-embed-link {
+  background-color: transparent;
+}
+
+/*Title Hide/Show*/
+.internal-embed[alt*="no-t"] .markdown-embed-title,
+.internal-embed[alt*="no-title"] .markdown-embed-title,
+.file-embed-title {
+  display: none;
+}
+.internal-embed[alt*="ttl"] .markdown-embed-title, .file-embed-title{
+  display: block;
+}
+.internal-embed[alt*="no-i"] i,
+.internal-embed[alt*="no-i"] .i-at {
+  display: none;
+}
+
+.view-content > :not(.is-live-preview) .internal-embed[alt*="right"] {
+  float: right;
+  margin-left: .5em;
+}
+.view-content > :not(.is-live-preview) .internal-embed[alt*="left"] {
+  float: left;
+  margin-right: .5em;
+}
+.internal-embed[alt*="center"] {
+  margin: auto;
+}
+
+.internal-embed[alt*="nob"] li {
+  list-style: none;
+  margin: 0;
+}
+.internal-embed[alt*="nob"] ul{
+  padding-inline-start: 0;
+}
+.internal-embed[alt*="em+"] .markdown-embed .markdown-preview-view,
+.markdown-preview-view .internal-embed[alt*="em+"]:not(.image-embed) {
+  padding: 20px 10px;
+  display: block !important;
+  width: 100%;
+  background-color: var(--embed-bg);
+}
+.internal-embed[alt*="em+"] .markdown-embed-link{
+  color: var(--accent);
+}
+
+
+/*Clean Embeds*/
+.internal-embed[alt*="clean"] > .markdown-embed,
+.internal-embed[alt*="clean"].is-loaded:not(.image-embed),
+.internal-embed[alt*="clean"] .admonition {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: 0 0 0 var(--note) !important;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.internal-embed[alt*="nmg"] .markdown-embed .markdown-preview-view {
+  margin: 0;
+  padding: 0;
+}
+
+/*Hide Headings*/
+.internal-embed[alt*="no-h"] .markdown-embed :is(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+),
+.internal-embed[alt~="no-h"].markdown-embed :is(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) { display: none; }
+/*Hide Specific Headings*/
+.internal-embed[alt*="n-h1"] .markdown-embed h1,
+.internal-embed[alt*="n-h2"] .markdown-embed h2,
+.internal-embed[alt*="n-h3"] .markdown-embed h3,
+.internal-embed[alt*="n-h4"] .markdown-embed h4,
+.internal-embed[alt*="n-h5"] .markdown-embed h5,
+.internal-embed[alt*="n-h6"] .markdown-embed h6,
+
+.internal-embed[alt~="no-h1"].markdown-embed h1,
+.internal-embed[alt~="no-h2"].markdown-embed h2,
+.internal-embed[alt~="no-h3"].markdown-embed h3,
+.internal-embed[alt~="no-h4"].markdown-embed h4,
+.internal-embed[alt~="no-h5"].markdown-embed h5,
+.internal-embed[alt~="no-h6"].markdown-embed h6 
+{ display: none; }
+
+
+/*Height Adjustment*/
+.internal-embed[alt*="htiny"] .markdown-embed-content {
+  height: var(--tiny);
+}
+.internal-embed[alt*="hsmall"] .markdown-embed-content {
+  height: var(--small);
+}
+.internal-embed[alt*="hs-med"] .markdown-embed-content{
+  height: var(--small-med);
+}
+.internal-embed[alt*="hm-sm"] .markdown-embed-content{
+  height: var(--med-small);
+}
+.internal-embed[alt*="hmed"] .markdown-embed-content{
+  height: var(--medium);
+}
+.internal-embed[alt*="htall"] .markdown-embed-content{
+  height: var(--tall);
+}
+.internal-embed[alt*="full"] .markdown-embed-content,
+.internal-embed[alt*="full"] .markdown-embed-content > .markdown-preview-view { 
+  max-height: unset;
+}
+
+/*Width Adjustment*/
+.internal-embed[alt*="wtiny"]{
+  width: 20%;
+}
+.internal-embed[alt*="wsmall"]{
+  width: 30%;
+}
+.internal-embed[alt*="ws-med"]{
+  width: 40%;
+}
+.internal-embed[alt*="wm-small"]{
+  width: 50%;
+}
+.internal-embed[alt*="wmed"]{
+  width: 60%;
+}
+.internal-embed[alt*="wm-tl"]{
+  width: 80%;
+}
+.internal-embed[alt*="wtall"]{
+  width: 95%;
+}
+
+/*
+    clean-embeds.css snippet
+
+    Removes title, link, padding, margins from embeds,
+    so they really look like the same note.
+
+    To be used with `cssclass: clean-embeds` in YAML frontmatter.
+
+    2021-08-24 Matthias C. Hormann (Moonbase59)
+
+    TODO: Find out how to correct PDF export. L/R margins & vspace too large on embeds.
+*/
+
+/* remove title and the table from the "Metatable" plugin */
+/*.markdown-preview-view.clean-embeds .markdown-embed-title,
+.markdown-preview-view.clean-embeds .obsidian-metatable {
+  display: none;
+}*/
+
+/*
+  For links to embeds NOT to be shown, uncomment the following
+  and comment out the other section below.
+*/
+
+
+.markdown-preview-view.clean-embeds .markdown-embed-link:not(:hover),
+.markdown-preview-view.clean-embeds .file-embed-link:not(:hover) {
+	opacity: 0 !important;
+	transition: opacity .25s ease-in-out;
+}
+
+.clean-embeds .markdown-embed-link:not(:hover),
+.clean-embeds .file-embed-link:not(:hover) {
+	opacity: 0 !important;
+	transition: opacity .25s ease-in-out;
+}
+
+
+/*
+  For links to embeds to BE shown, uncomment the following
+  until the "End link show/hide stuff" comment
+  and comment out the section above.
+*/
+
+
+/* Link icon */
+
+/* .markdown-preview-view.clean-embeds .markdown-embed-link,
+.markdown-preview-view.clean-embeds .file-embed-link {
+  top: 0;
+  right: 0;
+  left: unset;
+  text-align: right;
+  border: none;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--text-faint);
+  cursor: pointer;
+} */
+
+/* for Ars Magna theme and others that change ::before */
+/* .markdown-preview-view.clean-embeds .markdown-embed-link::before,
+.markdown-preview-view.clean-embeds .file-embed-link::before {
+  display: none;
+} */
+
+/* Link icon size & hide */
+/* .markdown-preview-view.clean-embeds .file-embed-link svg,
+.markdown-preview-view.clean-embeds .markdown-embed-link svg {
+  height: 24px;
+  width: 24px;
+  opacity: 0;
+  display: unset;
+} */
+
+/* show on hover */
+/* .markdown-preview-view.clean-embeds .markdown-embed:hover .file-embed-link svg,
+.markdown-preview-view.clean-embeds .markdown-embed:hover .markdown-embed-link svg {
+  opacity: 1;
+} */
+
+/* change background on hover, to exactly see what’s embedded */
+/* .markdown-preview-view.clean-embeds .markdown-embed:hover,
+.markdown-preview-view.clean-embeds .file-embed:hover {
+  background-color: var(--background-secondary) !important;
+} */
+
+
+/* Remove the titles */
+.clean-embeds .internal-embed .markdown-preview-section h2,
+.clean-embeds .internal-embed .markdown-preview-section h1,
+.clean-embeds .internal-embed .markdown-preview-section h3,
+.clean-embeds .internal-embed .markdown-preview-section h4,
+.clean-embeds .internal-embed .markdown-preview-section h5,
+.clean-embeds .internal-embed .markdown-preview-section h6 {
+    display: none;
+}
+
+/* remove border and scroll */
+/* unfortunately needs !important for some themes */
+.markdown-preview-view.clean-embeds .markdown-embed,
+.markdown-preview-view.clean-embeds .file-embed {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.markdown-preview-view.clean-embeds .markdown-embed-content,
+.markdown-preview-view.clean-embeds .markdown-embed-content > .markdown-preview-view { 
+  max-height: unset;
+  padding: 0 !important; /* !important for "Pisum" theme */
+  margin: 0;
+  border: 0;
+}
+
+.clean-embeds .markdown-embed,
+.clean-embeds .file-embed {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.clean-embeds .markdown-embed-content,
+.clean-embeds .markdown-embed-content > .markdown-preview-view { 
+  max-height: unset;
+  padding: 0 !important; /* !important for "Pisum" theme */
+  margin: 0;
+  border: 0;
+}
+
+/* remove <br> between internal embeds */
+.clean-embeds .markdown-preview-section div > br {
+  display: none;
+}
+
+
+/* remove vertical space added by markdown-preview-sizer */
+/* .clean-embeds div.markdown-preview-sizer.markdown-preview-section {
+  min-height: unset !important;
+  padding-bottom: 0 !important;
+} */
+
+/* special considerations for printing (PDF export) */
+/*@media print {
+
+  pre.frontmatter,
+  .obsidian-metatable {
+    display: none;
+  }
+} 
+*/
+
+
+
+/*Callout Positioning*/
+:not(.is-live-preview) .callout.callout.callout:is([data-callout-metadata~="p+l"],
+[data-callout-metadata~=left]) {
+  float: left;
+  margin: unset;
+  margin-right: 8px;
+}
+
+:not(.is-live-preview) .callout.callout:is([data-callout-metadata~="p+r"],
+[data-callout-metadata~=right]) {
+  float: right;
+  margin: unset;
+  margin-left: 8px;
+}
+
+.callout.callout.callout:is([data-callout-metadata~=ctr],
+[data-callout-metadata~=center]) {
+  display: block;
+  margin: auto;
+  float: unset;
+}
+
+.callout.callout[data-callout-metadata~=wtiny] {
+  width: 20%;
+}
+.callout.callout[data-callout-metadata~=large] {
+  width: 80%;
+}
+.callout.callout[data-callout-metadata~=fin] {
+  width: 20%;
+}
+.callout.callout[data-callout-metadata~=wsmall] {
+  width: 30%;
+}
+.callout.callout[data-callout-metadata~=ws-med] {
+  width: 40%;
+}
+.callout.callout[data-callout-metadata~=wm-sm] {
+  width: 50%;
+}
+.callout.callout[data-callout-metadata~=wmed] {
+  width: 60%;
+}
+.callout.callout[data-callout-metadata~=wm-tl] {
+  width: 80%;
+}
+.callout.callout[data-callout-metadata~=wtall] {
+  width: 95%;
+}
+.callout.callout[data-callout-metadata~=wfull] {
+  width: 100%;
+}
+.callout.callout[data-callout-metadata~=wtiny-c] {
+  width: 19%;
+}
+.callout.callout[data-callout-metadata~=wsmall-c] {
+  width: 32.4%;
+}
+.callout.callout[data-callout-metadata~=ws-med-c] {
+  width: 39%;
+}
+.callout.callout[data-callout-metadata~=wm-sm-c] {
+  width: 49%;
+}
+.callout.callout[data-callout-metadata~=wmed-c] {
+  width: 59%;
+}
+.callout.callout[data-callout-metadata~=wm-tl-c] {
+  width: 79%;
+}
+
+body .callout.callout.callout:is([data-callout-metadata~=nmg], [data-callout-metadata~=no-margin]) {
+  margin: 0;
+}
+
+.callout[data-callout-metadata~=collapse] * {
+  margin: 0 !important;
+  padding: 0 !important;
+  grid-gap: 0 !important;
+}
+
+.callout.callout.callout:is([data-callout-metadata~=nbrd], [data-callout-metadata~=no-border]) {
+  border: 0;
+}
+
+.callout.callout:is([data-callout-metadata~=txt-l],
+[data-callout-metadata~=text-Left]) > .callout-content {
+  text-align: left;
+}
+
+.callout.callout:is([data-callout-metadata~=txt-r],
+[data-callout-metadata~=text-Right]) > .callout-content {
+  text-align: right;
+}
+
+.callout.callout:is([data-callout-metadata~=txt-c],
+[data-callout-metadata~=text-Center]) > .callout-content {
+  text-align: center;
+}
+
+.callout.callout:is([data-callout-metadata~=ttl-c],
+[data-callout-metadata~=title-Center]) .callout-title {
+  justify-content: center;
+}
+.callout.callout:is([data-callout-metadata~=ttl-c],
+[data-callout-metadata~=title-Center]) .callout-title-inner {
+  display: block;
+  flex: unset;
+}
+
+/*Callout Sizing*/
+.callout.callout.callout:is([data-callout-metadata~=banner], [data-callout-metadata~=sban]) {
+  width: 100%;
+  max-width: unset;
+}
+.callout.callout.callout:is([data-callout-metadata~=banner], [data-callout-metadata~=sban]) :is(.internal-embed, img) {
+  width: 100%;
+  object-fit: cover;
+}
+
+.callout.callout.callout[data-callout-metadata~=clean],
+.callout.callout.callout[data-callout-metadata~=clean] .callout-content {
+  border: 0;
+  box-shadow: none;
+  --callout-color: transparent;
+  --callout-padding: 0;
+}
+.callout.callout.callout[data-callout-metadata~=clean] .callout-content,
+.callout.callout.callout[data-callout-metadata~=clean] .callout-content .callout-content {
+  padding: 0;
+}
+
+/*Caption Adjustments*/
+.callout:is([data-callout-metadata~=no-t],
+[data-callout-metadata~=no-title]) > .callout-title {
+  display: none;
+}
+
+.callout.callout.callout.callout:is([data-callout-metadata~=s-t],
+[data-callout-metadata~=show-title]) > .callout-title {
+  display: flex;
+}
+.callout.callout.callout.callout:is([data-callout-metadata~=s-t],
+[data-callout-metadata~=show-title]) p {
+  margin-top: 0;
+}
+
+.callout:is([data-callout-metadata~=no-i],
+[data-callout-metadata~=no-icon]) > .callout-title .callout-icon {
+  display: none;
+}
+
+.callout:is([data-callout-metadata~=n-th],
+[data-callout-metadata~=no-table-header]) .callout-content > table {
+  margin-bottom: 5px;
+}
+.callout:is([data-callout-metadata~=n-th],
+[data-callout-metadata~=no-table-header]) .callout-content > table th {
+  display: none;
+}
+
+.callout[data-callout-metadata~=t-w] table td {
+  width: calc(var(--tbl-w) / 2);
+}
+
+.callout[data-callout-metadata~=t-w] table {
+  width: 100%;
+}
+
+.callout:is([data-callout-metadata~=nmg],
+[data-callout-metadata~=no-margin]) > .callout {
+  margin: 0;
+}
+
+.callout[data-callout-metadata~=embed] .callout-content, .callout[data-callout-metadata~=embed] p {
+  margin: 0;
+  padding: 0;
+}
+
+.callout.callout.callout {
+  --callout-blue: 82, 139, 212;
+  --callout-green: 86, 179, 117;
+  --callout-orange: 230, 129, 63;
+  --callout-red: 193, 67, 67;
+  --callout-purple: 153, 97, 218;
+  --callout-gray: 166, 189, 197;
+  --callout-yellow: 208, 181, 48;
+  --callout-pink: 227, 107, 167;
+}
+.callout.callout.callout:is([data-callout-metadata~=color-blue], [data-callout-metadata~=c-blue], [data-callout-metadata~=background-color-blue], [data-callout-metadata~=bg-c-blue]) {
+  --callout-color: var(--callout-blue);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-green], [data-callout-metadata~=c-green], [data-callout-metadata~=background-color-green], [data-callout-metadata~=bg-c-green]) {
+  --callout-color: var(--callout-green);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-orange], [data-callout-metadata~=c-orange], [data-callout-metadata~=background-color-orange], [data-callout-metadata~=bg-c-orange]) {
+  --callout-color: var(--callout-orange);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-red], [data-callout-metadata~=c-red], [data-callout-metadata~=background-color-red], [data-callout-metadata~=bg-c-red]) {
+  --callout-color: var(--callout-red);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-purple], [data-callout-metadata~=c-purple], [data-callout-metadata~=background-color-purple], [data-callout-metadata~=bg-c-purple]) {
+  --callout-color: var(--callout-purple);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-gray], [data-callout-metadata~=c-gray], [data-callout-metadata~=background-color-gray], [data-callout-metadata~=bg-c-gray]) {
+  --callout-color: var(--callout-gray);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-yellow], [data-callout-metadata~=c-yellow], [data-callout-metadata~=background-color-yellow], [data-callout-metadata~=bg-c-yellow]) {
+  --callout-color: var(--callout-yellow);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-pink], [data-callout-metadata~=c-pink], [data-callout-metadata~=background-color-pink], [data-callout-metadata~=bg-c-pink]) {
+  --callout-color: var(--callout-pink);
+}
+.callout.callout.callout:is([data-callout-metadata~=color-], [data-callout-metadata~=c-]) {
+  --callout-color: var(--callout);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-blue], [data-callout-metadata~=bg-blue], [data-callout-metadata~=background-color-blue], [data-callout-metadata~=bg-c-blue]) {
+  background-color: rgba(var(--callout-blue), 10%);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-green], [data-callout-metadata~=bg-green], [data-callout-metadata~=background-color-green], [data-callout-metadata~=bg-c-green]) {
+  background-color: rgba(var(--callout-green), 10%);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-orange], [data-callout-metadata~=bg-orange], [data-callout-metadata~=background-color-orange], [data-callout-metadata~=bg-c-orange]) {
+  background-color: rgba(var(--callout-orange), 10%);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-red], [data-callout-metadata~=bg-red], [data-callout-metadata~=background-color-red], [data-callout-metadata~=bg-c-red]) {
+  background-color: rgba(var(--callout-red), 10%);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-purple], [data-callout-metadata~=bg-purple], [data-callout-metadata~=background-color-purple], [data-callout-metadata~=bg-c-purple]) {
+  background-color: rgba(var(--callout-purple), 10%);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-gray], [data-callout-metadata~=bg-gray], [data-callout-metadata~=background-color-gray], [data-callout-metadata~=bg-c-gray]) {
+  background-color: rgba(var(--callout-gray), 10%);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-yellow], [data-callout-metadata~=bg-yellow], [data-callout-metadata~=background-color-yellow], [data-callout-metadata~=bg-c-yellow]) {
+  background-color: rgba(var(--callout-yellow), 10%);
+}
+.callout.callout.callout:is([data-callout-metadata~=background-pink], [data-callout-metadata~=bg-pink], [data-callout-metadata~=background-color-pink], [data-callout-metadata~=bg-c-pink]) {
+  background-color: rgba(var(--callout-pink), 10%);
+}
+
+/*--Callout Types--*/
+body {
+  --kbn-radius: 3px;
+  --co-radius: 7px;
+}
+
+/* Minimalist Style */
+.alt-co .callout.callout,
+.callout[data-callout-metadata~=alt-co] {
+  background: rgba(var(--callout-color), 0.1);
+  border: 0;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: var(--radius, var(--co-radius));
+  box-shadow: 1px 1px 0 rgba(var(--callout-color), 0.2);
+}
+.alt-co .callout.callout p:first-child,
+.callout[data-callout-metadata~=alt-co] p:first-child {
+  margin-block-start: 5px;
+}
+.alt-co .callout.callout:not(.is-collapsed) .callout-title,
+.callout[data-callout-metadata~=alt-co]:not(.is-collapsed) .callout-title {
+  padding-bottom: 0;
+}
+.alt-co .callout.callout .callout-title,
+.callout[data-callout-metadata~=alt-co] .callout-title {
+  background: transparent;
+}
+.alt-co .callout.callout .callout-content,
+.callout[data-callout-metadata~=alt-co] .callout-content {
+  border: 0;
+}
+
+.callout.callout[data-callout-metadata~=alt-line] {
+  border: 0;
+}
+.callout.callout[data-callout-metadata~=alt-line] .callout-title {
+  background: transparent;
+  border-bottom: 2px solid var(--table, var(--background-modifier-border));
+  padding: 5px 0;
+}
+.callout.callout[data-callout-metadata~=alt-line] .callout-fold {
+  color: rgb(var(--callout-color));
+}
+.callout.callout[data-callout-metadata~=alt-line] .callout-content.callout-content {
+  border: 0;
+  border-bottom: 1px solid rgba(var(--callout-color), 0.5);
+}
+
+.callout.callout[data-callout-metadata~=dim-hvr]:not(:hover),
+.callout.callout[data-callout-metadata~=dim].is-collapsed:not(:hover) {
+  opacity: 30%;
+  transition: opacity 300ms;
+}
+
+.co-ttl-ctr .callout-title {
+  justify-content: center;
+}
+.co-ttl-ctr .callout-title-inner {
+  display: block;
+  flex: unset;
+}
+
+/*Infobox*/
+:is(.is-mobile,
+.is-mobile .is-live-preview,
+.is-live-preview) .callout[data-callout~=infobox]:not([data-callout-metadata~=mobile]) {
+  float: unset !important;
+  max-width: 100%;
+  margin: 0 !important;
+  width: auto;
+}
+
+.callout[data-callout~=infobox] {
+  --callout-color: var(--note, var(--background-primary));
+  --callout-padding: 0;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  margin-left: 8px;
+  width: auto;
+  max-width: 20vw;
+  float: right;
+}
+.callout[data-callout~=infobox] .callout-title {
+  padding: 0;
+  justify-content: center;
+}
+.callout[data-callout~=infobox].is-collapsed .callout-fold {
+  border: 1px solid var(--hr, var(--background-modifier-border));
+  padding: 5px 10px;
+}
+.callout[data-callout~=infobox] .callout-title :is(.callout-icon, .callout-title-inner) {
+  display: none;
+}
+.callout[data-callout~=infobox]:not(:hover):not(.is-collapsed) .callout-title {
+  background-color: transparent;
+}
+.callout[data-callout~=infobox]:is([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]):not(:hover):not(.is-collapsed) > .callout-title {
+  display: flex;
+  gap: 0;
+}
+.callout[data-callout~=infobox]:is([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]).is-collapsed .callout-title {
+  border: 1px solid var(--hr, var(--background-modifier-border));
+  display: flex;
+}
+.callout[data-callout~=infobox]:is([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]) .callout-fold, .callout[data-callout~=infobox]:is([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]) .callout-title .callout-title-inner {
+  display: unset;
+  align-items: center;
+  align-content: center;
+  padding: 5px 10px;
+}
+.callout[data-callout~=infobox]:is([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]) .callout-fold {
+  padding: unset;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.callout[data-callout~=infobox]:is([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]).is-collapsed .callout-fold {
+  border: 0;
+}
+.callout[data-callout~=infobox] .callout-content {
+  padding: 1px;
+  border: 1px solid var(--table, var(--background-modifier-border));
+  margin: 0;
+  border-radius: var(--radius, var(--co-radius));
+}
+.callout[data-callout~=infobox] table {
+  width: 100%;
+}
+.callout[data-callout~=infobox] table td {
+  white-space: pre-wrap;
+  word-wrap: normal;
+  word-break: normal;
+}
+.callout[data-callout~=infobox] :is(p, table) {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+}
+.callout[data-callout~=infobox] :is(h1, h2, h3, h4, h5, h6) {
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 2px;
+  color: var(--text-normal);
+  background: var(--outer-bar, var(--background-secondary));
+}
+.callout[data-callout~=infobox] p, .callout[data-callout~=infobox] .internal-embed, .callout[data-callout~=infobox] img {
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+.callout[data-callout~=infobox][data-callout-metadata][data-callout-metadata][data-callout-metadata~=left] {
+  margin-right: 25px;
+}
+.callout[data-callout~=infobox][data-callout-metadata~=wikipedia] table th, .callout[data-callout~=infobox][data-callout-metadata~=wikipedia] table th:nth-child(even), .callout[data-callout~=infobox][data-callout-metadata~=wikipedia] table :is(td, tr) {
+  background: transparent;
+}
+.callout[data-callout~=infobox][data-callout-metadata~=wikipedia] table tr td {
+  border-top: 1.1px solid var(--hr);
+}
+.callout[data-callout~=infobox][data-callout-metadata~=wikipedia] table tr:last-child {
+  margin-bottom: 2px;
+}
+
+@media print {
+  .callout[data-callout~=infobox] {
+    max-width: 400px;
+  }
+}
+.theme-light .callout[data-callout~=infobox][data-callout-metadata~=wikipedia] {
+  --th-text: var(--th) ;
+}
+
+/*Image Grid*/
+.callout.callout[data-callout=grid] {
+  --callout-padding: 0;
+  --callout-content-padding: 0;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  box-shadow: none;
+}
+.callout.callout[data-callout=grid] .callout-content {
+  display: block;
+  width: 100%;
+  border: 0;
+  box-shadow: unset;
+  padding: 0;
+}
+.callout.callout[data-callout=grid] .callout-title {
+  display: none;
+}
+.callout.callout[data-callout=grid] .callout-content p {
+  display: flex;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  justify-content: center;
+}
+.callout.callout[data-callout=grid] .callout-content img {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3px;
+  max-height: 35vh;
+}
+.callout.callout[data-callout=grid] .callout-content img[alt=wfull] {
+  max-height: unset;
+}
+.callout.callout[data-callout=grid][data-callout-metadata~=masonry] .callout-content p {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, auto));
+  grid-gap: 0;
+  margin: 0;
+  margin-top: 1px;
+}
+.callout.callout[data-callout=grid][data-callout-metadata~=masonry] .callout-content img {
+  display: flex;
+  flex: 1;
+  align-self: stretch;
+  object-fit: cover;
+  max-height: unset;
+}
+
+/*Captions*/
+.callout.callout[data-callout~=caption] {
+  background: transparent;
+  text-align: center;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  margin-top: -10px;
+  max-width: 30vh;
+}
+.callout.callout[data-callout~=caption] .callout-title {
+  display: none;
+}
+.callout.callout[data-callout~=caption] p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: var(--text-faint);
+}
+
+/*Kanban*/
+.callout.callout[data-callout~=kanban] {
+  --callout-color: var(--text-normal);
+  --callout-icon: layout-dashboard;
+  --item-outline: 0 0 0 1px var(--outline, var(--background-modifier-border));
+  --box-shadow: 0 0 5px var(--outline, var(--background-modifier-box-shadow));
+  --lane-width: 250px;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  width: auto;
+  padding: 0;
+}
+.callout.callout[data-callout~=kanban] .callout-title {
+  justify-content: center;
+  background: var(--background-primary-alt);
+  padding: 5px;
+  border-radius: var(--radius, var(--co-radius));
+}
+.callout.callout[data-callout~=kanban] .callout-title-inner {
+  flex: unset;
+}
+.callout.callout[data-callout~=kanban] .callout-content {
+  padding: 0;
+}
+.callout.callout[data-callout~=kanban] ul li::marker, .callout.callout[data-callout~=kanban] ul li::before, .callout.callout[data-callout~=kanban] ul::before, .callout.callout[data-callout~=kanban] :is(ul, ul ul) .list-collapse-indicator {
+  list-style-type: none;
+  color: transparent;
+  display: none !important;
+}
+.callout.callout[data-callout~=kanban] ul {
+  display: flex;
+  margin-block-start: 5px;
+  padding-inline-start: 0;
+  text-align: center;
+  overflow: auto;
+}
+.callout.callout[data-callout~=kanban] ul.dataview-ul {
+  margin-inline-start: unset;
+}
+.callout.callout[data-callout~=kanban] ul li {
+  min-width: var(--lane-width);
+  border: 0;
+  padding: 5px;
+  margin: 5px 3px;
+  padding-top: 4px;
+  background: var(--note, var(--background-primary-alt));
+  border-radius: var(--radius, var(--kbn-radius));
+  box-shadow: var(--item-outline), var(--box-shadow);
+}
+.callout.callout[data-callout~=kanban] ul ul {
+  flex-direction: column;
+  text-align: left;
+  overflow: unset;
+}
+.callout.callout[data-callout~=kanban] ul ul li {
+  min-width: calc(var(--lane-width) / 2);
+  padding: 5px;
+  box-shadow: var(--item-outline);
+  background: var(--code-bg, var(--background-primary));
+}
+.callout.callout[data-callout~=kanban] ul ul li :is(img, .internal-embed) {
+  margin-bottom: -6px;
+}
+.callout.callout[data-callout~=kanban] ul.contains-task-list {
+  padding-inline-start: 20px;
+}
+.callout.callout[data-callout~=kanban] .task-list-item-checkbox {
+  cursor: default;
+}
+
+/* Recite */
+.callout.callout[data-callout=recite] {
+  --callout-color: 193, 67, 67;
+  --callout-icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path stroke="none" fill="none" d="M0 0h24v24H0z"/><path d="M6.455 19L2 22.5V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6.455z"/></svg>';
+  padding: 10px;
+  padding-top: 5px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 11px;
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA8CAYAAADxJz2MAAAFWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjgwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iNjAiCiAgIGV4aWY6Q29sb3JTcGFjZT0iMSIKICAgdGlmZjpJbWFnZVdpZHRoPSI4MCIKICAgdGlmZjpJbWFnZUxlbmd0aD0iNjAiCiAgIHRpZmY6UmVzb2x1dGlvblVuaXQ9IjIiCiAgIHRpZmY6WFJlc29sdXRpb249IjMwMC8xIgogICB0aWZmOllSZXNvbHV0aW9uPSIzMDAvMSIKICAgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIKICAgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIgogICB4bXA6TW9kaWZ5RGF0ZT0iMjAyMi0wMS0wMlQxNjowNTo0MS0wODowMCIKICAgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMi0wMS0wMlQxNjowNTo0MS0wODowMCI+CiAgIDxkYzp0aXRsZT4KICAgIDxyZGY6QWx0PgogICAgIDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+RCZhbXA7RCBCb3JkZXI8L3JkZjpsaT4KICAgIDwvcmRmOkFsdD4KICAgPC9kYzp0aXRsZT4KICAgPHhtcE1NOkhpc3Rvcnk+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpCiAgICAgIHN0RXZ0OmFjdGlvbj0icHJvZHVjZWQiCiAgICAgIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFmZmluaXR5IERlc2lnbmVyIDEuMTAuNCIKICAgICAgc3RFdnQ6d2hlbj0iMjAyMi0wMS0wMlQxNjowNTo0MS0wODowMCIvPgogICAgPC9yZGY6U2VxPgogICA8L3htcE1NOkhpc3Rvcnk+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+SLcLyAAAAYFpQ0NQc1JHQiBJRUM2MTk2Ni0yLjEAACiRdZHPK0RRFMc/8xD50SiUhcVLWA35UWJjMZNfhcXMKIPNm2fejJo3Xu+NJFtlO0WJjV8L/gK2ylopIiVLWRMbpuc8o0Yy53bP/dzvPed077mgRNO66ZR3g5nJ2uHRoDoTm1Urn/Ch0EQdqqY71mRkJEpJe7+VaLHrTq9W6bh/rWYh4ejgqxIe0i07KzwmPLGStTzeEm7UU9qC8IlwwJYLCt94erzAzx4nC/zpsR0Nh0CpF1aTvzj+i/WUbQrLy2kz08v6z328l9QmMtMRWVtltuAQZpQgKuMME6KfHgbF99NJL12yo0R+93f+FEuSq4u3WMVmkSQpsgREXZbqCVkN0RMy0qx6/f/bV8fo6y1Urw1CxaPrvrZD5Sbkc677ceC6+UMoe4DzTDF/aR8G3kTPFbW2PfCvw+lFUYtvw9kGNN9bmq19S2UyFcOAl2Ooi0HDFVTPFXr2c87RHUTX5KsuYWcXOiTeP/8FK5Jny8RYHqYAAAAJcEhZcwAALiMAAC4jAXilP3YAAAG5SURBVHic7dyxSiNRFMbxv0OwEkvZfrEWleWAvbA+giB5ANtgcx/gFJK0+wAbwUdYV7bZRjiIirXYL1tbiajFXHV3Y5KBbIyTfL8yOQxfPu5kprkXKnCzRTfrVpmdBm7WdbPFKrNFhYt9As6BnVGD1cgOcJ5/+0CNfl+4WQG0AB80N8U+AiduloBOirh/bejVFehmH4AjYJ/ZLO9Jg7KDo9xJj54C3ewzcAlsjjdbrWwCl7mbvzyvLjebp7xdW28YrE6WgG9u1gFSiriFvALdbBk4QeVV0aL8b1wGKNysCVwA6xONVS/rwIWbNefc7GHSaeps6HugiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIyCzQTqURaafSiBpAE/gCLAwbThFzY0/0DlS8K2+A3SJFdIE14Gy8sabKGbCWIroFQIq4AjaA9kRj1UMb2MidvexYzzuw99zsB/CVcoe2vPgNNFPE9z8/7HmI5IEV4PiNgtXBMbDyb3nQ5ymcIn4BW8AecDfebO/aHWUHW7mTHn2PNMnnpLTd7CdwSHmOyiy5BrZTxOmgoaHvgfkCq8DBfwpWBwfA6rDyAB4BTjVxWZByO0gAAAAASUVORK5CYII=") 11;
+  border-image-outset: 9px 0px;
+  box-shadow: 0px 0px 10px var(--outline, var(--background-modifier-box-shadow));
+  background: var(--note, var(--background-primary));
+  text-align: justify;
+}
+.callout.callout[data-callout=recite] .callout-title {
+  padding: 0;
+  background: transparent;
+  color: rgba(var(--callout-color), 1);
+  justify-content: center;
+}
+.callout.callout[data-callout=recite][data-callout-metadata*=bg-]:not([data-callout-metadata*=bg-c]) .callout-title {
+  color: var(--text-normal);
+}
+.callout.callout[data-callout=recite] .callout-title-inner {
+  flex: unset;
+}
+.callout.callout[data-callout=recite] .callout-content {
+  padding: 0;
+  padding-top: 10px;
+}
+
+/* Metadata */
+.callout.callout[data-callout~=Metadata i] {
+  --callout-icon: layers;
+  --callout-color: 82, 139, 212;
+  border-width: 2px;
+  box-shadow: 0px 0px 0px 1px var(--outline);
+}
+.callout.callout[data-callout~=Metadata i] .callout-title {
+  padding: 5px;
+  background-color: transparent;
+  justify-content: center;
+}
+.callout.callout[data-callout~=Metadata i] .callout-fold {
+  color: rgb(var(--callout-color));
+}
+.callout.callout[data-callout~=Metadata i] .callout-title-inner {
+  flex: unset;
+  color: rgb(var(--callout-color));
+}
+.callout.callout[data-callout~=Metadata i] .callout-content {
+  padding: 10px;
+  padding-top: 0px;
+}
+.callout.callout[data-callout~=Metadata i] .callout-content strong {
+  color: rgb(var(--callout-color));
+}
+.callout.callout[data-callout~=Metadata i] .dataview.inline-field-key {
+  background: rgb(var(--callout-color));
+  color: var(--text-on-accent);
+  font-weight: 900;
+}
+.callout.callout[data-callout~=Metadata i] .dataview.inline-field-value {
+  font-weight: unset;
+  background: transparent;
+}
+.callout.callout[data-callout~=Metadata i] table th {
+  background-color: var(--aside-bg, rgba(var(--callout-color), 0.5));
+}
+.callout.callout[data-callout~=Metadata i] table {
+  --tbl-td-h: 0;
+  --tbl-td-w: 5px;
+  white-space: nowrap;
+  margin: 0;
+  width: 100%;
+}
+.callout.callout[data-callout~=Metadata i] .callout-content p:last-child {
+  margin-bottom: 0;
+}
+.callout.callout[data-callout~=Metadata i] .callout-content p:first-child {
+  margin-top: 0;
+}
+.callout.callout[data-callout~=Metadata i] .callout-content, .callout.callout[data-callout~=Metadata i] ul {
+  margin: 0;
+}
+.callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at] {
+  background: var(--outer-bar);
+  border: 0;
+  text-align: center;
+  padding: 0;
+}
+.callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at].is-collapsible:not(.is-collapsed) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at]:not(.is-collapsible) .callout-title, .callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at] .callout-title-inner, .callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at]:not(.is-collapsed) .callout-icon {
+  display: none;
+}
+.callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at] .callout-fold {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at] .callout-fold svg {
+  margin-bottom: unset;
+}
+.callout.callout[data-callout~=Metadata i][data-callout-metadata~=i-at] .callout-content {
+  padding: 0px;
+  margin: auto;
+}
+.callout.callout[data-callout~=Metadata i]:is([data-callout-metadata~=tbl-cln], [data-callout-metadata~=table-clean]) table :is(td, tr, th) {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.callout-list .callout {
+  border: 0;
+  background-color: var(--note, var(--background-primary));
+}
+.callout-list .callout-title {
+  padding: 5px 10px;
+}
+.callout-list .callout ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Cards */
+.callout[data-callout~=cards] {
+  --callout-color: none;
+  --callout-icon: layout-dashboard;
+  --callout-content-padding: 0px;
+  box-shadow: none;
+  border: 0;
+  width: auto;
+  background: transparent;
+}
+.callout[data-callout~=cards] .callout-title {
+  display: none;
+}
+.callout[data-callout~=cards] .callout-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  border-radius: 0;
+  padding-inline-start: 0px;
+  padding: 0;
+}
+.callout[data-callout~=cards] p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 0;
+}
+.callout[data-callout~=cards]:not([data-callout-metadata~=nstr], [data-callout-metadata~=no-strong]) strong {
+  display: block;
+  text-align: center;
+  margin: auto;
+  background-color: var(--outer-bar, var(--background-secondary));
+}
+
+
+.callout[data-callout~=cards] br {
+  display: none;
+}
+
+/* Dataview Cards */
+.callout[data-callout~=cards][data-callout-metadata~=dataview] {
+  --callout-content-padding: 0px;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .callout-content {
+  display: unset;
+  grid-template-columns: unset;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .dataview.table-view-table {
+  display: grid;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .dataview.table-view-table :is(td, tr) {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .dataview.table-view-table strong {
+  background: transparent;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .table-view-thead th {
+  border: 0;
+  background-color: transparent;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .table-view-thead tr {
+  display: none;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .dataview.table-view-table tbody {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dataview] .dataview.table-view-table tbody tr {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px;
+  box-shadow: 0 0 0 1px var(--outline, var(--background-modifier-box-shadow)), 2px 2px 0 var(--outline, var(--background-modifier-box-shadow));
+}
+
+.callout[data-callout~=cards][data-callout-metadata~=dvl] .callout-content {
+  display: block;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dvl] br {
+  display: unset;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dvl] .block-language-dataviewjs .dataview-result-list-li, .callout[data-callout~=cards][data-callout-metadata~=dvl] .list-view-ul li {
+  padding: 10px;
+  background-color: var(--outer-bar);
+  box-shadow: 2px 2px 0 var(--outline);
+  margin-bottom: 5px;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dvl] .dataview.list-view-ul li::before {
+  margin-left: -27px;
+}
+.callout[data-callout~=cards][data-callout-metadata~=dvl] ul {
+  padding-inline-start: unset;
+}
+
+.callout[data-callout~=cards][data-callout-metadata~="1"] :is(.dataview.table-view-table tbody, .callout-content) {
+  grid-template-columns: repeat(1, 1fr);
+}
+.callout[data-callout~=cards][data-callout-metadata~="2"] :is(.dataview.table-view-table tbody, .callout-content) {
+  grid-template-columns: repeat(2, 1fr);
+}
+.callout[data-callout~=cards][data-callout-metadata~="4"] :is(.dataview.table-view-table tbody, .callout-content) {
+  grid-template-columns: repeat(4, 1fr);
+}
+.callout[data-callout~=cards][data-callout-metadata~="5"] :is(.dataview.table-view-table tbody, .callout-content) {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* Unwrapped Table */
+.callout.callout[data-callout-metadata~=table],
+.callout.callout[data-callout~=table] {
+  border: 0;
+}
+.callout.callout[data-callout-metadata~=table] .callout-content,
+.callout.callout[data-callout~=table] .callout-content {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.callout.callout[data-callout-metadata~=table]:not([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]) .callout-title,
+.callout.callout[data-callout~=table]:not([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]) .callout-title {
+  display: none;
+}
+.callout.callout[data-callout-metadata~=table] table,
+.callout.callout[data-callout~=table] table {
+  white-space: nowrap;
+  margin: 0;
+  margin: auto;
+}
+
+/* Asides */
+.callout[data-callout~=aside] {
+  --callout-icon: message-square;
+  --callout-color: "";
+  background-color: var(--aside-bg, var(--background-secondary));
+  box-shadow: 0.3em 0.3em 0 var(--accent, var(--background-modifier-box-shadow)), 0 0 0 1px var(--accent, var(--background-modifier-box-shadow));
+  float: right;
+  position: relative;
+  margin: 0;
+  margin-right: -1.2em;
+  margin-left: 5px;
+  max-width: 400px;
+}
+.callout[data-callout~=aside]:not([data-callout-metadata~=no-t]) .callout-content {
+  padding: 5px 10px;
+}
+.callout[data-callout~=aside]:not([data-callout-metadata~=no-t]) .callout-content p:first-child {
+  margin-top: 0;
+}
+.callout[data-callout~=aside]:not([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]) .callout-title-inner {
+  display: none;
+}
+.callout[data-callout~=aside]:not([data-callout-metadata~=show-title], [data-callout-metadata~=s-t]) .callout-title {
+  justify-content: space-between;
+}
+.callout[data-callout~=aside].is-collapsed {
+  background-color: transparent;
+  box-shadow: none;
+}
+.callout[data-callout~=aside].is-collapsed .callout-title-inner {
+  display: none;
+}
+.callout[data-callout~=aside].is-collapsed .callout-title {
+  justify-content: space-between;
+  padding: 0;
+}
+.callout[data-callout~=aside].is-collapsed .callout-fold {
+  margin: 0;
+  padding: 0;
+  margin-left: -25px;
+  visibility: hidden;
+}
+
+.callout[data-callout~=aside][data-callout-metadata~=clean] {
+  background: transparent;
+  box-shadow: none;
+}
+
+.callout[data-callout~=aside][data-callout-metadata~=tufte] {
+  background: transparent;
+  box-shadow: none;
+  float: right;
+  position: relative;
+}
+.callout[data-callout~=aside][data-callout-metadata~=tufte]:not(.is-collapsed) {
+  width: 400px;
+  margin-right: -25.3em;
+}
+.callout[data-callout~=aside][data-callout-metadata~=tufte] .callout-title {
+  padding-top: 0;
+}
+.callout[data-callout~=aside][data-callout-metadata~=tufte].is-collapsed .callout-title {
+  justify-content: unset;
+}
+.callout[data-callout~=aside][data-callout-metadata~=tufte].is-collapsed .callout-content {
+  display: none;
+}
+
+.is-live-preview .callout[data-callout~=aside] {
+  float: unset;
+}
+
+.callout.callout.callout[data-callout~=aside]:is([data-callout-metadata~=left], [data-callout-metadata~="p+l"]) {
+  margin-left: -1.6em;
+}
+.callout.callout.callout[data-callout~=aside]:is([data-callout-metadata~=left], [data-callout-metadata~="p+l"]):not(.is-collapsed) {
+  margin-right: 10px;
+}
+.callout.callout.callout[data-callout~=aside]:is([data-callout-metadata~=left], [data-callout-metadata~="p+l"])[data-callout-metadata~=tufte]:not(.is-collapsed) {
+  margin: unset;
+  margin-left: -25em !important;
+}
+.callout.callout.callout[data-callout~=aside]:is([data-callout-metadata~=left], [data-callout-metadata~="p+l"])[data-callout-metadata~=tufte]:not(.is-collapsed) .callout-title {
+  padding-top: 5px;
+  flex-direction: row-reverse;
+}
+
+.is-live-preview.is-live-preview .callout.callout[data-callout~=aside] {
+  margin: 5px;
+}
+
+/* Columns */
+.callout[data-callout*=column] {
+  --callout-color: var(--text-normal);
+  --callout-icon: layout-dashboard;
+  --columns: 2;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  width: auto;
+  padding: 0;
+}
+.callout[data-callout*=column] > .callout-content .callout-content {
+  border: 0;
+}
+.callout[data-callout*=column] > .callout-content {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 10px;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+}
+.callout[data-callout*=column][data-callout-metadata~="3"] .callout-content {
+  --columns: 3;
+}
+.callout[data-callout*=column][data-callout-metadata~="4"] .callout-content {
+  --columns: 4;
+}
+.callout[data-callout*=column][data-callout-metadata~=flex] > .callout-content {
+  gap: unset;
+  grid-template-columns: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.callout[data-callout*=column][data-callout-metadata~=flex] > .callout-content .callout {
+  flex: 1 1 250px;
+  margin: 5px;
+}
+.callout[data-callout*=column][data-callout-metadata~=dataview] > .callout-content {
+  grid-template-columns: unset;
+  gap: unset;
+}
+.callout[data-callout*=column][data-callout-metadata~=dataview] > .callout-content .dataview.list-view-ul {
+  columns: var(--columns);
+}
+.callout[data-callout*=column][data-callout-metadata~=dataview] > .callout-content .dataview li {
+  break-inside: avoid;
+}
+
+/* Timeline */
+.callout.callout[data-callout~=timeline] {
+  --callout-icon: "clock-12";
+  --callout-padding: 0px;
+  --callout-title-padding: 10px;
+  --callout-content-padding: 10px;
+  --micro: 50px;
+  --tiny: 100px;
+  --small: 200px;
+  --small-med: 300px;
+  --med-small: 400px;
+  --medium: 500px;
+  --med-tall: 600px;
+  --tall: 700px;
+  --c-timeline: 49.72%;
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  clear: both;
+}
+@media all and (max-width: 450px) {
+  .callout.callout[data-callout~=timeline] {
+    --c-timeline: 49.5%;
+  }
+}
+.callout.callout[data-callout~=timeline] .callout-title {
+  background: rgb(var(--callout-color), 0.35);
+  align-content: center;
+  align-items: center;
+}
+.callout.callout[data-callout~=timeline] .callout-title em {
+  font-style: normal;
+  display: block;
+  font-size: 14px;
+  line-height: 12px;
+  color: rgb(var(--callout-color));
+}
+.callout.callout[data-callout~=timeline] .callout-icon {
+  background-color: var(--note, var(--background-primary));
+  transform: scale(1.2);
+  border-radius: 20px;
+}
+.callout.callout[data-callout~=timeline] .callout-content {
+  background-color: rgb(var(--callout-color), 0.1);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-l] :is(.callout-title, .callout-content) {
+  border-right: 4px solid rgb(var(--callout-color));
+  margin-right: var(--c-timeline);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-l] :is(.callout-title, .callout-content) > .callout-title, .callout.callout[data-callout~=timeline][data-callout-metadata~=t-l] :is(.callout-title, .callout-content) > .callout-content {
+  box-shadow: -4px 4px 0 var(--outline, var(--background-modifier-box-shadow));
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-r] :is(.callout-title, .callout-content) {
+  border-left: 4px solid rgb(var(--callout-color));
+  margin-left: var(--c-timeline);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-r] :is(.callout-title, .callout-content) > .callout-title, .callout.callout[data-callout~=timeline][data-callout-metadata~=t-r] :is(.callout-title, .callout-content) > .callout-content {
+  box-shadow: 4px 4px 0 var(--outline, var(--background-modifier-box-shadow));
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-l] > .callout-title {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-l] > .callout-title .callout-icon {
+  float: right;
+  margin-right: -20px;
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-r] > .callout-title .callout-icon {
+  float: left;
+  margin-left: -20px;
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-1] {
+  padding-top: var(--micro);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-2] {
+  padding-top: var(--tiny);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-3] {
+  padding-top: var(--small);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-4] {
+  padding-top: var(--small-med);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-5] {
+  padding-top: var(--med-small);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-6] {
+  padding-top: var(--medium);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-7] {
+  padding-top: 350px;
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-8] {
+  padding-top: var(--med-tall);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-9] {
+  padding-top: var(--tall);
+}
+.callout.callout[data-callout~=timeline][data-callout-metadata~=t-10] {
+  padding-top: 750px;
+}
+
+@media print {
+.print.print .markdown-preview-view .callout:is(
+    [data-callout*="cards"],
+    [data-callout*="column"]
+) .callout-content { display: grid !important; }
+}
+
+	/* metadata "wide-x" to control subcallout flexible max width. only discrete 2,4,8,16 */
+	div[data-callout="column"].callout > .callout-content > div[data-callout-metadata*="min-0"] { flex-basis: 0; }
+	div[data-callout="column"].callout > .callout-content > div[data-callout-metadata*="wide-1"] { flex-grow: 1; }
+	div[data-callout="column"].callout > .callout-content > div[data-callout-metadata*="wide-2"] { flex-grow: 2; }
+	div[data-callout="column"].callout > .callout-content > div[data-callout-metadata*="wide-3"] { flex-grow: 3; }
+	div[data-callout="column"].callout > .callout-content > div[data-callout-metadata*="wide-4"] { flex-grow: 4; }
+	div[data-callout="column"].callout > .callout-content > div[data-callout-metadata*="wide-5"] { flex-grow: 5; }
+	div[data-callout="column"].callout > .callout-content > div[data-callout-metadata*="wide-8"] { flex-grow: 8; }
+  .callout.callout[data-callout-metadata~=fin] {
+    flex-grow: 1; 
+  }
+  .callout.callout[data-callout-metadata~=large] {
+    flex-grow: 8; 
+  }
+
+/*@settings
+name: Alternate Callouts
+id: alternate-callouts
+settings:
+    -
+        title: Alternate Callout Styling
+        description: Simplistic callout styling applying the callout color as the background color
+        id: alt-co
+        type: class-toggle
+    - 
+        title: Center Callout Titles
+        id: co-ttl-ctr
+        type: class-toggle
+    -
+        title: Callout Border Radius
+        description: Adjust how round or not round the callout corners are.
+        id: co-radius
+        type: variable-number-slider
+        default: 7
+        format: px
+        min: 0
+        max: 20
+        step: 1
+    -
+        title: Kanban Callout Border Radius
+        description: Adjust how round or not round the Kanban callout's list items corners are.
+        id: kbn-radius
+        type: variable-number-slider
+        default: 3
+        format: px
+        min: 0
+        max: 20
+        step: 1
+*/
+
+
+.callout[data-callout = "custom"] {
+  --callout-color: 214, 209, 209;
+  --callout-icon: lucide-activity;
+}
+
+.callout[data-callout = "note"] {
+  --callout-color: 26, 140, 216;
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1" d="M0 0h512M0 0h512m0 0v512m0-512v512m0 0H0m512 0H0m0 0V0m0 512V0"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="8" d="M112 40h256m-256 0h256m0 0c21.33 0 32 10.67 32 32m-32-32c21.33 0 32 10.67 32 32m0 0v367.74M400 72v367.74m0 0c0 21.33-10.67 32-32 32m32-32c0 21.33-10.67 32-32 32m0 0H112m256 0H112m0 0c-21.33 0-32-10.67-32-32m32 32c-21.33 0-32-10.67-32-32m0 0V72m0 367.74V72m0 0c0-21.33 10.67-32 32-32M80 72c0-21.33 10.67-32 32-32M100 221.628c46.27-.27 231.34-1.36 277.61-1.63M100 221.628c46.27-.27 231.34-1.36 277.61-1.63M100 301.628c46.27-.27 231.34-1.36 277.61-1.63M100 301.628c46.27-.27 231.34-1.36 277.61-1.63M100 381.628c46.27-.27 231.34-1.36 277.61-1.63M100 381.628c46.27-.27 231.34-1.36 277.61-1.63M100 141.628c46.27-.27 231.34-1.36 277.61-1.63M100 141.628c46.27-.27 231.34-1.36 277.61-1.63"/></svg>;
+}
+
+.callout[data-callout = "tweet"] {
+  --callout-color: 51, 165, 241;
+  --callout-icon:<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>;
+}
+
+/* Apple style checkbox */
+input[type=checkbox] {
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  border: 1px solid var(--text-faint);
+  padding: 0;
+}
+
+
+
+/* voir l'ensemble des résultats sur la page sans scroller */
+
+.internal-query .search-result-container {
+  height: fit-content;
+  min-height: fit-content;
+  max-height: none;
+}
+
+.markdown-preview-view .internal-query .search-result-container {
+  height: fit-content;
+  min-height: fit-content;
+  max-height: none;
+}
+
+/* Cache l'icone de recherche */
+.internal-query .internal-query-header-icon {
+  display: none;
+}
+
+/* cache l'icone de recherche */
+.markdown-preview-view .internal-query .internal-query-header-icon {
+  display: none;
+}
+
+/* Modifie les embed query */
+
+.search-empty-state {
+  color: var(--text-normal);
+border: none;
+  font-size: 0;
+  margin: 0 0 0;
+  padding-left: 0;
+}
+
+.tree-item-inner {
+  color: var(--text-normal);
+}
+
+.internal-query .search-result-container {
+  padding: var(--size-4-2);
+  border: 0px solid var(--background-modifier-border);
+  background-color: var(--background-primary);
+  border-radius: var(--radius-m);
+min-width: 0;
+}
+
+.internal-query {
+  margin: 0;
+  border-top: 0px solid var(--background-modifier-border);
+}
+
+.internal-query .search-result-container {
+  border: 0px solid var(--background-modifier-border) !important;
+}
+.internal-query .search-result .tree-item-inner {
+  color: var(--text-normal);
+  font-size: var(--font-text-size);
+}
+
+.internal-query .internal-query-header {
+  font-weight: 600;
+}
+.tree-item-self {
+  padding-left: 8px;
+  margin-left: 0;
+}
+/* query-no-border*/
+.query-no-border .search-result-file-matches {
+  box-shadow: 0 0 0 var(--embed-query-border) var(--background-modifier-border); 
+  border-bottom: 0px;
+}
+
+.query-no-border .search-result-file-match {
+  border-bottom: 0px;
+}
+/*query-neutral*/
+.query-neutral .search-result-file-matched-text {
+  background-color: transparent !important;
+}
+
+/* query-list*/
+
+.query-list .tree-item-flair {
+  font-size: 0;
+--background-modifier-hover: none;
+}
+
+
+.query-list .tree-item-flair:hover {
+  font-size: 0;
+--background-modifier-hover: none;
+background-color: var(--background-primary);
+}
+
+
+.query-list .search-result-file-match:hover {
+  animation: none;
+  background-color: transparent;
+}
+.query-list .search-result-hover-button {
+  display: none;
+}
+.query-list .tree-item-self.is-clickable:hover {
+  background-color: transparent !important;
+}
+.query-list .collapse-icon svg.svg-icon {
+  width: 7px;
+  height: 7px;
+}
+.query-list .tree-item-self .tree-item-icon {
+  padding: 0;
+  opacity: 0;
+}
+.query-list .tree-item-self .tree-item-icon:hover {
+  margin-left: calc(-1 * var(--size-4-5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: var(--icon-opacity);
+  color: var(--icon-color);
+  flex: 0 0 auto;
+  transition: opacity 200ms ease-in-out;
+}
+
+/* query-collapse*/
+.query-collapse .tree-item-self .tree-item-icon {
+  display:none;
+}
+
+
+/* global search results: reduce gap between note title (bold) and hor. line above */
+.search-result {
+  word-break: break-word;
+  margin-bottom: -4px; 
+}
+
+
+/* reduce global search result margin - Blue Topaz */
+.search-result-file-match{
+  padding: 2px 2px;
+}
+
+
+
+
+/* @settings
+
+name: control embed query
+id: hide-control-embed-query
+settings:
+-
+  id: embed-query-border
+  title: largeur de la bordure
+  description: largeur de la bordure autour des résultats, 0 pour pas de bordure, 1 pour des bordures
+  type: variable-number
+  default: 0
+  format: px
+*/
+
+/* Query total pour afficher juste le nombre de résulats */
+.query-total .tree-item-flair {
+  font-size: var(--font-ui-medium) !important;
+  color: var(--text-normal);
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+}
+.query-total .search-result-file-title {
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+}
+.query-total .search-result-file-matched-text {
+  display: none;
+}
+.query-total .tree-item-self .tree-item-icon {
+  display: none;
+} 
+
+
+/* query-infile pour ne pas afficher les titres de fichiers */
+.query-infile .search-result-file-title {
+  display: none;
+}
+
+
+/* Makes multiple images on the same line appear in a flex grid */
+.cm-line:not(.cm-active):has(.image-embed ~ .image-embed, img:not(.cm-widgetBuffer) ~ img:not(.cm-widgetBuffer)):not(:has([alt="inline"])),
+p:has(.image-embed ~ .image-embed, img ~ img):not(:has([alt="inline"])) {
+    display: flex;
+    gap: 0.5rem;
+    align-items: end;
+}
+.cm-line:not(.cm-active):has(.image-embed ~ .image-embed, img:not(.cm-widgetBuffer) ~ img:not(.cm-widgetBuffer)):not(:has([alt="inline"])) > .image-embed,
+p:has(.image-embed ~ .image-embed, img ~ img):not(:has([alt="inline"])) > .image-embed {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* get more snippets at https://github.com/kmaasrud/awesome-obsidian */
+/* author: https://github.com/TClark1011 */
+/* source: https://github.com/kmaasrud/awesome-obsidian 
+  Background color so PNGs with transparent backgrounds don't look weird 
+  
+  pour avoir des images sous formes de cartes*/
+
+ 
+.cards-img img {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-color: var(
+      --background-secondary
+    ); 
+}
+
+
+
+
+.popover.hover-popover {
+  transform: scale(0.8); /* makes the content smaller */
+  max-height: 800px; /* was 300 */
+  min-height: 100px;
+  width: 450px; /* was 400 */
+}
+
+.popover.hover-popover .markdown-embed {
+  height: 800px;
+}
+
+
+/* ---------------- General ------------------ */
+
+.callout {
+  --callout-border-opacity: 0.4 !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-radius: 8px !important;
+  background-color: transparent !important;
+}
+.callout-title {
+  color: rgb(var(--callout-color)) !important;
+  background-color: var(--background-primary) !important;
+}
+.callout-content {
+  padding-top: 0 !important;
+}
+.callout[data-callout*=column] {
+border-width: 0px !important;
+}
+
+/* ---------- Outlined callouts ------------- */
+.is-live-preview.is-readable-line-width>.cm-callout .callout[data-callout-metadata~=outlined] {
+max-width: var(--max-width) !important;
+margin:  auto !important;
+}
+.callout[data-callout-metadata~=outlined] .callout-title {
+background-color: var(--background-primary) !important;
+margin-top: -23px !important;
+  margin-left: 15px !important;
+z-index: 200 !important;
+width: fit-content !important;
+padding: 0.5em .5em !important;
+  padding-bottom: 0 !important;
+}
+
+.callout[data-callout-metadata~=outlined] {
+overflow: visible !important;
+--callout-border-width: 1px !important;
+--callout-border-opacity: 0.5 !important;
+--callout-title-size: 0.8em !important;
+--callout-blend-mode: normal !important;
+background-color: transparent !important;
+}
+
+.cm-embed-block.cm-callout .callout[data-callout-metadata~=outlined] {
+padding-top: 12px !important;
+}
+
+.callout[data-callout-metadata~=outlined] {
+  overflow: visible;
+  --callout-border-width: 1px !important;
+  --callout-border-opacity: 0.5 !important;
+  --callout-title-size: 0.8em !important;
+  --callout-blend-mode: normal !important;
+  background-color: transparent !important;
+}
+.callout[data-callout-metadata~=outlined].is-collapsable .is-collapsed{
+  margin-bottom: 15px !important;
+}
+.callout[data-callout-metadata~=outlined].is-collapsable .is-collapsed .callout-title {
+margin: 0px !important;
+}
+
+
+/* MIT License | Copyright (c) Stephan Ango (@kepano) 
+
+Cards snippet for Obsidian
+
+author: @kepano
+version: 2.0.0
+
+Support my work:
+https://github.com/sponsors/kepano
+
+*/
+:root {
+	--cards-min-width: 180px;
+	--cards-max-width: 1fr;
+	--cards-mobile-width: 120px;
+	--cards-image-height: 400px;
+	--cards-padding: 1.2em;
+	--cards-image-fit: contain;
+	--cards-background: transparent;
+	--cards-border-width: 1px;
+	--cards-aspect-ratio: auto;
+	--cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)))
+}
+
+
+@media (max-width: 400pt) {
+  :root {
+    --cards-min-width:var(--cards-mobile-width);
+  }
+}
+.cards.table-100 table.dataview tbody,
+.table-100 .cards table.dataview tbody {
+  padding: 0.25rem 0.75rem;
+}
+
+.cards table.dataview tbody {
+  clear: both;
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: var(--cards-columns);
+  grid-column-gap: 0.75rem;
+  grid-row-gap: 0.75rem;
+}
+.cards table.dataview > tbody > tr {
+  background-color: var(--cards-background);
+  border: var(--cards-border-width) solid var(--background-modifier-border);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 0 calc(var(--cards-padding) / 3) 0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.15s linear;
+  max-width: var(--cards-max-width);
+  height: fit-content;
+}
+.cards table.dataview > tbody > tr:hover {
+  border: var(--cards-border-width) solid var(--background-modifier-border-hover);
+  box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.025);
+  transition: box-shadow 0.15s linear;
+}
+.cards table.dataview tbody > tr > td {
+  /* Paragraphs */
+  /* Links */
+  /* Buttons */
+  /* Lists */
+  /* Images */
+}
+.cards table.dataview tbody > tr > td:first-child {
+  font-weight: var(--bold-weight);
+}
+.cards table.dataview tbody > tr > td:first-child a {
+  padding: 0 0 calc(var(--cards-padding) / 3);
+  display: block;
+}
+.cards table.dataview tbody > tr > td:not(:first-child) {
+  font-size: 90%;
+  color: var(--text-muted);
+}
+.cards table.dataview tbody > tr > td .el-p {
+  display: block;
+  width: 100%;
+}
+.cards table.dataview tbody > tr > td > *:not(.el-embed-image) {
+  padding: calc(var(--cards-padding) / 3) 0;
+}
+.cards table.dataview tbody > tr > td:not(:last-child):not(:first-child) > .el-p:not(.el-embed-image) {
+  border-bottom: 1px solid var(--background-modifier-border);
+  width: 100%;
+}
+.cards table.dataview tbody > tr > td a {
+  text-decoration: none;
+}
+.cards table.dataview tbody > tr > td > button {
+  width: 100%;
+  margin: calc(var(--cards-padding) / 2) 0;
+}
+.cards table.dataview tbody > tr > td:last-child > button {
+  margin-bottom: calc(var(--cards-padding) / 6);
+}
+.cards table.dataview tbody > tr > td > ul {
+  width: 100%;
+  padding: 0.25em 0 !important;
+  margin: 0 auto !important;
+}
+.cards table.dataview tbody > tr > td:not(:last-child) > ul {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.cards table.dataview tbody>tr>td:has(img) {
+	padding: 0 !important;
+	background-color: var(--background-secondary);
+	display: block;
+	margin: 0;
+	width: 100%
+}
+
+.cards table.dataview tbody > tr > td .el-embed-image {
+  background-color: var(--background-secondary);
+  display: block;
+  margin: 0 calc(var(--cards-padding) / -2) 0 calc(var(--cards-padding) / -2);
+  width: calc(100% + var(--cards-padding));
+}
+.cards table.dataview tbody > tr > td img {
+  aspect-ratio: var(--cards-aspect-ratio);
+  width: 100%;
+  -o-object-fit: var(--cards-image-fit);
+     object-fit: var(--cards-image-fit);
+  max-height: var(--cards-image-height);
+  background-color: var(--background-secondary);
+  vertical-align: bottom;
+}
+
+.markdown-source-view.mod-cm6.cards .dataview.table-view-table > tbody > tr > td,
+.trim-cols .cards table.dataview tbody > tr > td {
+  white-space: normal;
+}
+
+.cards .dataview.table-view-table > tbody > tr > td,
+.cards table.dataview tbody > tr > td,
+.markdown-source-view.mod-cm6.cards .dataview.table-view-table > tbody > tr > td,
+.markdown-source-view.mod-cm6.cards table.dataview tbody > tr > td {
+  border-bottom: none;
+  padding: 0 !important;
+  line-height: 1.2;
+  width: calc(100% - var(--cards-padding));
+  margin: 0 auto;
+  overflow: visible !important;
+  max-width: 100%;
+  display: flex;
+}
+
+.links-int-on .cards table.dataview tbody > tr > td a {
+  text-decoration: none;
+}
+
+
+.cards {	
+ table.dataview {
+    tbody > tr > td {
+      /* Images */
+			&:has(img) {
+				padding: 0 !important;
+				background-color: var(--background-primary);
+				display: block;
+				margin: 0;
+				width: 100%;
+        height: 100%;
+			}
+			img {
+				aspect-ratio: var(--cards-aspect-ratio);
+				width: 100%;
+				object-fit: var(--cards-image-fit);
+				max-height: var(--cards-image-height);
+				background-color: var(--background-secondary);
+				vertical-align: bottom;
+			}
+    }
+  }
+}
+
+
+/* Block button */
+.markdown-source-view.mod-cm6.cards .edit-block-button {
+  top: 0px;
+}
+
+/* ------------------- */
+/* Sorting menu */
+.cards.table-100 table.dataview thead > tr,
+.table-100 .cards table.dataview thead > tr {
+  right: 0.75rem;
+}
+
+.table-100 .cards table.dataview thead:before,
+.cards.table-100 table.dataview thead:before {
+  margin-right: 0.75rem;
+}
+
+.theme-light .cards table.dataview thead:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="black" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>');
+}
+
+.cards .el-pre + .el-lang-dataview .table-view-thead {
+  padding-top: 8px;
+}
+.cards table.dataview thead {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 180px;
+  display: block;
+  float: right;
+  position: relative;
+  text-align: right;
+  height: 24px;
+  padding-bottom: 4px;
+}
+.cards table.dataview thead:hover:before {
+  opacity: 0.5;
+  background-color: var(--background-modifier-hover);
+}
+.cards table.dataview thead:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 16px;
+  background-repeat: no-repeat;
+  cursor: var(--cursor);
+  text-align: right;
+  padding: var(--size-4-1) var(--size-4-2);
+  margin-bottom: 2px;
+  border-radius: var(--radius-s);
+  font-weight: 500;
+  font-size: var(--font-adaptive-small);
+  opacity: 0.25;
+  background-position: center center;
+  background-size: 16px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="white" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>');
+}
+.cards table.dataview thead > tr {
+  top: -1px;
+  position: absolute;
+  display: none;
+  z-index: 9;
+  border: 1px solid var(--background-modifier-border-hover);
+  background-color: var(--background-secondary);
+  box-shadow: var(--shadow-s);
+  padding: 6px;
+  border-radius: var(--radius-m);
+  flex-direction: column;
+  margin: 26px 0 0 0;
+  width: 100%;
+}
+.cards table.dataview thead:hover > tr {
+  display: flex;
+}
+.cards table.dataview thead > tr > th {
+  display: block;
+  padding: 3px 30px 3px 6px !important;
+  border-radius: var(--radius-s);
+  width: 100%;
+  font-weight: 400;
+  color: var(--text-normal);
+  cursor: var(--cursor);
+  border: none;
+  font-size: var(--font-ui-small);
+}
+.cards table.dataview thead > tr > th[sortable-style=sortable-asc],
+.cards table.dataview thead > tr > th[sortable-style=sortable-desc] {
+  color: var(--text-normal);
+}
+.cards table.dataview thead > tr > th:hover {
+  color: var(--text-normal);
+  background-color: var(--background-modifier-hover);
+}
+
+/* ------------------- */
+/* Helper classes */
+
+.cards.cards-16-9,
+.list-cards.cards-16-9 {
+	--cards-aspect-ratio: 16/9
+}
+
+.cards.cards-1-1,
+.list-cards.cards-1-1 {
+	--cards-aspect-ratio: 1/1
+}
+
+.cards.cards-2-1,
+.list-cards.cards-2-1 {
+	--cards-aspect-ratio: 2/1
+}
+
+.cards.cards-2-3,
+.list-cards.cards-2-3 {
+	--cards-aspect-ratio: 2/3
+}
+
+.cards.cards-cols-1,
+.list-cards.cards-cols-1 {
+	--cards-columns: repeat(1, minmax(0, 1fr))
+}
+
+.cards.cards-cols-2,
+.list-cards.cards-cols-2 {
+	--cards-columns: repeat(2, minmax(0, 1fr))
+}
+
+.cards.cards-cover,
+.list-cards.cards-cover {
+	--cards-image-fit: cover
+}
+
+.cards.cards-align-bottom table.dataview tbody>tr>td:last-child,
+.list-cards.cards-align-bottom table.dataview tbody>tr>td:last-child {
+	align-items: flex-end;
+	flex-grow: 1
+}
+
+@media (max-width:400pt) {
+	.cards table.dataview tbody>tr>td:not(:first-child) {
+		font-size: 80%
+	}
+}
+
+@media (min-width:400pt) {
+	.cards-cols-3 {
+		--cards-columns: repeat(3, minmax(0, 1fr))
+	}
+
+	.cards-cols-4 {
+		--cards-columns: repeat(4, minmax(0, 1fr))
+	}
+
+	.cards-cols-5 {
+		--cards-columns: repeat(5, minmax(0, 1fr))
+	}
+
+	.cards-cols-6 {
+		--cards-columns: repeat(6, minmax(0, 1fr))
+	}
+
+	.cards-cols-7 {
+		--cards-columns: repeat(7, minmax(0, 1fr))
+	}
+
+	.cards-cols-8 {
+		--cards-columns: repeat(8, minmax(0, 1fr))
+	}
+}
+
+
+/*# sourceMappingURL=cards.css.map */
+
+
+/* List card */
+
+
+.list-cards.markdown-preview-view .list-bullet,
+.list-cards.markdown-preview-view .list-collapse-indicator,
+.list-cards.markdown-preview-view.markdown-rendered.show-indentation-guide li>ul::before {
+	display: none
+}
+
+.list-cards.markdown-preview-view div>ul {
+	display: grid;
+	gap: .75rem;
+	grid-template-columns: var(--cards-columns);
+	padding: 0;
+	line-height: var(--line-height-tight)
+}
+
+.list-cards.markdown-preview-view div>ul>li {
+	background-color: var(--cards-background);
+	padding: calc(var(--cards-padding)/2);
+	border-radius: var(--radius-s);
+	border: var(--cards-border-width) solid var(--background-modifier-border);
+	overflow: hidden
+}
+
+.list-cards.markdown-preview-view div>ul .image-embed {
+	padding: 0;
+	display: block;
+	background-color: var(--background-secondary);
+	border-radius: 4px
+}
+
+.list-cards.markdown-preview-view div>ul .image-embed img {
+	aspect-ratio: var(--cards-aspect-ratio);
+	object-fit: var(--cards-image-fit);
+	max-height: var(--cards-image-height);
+	background-color: var(--background-secondary);
+	vertical-align: bottom
+}
+
+.list-cards.markdown-preview-view div>ul>li>a {
+	--link-decoration: none;
+	--link-external-decoration: none;
+	font-weight: var(--bold-weight)
+}
+
+.list-cards.markdown-preview-view div ul>li:hover {
+	border-color: var(--background-modifier-border-hover)
+}
+
+.list-cards.markdown-preview-view div ul ul {
+	display: block;
+	width: 100%;
+	color: var(--text-muted);
+	font-size: var(--font-smallest);
+	margin: calc(var(--cards-padding)/-4) 0;
+	padding: calc(var(--cards-padding)/2) 0
+}
+
+.list-cards.markdown-preview-view div ul ul ul {
+	padding-bottom: calc(var(--cards-padding)/4)
+}
+
+.list-cards.markdown-preview-view div ul ul>li {
+	display: block
+}
+
+
+
+
+/* Modifie l'apparence des embed */
+
+
+.embed-strict {
+	--embed-background: transparent;
+	--embed-border-left: 0;
+	--embed-padding: 0
+}
+
+.embed-strict .markdown-embed-content {
+	--folding-offset: 0px
+}
+
+.embed-strict .el-embed-heading.el-p>p {
+	margin-block-start: 0;
+	margin-block-end: 0
+}
+
+.embed-strict .internal-embed .markdown-embed,
+.embed-strict .markdown-preview-view .markdown-embed,
+.embed-strict.markdown-preview-view .markdown-embed {
+	padding: 0
+}
+
+.embed-strict .internal-embed .markdown-embed .markdown-embed-title,
+.embed-strict .markdown-embed-title {
+	display: none
+}
+
+.embed-strict .internal-embed:not([src*="#^"]) .markdown-embed-link {
+	width: 24px;
+	opacity: 0
+}
+
+
+body {
+	--embed-border-left: none !important;
+}
+
+.markdown-embed {
+	border-left: none;
+}
+
+.embed-hide-title .markdown-embed-title {
+	display: none
+}
+
+/* Modifie l'apparence des liens des embed */
+
+.embed-strict .internal-embed:not([src*="#^"]) .markdown-embed-link {
+    width: 24px;
+    opacity: 0.3;
+}
+
+.embed-strict .internal-embed:not([src*="#^"]) .markdown-embed-link:hover {
+    width: 24px;
+    opacity: 1;
+	background-color: transparent;
+}
+
+
+/* cssclass des tables */
+
+
+.table-numbers table:not(.calendar) {
+	counter-reset: section
+}
+
+.table-numbers table:not(.calendar)>thead>tr>th:first-child::before {
+	content: " ";
+	padding-right: .5em;
+	display: inline-block;
+	min-width: 2em;
+	max-width: 4em;
+}
+
+.table-numbers table:not(.calendar)>tbody>tr>td:first-child::before {
+	counter-increment: section;
+	content: counter(section) " ";
+	text-align: left;
+	padding-right: 0.5em;
+  padding-left: 0;
+	display: inline-block;
+	min-width: 2em;
+	max-width: 4em;
+	color: var(--text-faint);
+	font-variant-numeric: tabular-nums
+}
+.table-numbers table:not(.calendar)>tbody>tr>td:first-child {
+  text-align: left;
+}
+
+
+/* Filtres sur les images */
+.theme-light div[src$="#invertW"] img,
+.theme-light img[src$="#invertW"],
+.theme-light span[src$=invertW] img {
+	filter: invert(1) hue-rotate(180deg)
+}
+
+div[src$="#invert"],
+div[src$="#multiply"] {
+	background-color: var(--background-primary)
+}
+
+.theme-dark div[src$="#invert"] img,
+.theme-dark img[src$="#invert"],
+.theme-dark span[src$="#invert"] img {
+	filter: invert(1) hue-rotate(180deg);
+	mix-blend-mode: screen
+}
+
+img[src$="#circle"],
+span[src$="#circle"] img,
+span[src$="#round"] img {
+	border-radius: 50%;
+	aspect-ratio: 1/1
+}
+
+img[src$="#outline"],
+span[src$="#outline"] img {
+	border: 1px solid var(--ui1)
+}
+
+
+/* amène un iframe xtra large */
+
+
+body {
+	--container-iframe-width: var(--line-width);
+	--container-iframe-max-width: var(--max-width);
+	--iframe-max-width: none;
+	--iframe-width: auto
+  --line-width: 40rem;
+}
+.iframe-100,
+.iframe-max,
+.iframe-wide {
+	--iframe-max-width: 100%;
+	--iframe-width: 100%
+}
+
+.iframe-wide {
+	--container-iframe-width: var(--line-width-wide)
+}
+
+.iframe-max {
+	--container-iframe-width: var(--max-width)
+}
+
+.iframe-100 {
+	--container-iframe-width: 100%;
+	--container-iframe-max-width: 100%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* a lien total */
 .rich-link-card {
-    border: 2px solid purple !important;
-    margin: 0px 0 !important;
-    border-radius: 10px !important;
-    width: 100% !important;
-    display: flex !important;
-    text-decoration: none !important;
-    background-color: rgba(255, 255, 255, 0.274) !important;
-  }
-  /* div  container du lien total */
-  .rich-link-card-container {
-    position: relative !important;
-  }
-  
-  /* bordure inférieur du lien total */
-  .rich-link-card-container::after {
-    display: none !important;
-  }
-  
-  /* div container de l'image */
-  .rich-link-card .rich-link-image-container {
-    height: 100px !important;
-    width: 25% !important;
-    min-width: 80px !important;
-    overflow: hidden !important;
-    border-right: 1px solid purple !important;
-    border-radius: 10px !important;
-  }
-  
-  /* div avec l'image en background */
-  .rich-link-card .rich-link-image {
-    background-position: center center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    padding-bottom: 100px !important;
-    background-color: grey !important;
-  }
-  
-  /* div container de l'ensemble des textes */
-  .rich-link-card .rich-link-card-text {
-    padding: 7px !important;
-    width: 75% !important;
-    overflow: hidden !important;
-  }
-  
-  /*  h1 titre de la carte */
-  .rich-link-card .rich-link-card-title {
-    font-family: 'Comic Sans MS';
-    font-size: 14px !important;
-    margin: 0 0 4px 0 !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 1 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-    color: black !important;
-  }
-  
-  /* p description de la carte */
-  .rich-link-card .rich-link-card-description {
-    font-family: 'Tahoma' !important;
-    font-size: 12px !important;
-    margin: 0 !important;
-    color: black !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-  }
-  
-  /* p lien de la carte */
-  .rich-link-card .rich-link-href {
-    font-family: 'Tahoma' !important;
-    font-size: 12px !important;
-    margin: 0 !important;
-    color: purple !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 1 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-  }
-  
+  border: 2px solid purple;
+  margin: 0px 0;
+  border-radius: 10px !important;
+  width: 100%;
+  display: flex;
+  text-decoration: none !important;
+  background-color: rgba(255, 255, 255, 0.274);
+}
+/* div  container du lien total */
+.rich-link-card-container {
+  position: relative;
+}
+
+/* bordure inférieur du lien total */
+.rich-link-card-container::after {
+  display: none !important;
+}
+
+/* div container de l'image */
+.rich-link-card .rich-link-image-container {
+  height: 100px;
+  width: 25%;
+  min-width: 80px;
+  overflow: hidden;
+  border-right: 1px solid purple;
+  border-radius: 10px !important;
+}
+
+/* div avec l'image en background */
+.rich-link-card .rich-link-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 100px;
+  background-color: grey;
+}
+
+/* div container de l'ensemble des textes */
+.rich-link-card .rich-link-card-text {
+  padding: 7px;
+  width: 75%;
+  overflow: hidden;
+}
+
+/*  h1 titre de la carte */
+.rich-link-card .rich-link-card-title {
+  font-family: 'Comic Sans MS';
+  font-size: 14px;
+  margin: 0 0 4px 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: black;
+}
+
+/* p description de la carte */
+.rich-link-card .rich-link-card-description {
+  font-family: 'Tahoma';
+  font-size: 12px;
+  margin: 0;
+  color: black;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* p lien de la carte */
+.rich-link-card .rich-link-href {
+  font-family: 'Tahoma';
+  font-size: 12px;
+  margin: 0;
+  color: purple;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
