@@ -25,9 +25,6 @@ theme:
 # Extensions
 markdown_extensions:
   - footnotes
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.highligh
   - pymdownx.superfences
   - pymdownx.details
   - pymdownx.magiclink
