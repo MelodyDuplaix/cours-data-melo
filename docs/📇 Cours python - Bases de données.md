@@ -11,7 +11,7 @@ cssclasses: []
 share: true  
 ---  
   
-[📑 Cours python](./%F0%9F%93%91%20Cours%20python.md#)  
+[Cours python](./Cours%20python.md#)  
   
 ---  
 diaporama du cours : [Python et base de données.pdf](./image/Python%20et%20base%20de%20donn%C3%A9es.pdf#)  
@@ -457,5 +457,5 @@ if __name__ == '__main__':
 %%  
 parent:: [Python et base de données.pdf](./image/Python%20et%20base%20de%20donn%C3%A9es.pdf#)  
 exemple:: [Bases de données avec python-1.png](Bases%20de%20donn%C3%A9es%20avec%20python-1.png#), [Bases de données avec python-2.png](Bases%20de%20donn%C3%A9es%20avec%20python-2.png#), [Schéma SQLite sous python.excalidraw](../Sch%C3%A9ma%20SQLite%20sous%20python.excalidraw.md#)  
-précédent:: [📑 Cours python](./%F0%9F%93%91%20Cours%20python.md#)  
+précédent:: [Cours python](./Cours%20python.md#)  
 %%
