@@ -4,9 +4,11 @@ nature: cours
 tags:  
   - cours  
 share: true  
+share_link: https://file.obsidianshare.com/c6/a678550b2fbd51d799eec6e1687e8f97.html#NqAs9kiBJoN4yeJIIPO9qR/RG63IJeKqIwYKyhSdR8Y  
+share_updated: 2023-09-20T20:01:16+02:00  
 ---  
   
-  
+home: [Cours Data](https://file.obsidianshare.com/d0/87201970041ab9cab311d091cecb3e7f.html#/8RibCkuQ2bt3bBH7Gg+/rq0b91UKW8N8rQNt9bv43c)  
 - cours CEFIM  
 	- Dataviz  
 		- definition: conversion d'une source de données brutes en représentation visuelle  
