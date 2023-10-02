@@ -1,0 +1,2035 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Cours%20Power%20BI%20et%20Microsoft/">
+      
+      
+        <link rel="next" href="../Pandas/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Numpy - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-numpy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Numpy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-numpy" class="md-nav__link">
+    2) Numpy
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Numpy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-configuration-des-donnees" class="md-nav__link">
+    2.1) Configuration des données
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1) Configuration des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-convertir-une-liste-en-tableau-ndarray-numpy" class="md-nav__link">
+    2.1.1) Convertir une liste en tableau ndarray Numpy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-audit-des-donnees" class="md-nav__link">
+    2.2) Audit des données
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2) Audit des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-connaitre-le-nombre-de-dimension-dun-tableau" class="md-nav__link">
+    2.2.1) Connaître le nombre de dimension d'un tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-connaitre-le-nombre-colonnes-et-lignes" class="md-nav__link">
+    2.2.2) Connaître le nombre colonnes et lignes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-connaitre-le-type-de-donnees-du-tableau" class="md-nav__link">
+    2.2.3) Connaître le type de données du tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-connaitre-le-nombre-delements-dans-le-tableau" class="md-nav__link">
+    2.2.4) Connaître le nombre d'éléments dans le tableau
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-creer-un-tableau" class="md-nav__link">
+    2.3) Créer un tableau
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3) Créer un tableau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-creer-un-tableau-de-nombre-au-hasard" class="md-nav__link">
+    2.3.1) Créer un tableau de nombre au hasard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-creer-un-suite-de-nombre" class="md-nav__link">
+    2.3.2) Créer un suite de nombre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-creer-une-suite-de-nombre-repartie" class="md-nav__link">
+    2.3.3) Créer une suite de nombre répartie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-tableau-de-nombres-uniques" class="md-nav__link">
+    Créer un tableau de nombres uniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-slicing" class="md-nav__link">
+    2.4) Slicing
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4) Slicing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-slicing-simple" class="md-nav__link">
+    2.4.1) Slicing simple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-slicing-avec-pas" class="md-nav__link">
+    2.4.2) Slicing avec pas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-slicing-pour-prendre-la-premiere-colonne" class="md-nav__link">
+    2.4.3) Slicing pour prendre la première colonne
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-le-boolean-indexing" class="md-nav__link">
+    2.5) Le boolean indexing
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5) Le boolean indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-remplacer-des-valeurs-selon-une-condition" class="md-nav__link">
+    2.5.1) Remplacer des valeurs selon une condition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembler-des-tableaux" class="md-nav__link">
+    Assembler des tableaux
+  </a>
+  
+    <nav class="md-nav" aria-label="Assembler des tableaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-facon-verticale" class="md-nav__link">
+    De facon verticale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-facon-horizontal" class="md-nav__link">
+    De façon horizontal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#par-lindex" class="md-nav__link">
+    Par l'index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-calculs-arithmetiques-et-stats" class="md-nav__link">
+    2.6) Calculs arithmétiques et stats
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6) Calculs arithmétiques et stats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-somme-des-valeurs-des-colonnes" class="md-nav__link">
+    2.6.1) Somme des valeurs des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262-sommes-des-valeurs-des-lignes" class="md-nav__link">
+    2.6.2) Sommes des valeurs des lignes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263-valeurs-maximum-et-minimum-des-colonnes" class="md-nav__link">
+    2.6.3) Valeurs maximum et minimum des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produit-des-valeurs" class="md-nav__link">
+    Produit des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264-index-des-valeurs-maximum-des-colonnes" class="md-nav__link">
+    2.6.4) Index des valeurs maximum des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#265-trier-les-valeurs" class="md-nav__link">
+    2.6.5) Trier les valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculer-la-moyenne-des-valeurs" class="md-nav__link">
+    Calculer la moyenne des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#266-calculer-la-mediane-des-valeurs" class="md-nav__link">
+    2.6.6) Calculer la médiane des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcul-de-la-variance" class="md-nav__link">
+    Calcul de la variance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#267-obtenir-les-valeurs-uniques" class="md-nav__link">
+    2.6.7) Obtenir les valeurs uniques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#268-manipuler-des-valeurs-manquantes" class="md-nav__link">
+    2.6.8) Manipuler des valeurs manquantes
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6.8) Manipuler des valeurs manquantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2681-creer-des-valeurs-manquantes" class="md-nav__link">
+    2.6.8.1) Créer des valeurs manquantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2682-obtenir-le-pourcentage-de-valeurs-manquantes" class="md-nav__link">
+    2.6.8.2) Obtenir le pourcentage de valeurs manquantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2683-obtenir-le-nombre-de-valeurs-manquantes" class="md-nav__link">
+    2.6.8.3) Obtenir le nombre de valeurs manquantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2-numpy" class="md-nav__link">
+    2) Numpy
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Numpy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-configuration-des-donnees" class="md-nav__link">
+    2.1) Configuration des données
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1) Configuration des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-convertir-une-liste-en-tableau-ndarray-numpy" class="md-nav__link">
+    2.1.1) Convertir une liste en tableau ndarray Numpy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-audit-des-donnees" class="md-nav__link">
+    2.2) Audit des données
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2) Audit des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-connaitre-le-nombre-de-dimension-dun-tableau" class="md-nav__link">
+    2.2.1) Connaître le nombre de dimension d'un tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-connaitre-le-nombre-colonnes-et-lignes" class="md-nav__link">
+    2.2.2) Connaître le nombre colonnes et lignes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-connaitre-le-type-de-donnees-du-tableau" class="md-nav__link">
+    2.2.3) Connaître le type de données du tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-connaitre-le-nombre-delements-dans-le-tableau" class="md-nav__link">
+    2.2.4) Connaître le nombre d'éléments dans le tableau
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-creer-un-tableau" class="md-nav__link">
+    2.3) Créer un tableau
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3) Créer un tableau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-creer-un-tableau-de-nombre-au-hasard" class="md-nav__link">
+    2.3.1) Créer un tableau de nombre au hasard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-creer-un-suite-de-nombre" class="md-nav__link">
+    2.3.2) Créer un suite de nombre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-creer-une-suite-de-nombre-repartie" class="md-nav__link">
+    2.3.3) Créer une suite de nombre répartie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-un-tableau-de-nombres-uniques" class="md-nav__link">
+    Créer un tableau de nombres uniques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-slicing" class="md-nav__link">
+    2.4) Slicing
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4) Slicing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-slicing-simple" class="md-nav__link">
+    2.4.1) Slicing simple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-slicing-avec-pas" class="md-nav__link">
+    2.4.2) Slicing avec pas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-slicing-pour-prendre-la-premiere-colonne" class="md-nav__link">
+    2.4.3) Slicing pour prendre la première colonne
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-le-boolean-indexing" class="md-nav__link">
+    2.5) Le boolean indexing
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5) Le boolean indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-remplacer-des-valeurs-selon-une-condition" class="md-nav__link">
+    2.5.1) Remplacer des valeurs selon une condition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembler-des-tableaux" class="md-nav__link">
+    Assembler des tableaux
+  </a>
+  
+    <nav class="md-nav" aria-label="Assembler des tableaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-facon-verticale" class="md-nav__link">
+    De facon verticale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-facon-horizontal" class="md-nav__link">
+    De façon horizontal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#par-lindex" class="md-nav__link">
+    Par l'index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-calculs-arithmetiques-et-stats" class="md-nav__link">
+    2.6) Calculs arithmétiques et stats
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6) Calculs arithmétiques et stats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-somme-des-valeurs-des-colonnes" class="md-nav__link">
+    2.6.1) Somme des valeurs des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262-sommes-des-valeurs-des-lignes" class="md-nav__link">
+    2.6.2) Sommes des valeurs des lignes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263-valeurs-maximum-et-minimum-des-colonnes" class="md-nav__link">
+    2.6.3) Valeurs maximum et minimum des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produit-des-valeurs" class="md-nav__link">
+    Produit des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264-index-des-valeurs-maximum-des-colonnes" class="md-nav__link">
+    2.6.4) Index des valeurs maximum des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#265-trier-les-valeurs" class="md-nav__link">
+    2.6.5) Trier les valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculer-la-moyenne-des-valeurs" class="md-nav__link">
+    Calculer la moyenne des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#266-calculer-la-mediane-des-valeurs" class="md-nav__link">
+    2.6.6) Calculer la médiane des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcul-de-la-variance" class="md-nav__link">
+    Calcul de la variance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#267-obtenir-les-valeurs-uniques" class="md-nav__link">
+    2.6.7) Obtenir les valeurs uniques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#268-manipuler-des-valeurs-manquantes" class="md-nav__link">
+    2.6.8) Manipuler des valeurs manquantes
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6.8) Manipuler des valeurs manquantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2681-creer-des-valeurs-manquantes" class="md-nav__link">
+    2.6.8.1) Créer des valeurs manquantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2682-obtenir-le-pourcentage-de-valeurs-manquantes" class="md-nav__link">
+    2.6.8.2) Obtenir le pourcentage de valeurs manquantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2683-obtenir-le-nombre-de-valeurs-manquantes" class="md-nav__link">
+    2.6.8.3) Obtenir le nombre de valeurs manquantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Numpy</h1>
+
+<p><a href="./Cours%20python.md#">Cours python</a>  </p>
+<hr />
+<h2 id="2-numpy">2) Numpy<a class="headerlink" href="#2-numpy" title="Permanent link">&para;</a></h2>
+<h3 id="21-configuration-des-donnees">2.1) Configuration des données<a class="headerlink" href="#21-configuration-des-donnees" title="Permanent link">&para;</a></h3>
+<h4 id="211-convertir-une-liste-en-tableau-ndarray-numpy">2.1.1) Convertir une liste en tableau ndarray Numpy<a class="headerlink" href="#211-convertir-une-liste-en-tableau-ndarray-numpy" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>  
+<span class="n">nom_tableau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span>  
+</code></pre></div>
+<h3 id="22-audit-des-donnees">2.2) Audit des données<a class="headerlink" href="#22-audit-des-donnees" title="Permanent link">&para;</a></h3>
+<h4 id="221-connaitre-le-nombre-de-dimension-dun-tableau">2.2.1) Connaître le nombre de dimension d'un tableau<a class="headerlink" href="#221-connaitre-le-nombre-de-dimension-dun-tableau" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">ndim</span>  
+</code></pre></div>
+<h4 id="222-connaitre-le-nombre-colonnes-et-lignes">2.2.2) Connaître le nombre colonnes et lignes<a class="headerlink" href="#222-connaitre-le-nombre-colonnes-et-lignes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">shape</span>  
+</code></pre></div>
+<h4 id="223-connaitre-le-type-de-donnees-du-tableau">2.2.3) Connaître le type de données du tableau<a class="headerlink" href="#223-connaitre-le-type-de-donnees-du-tableau" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">dtype</span>  
+</code></pre></div>
+<h4 id="224-connaitre-le-nombre-delements-dans-le-tableau">2.2.4) Connaître le nombre d'éléments dans le tableau<a class="headerlink" href="#224-connaitre-le-nombre-delements-dans-le-tableau" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">size</span>  
+</code></pre></div>
+<h3 id="23-creer-un-tableau">2.3) Créer un tableau<a class="headerlink" href="#23-creer-un-tableau" title="Permanent link">&para;</a></h3>
+<h4 id="231-creer-un-tableau-de-nombre-au-hasard">2.3.1) Créer un tableau de nombre au hasard<a class="headerlink" href="#231-creer-un-tableau-de-nombre-au-hasard" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span>  
+</code></pre></div>
+pour des nombres entiers :<br />
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span> <span class="p">,[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span>  
+</code></pre></div></p>
+<h4 id="232-creer-un-suite-de-nombre">2.3.2) Créer un suite de nombre<a class="headerlink" href="#232-creer-un-suite-de-nombre" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="233-creer-une-suite-de-nombre-repartie">2.3.3) Créer une suite de nombre répartie<a class="headerlink" href="#233-creer-une-suite-de-nombre-repartie" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  
+</code></pre></div>
+<blockquote>
+<p>[!WARNING] Important<br />
+<span style="background:#fff88f">Créer une copie de la matrice originale avant de faire n'importe quelle modification</span>  </p>
+</blockquote>
+<h4 id="creer-un-tableau-de-nombres-uniques">Créer un tableau de nombres uniques<a class="headerlink" href="#creer-un-tableau-de-nombres-uniques" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">mon_tableau_de_uns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_tableau_de_uns</span><span class="p">)</span>  
+</code></pre></div>
+<h3 id="24-slicing">2.4) Slicing<a class="headerlink" href="#24-slicing" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">nb_entiers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,[</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>  
+</code></pre></div>
+<h4 id="241-slicing-simple">2.4.1) Slicing simple<a class="headerlink" href="#241-slicing-simple" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nb_entiers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  
+</code></pre></div>
+<h4 id="242-slicing-avec-pas">2.4.2) Slicing avec pas<a class="headerlink" href="#242-slicing-avec-pas" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="n">nb_entiers</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>  
+</code></pre></div>
+prend dans la première ligne, les valeurs de 0 à la fin, toutes les deux valeurs  </p>
+<h4 id="243-slicing-pour-prendre-la-premiere-colonne">2.4.3) Slicing pour prendre la première colonne<a class="headerlink" href="#243-slicing-pour-prendre-la-premiere-colonne" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="n">nb_entiers</span><span class="p">[:,</span><span class="mi">0</span> <span class="p">]</span>  
+</code></pre></div>
+- []<br />
+- : plage - nombre debut : nombre fin<br />
+- , élément séparateur entre  les lignes et les colonnes  </p>
+<h3 id="25-le-boolean-indexing">2.5) Le boolean indexing<a class="headerlink" href="#25-le-boolean-indexing" title="Permanent link">&para;</a></h3>
+<p>Une matrice booléenne permet de parcourir tous les éléments et de renvoyer un booléen selon une condition<br />
+<img alt="600" src="%F0%9F%93%91%20Travail%20des%20donn%C3%A9es%20sur%20python%20fourre-tout-1.png#" />  </p>
+<ul>
+<li>on détecte les valeurs qui répondent à la contrainte =&gt; True  </li>
+<li>on remplace ces valeurs par une autre valeur  </li>
+</ul>
+<h4 id="251-remplacer-des-valeurs-selon-une-condition">2.5.1) Remplacer des valeurs selon une condition<a class="headerlink" href="#251-remplacer-des-valeurs-selon-une-condition" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nb_entiers</span><span class="p">[</span><span class="n">nb_entiers</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">nb_entiers</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="assembler-des-tableaux">Assembler des tableaux<a class="headerlink" href="#assembler-des-tableaux" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">tableau_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">tableau_1</span><span class="p">)</span>  
+<span class="n">tableau_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">tableau_2</span><span class="p">)</span>  
+</code></pre></div>
+<h5 id="de-facon-verticale">De facon verticale<a class="headerlink" href="#de-facon-verticale" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">tableau_assembler_vertical</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tableau_1</span><span class="p">,</span> <span class="n">tableau_2</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">tableau_assembler_vertical</span><span class="p">)</span>  
+</code></pre></div>
+<h5 id="de-facon-horizontal">De façon horizontal<a class="headerlink" href="#de-facon-horizontal" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">tableau_assembler_horizontal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">tableau_1</span><span class="p">,</span> <span class="n">tableau_2</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">tableau_assembler_horizontal</span><span class="p">)</span>  
+</code></pre></div>
+<h5 id="par-lindex">Par l'index<a class="headerlink" href="#par-lindex" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">tableau_assembler_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">tableau_1</span><span class="p">,</span> <span class="n">tableau_2</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">tableau_assembler_index</span><span class="p">)</span>  
+</code></pre></div>
+<h3 id="26-calculs-arithmetiques-et-stats">2.6) Calculs arithmétiques et stats<a class="headerlink" href="#26-calculs-arithmetiques-et-stats" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,[</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="261-somme-des-valeurs-des-colonnes">2.6.1) Somme des valeurs des colonnes<a class="headerlink" href="#261-somme-des-valeurs-des-colonnes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="262-sommes-des-valeurs-des-lignes">2.6.2) Sommes des valeurs des lignes<a class="headerlink" href="#262-sommes-des-valeurs-des-lignes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="263-valeurs-maximum-et-minimum-des-colonnes">2.6.3) Valeurs maximum et minimum des colonnes<a class="headerlink" href="#263-valeurs-maximum-et-minimum-des-colonnes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">nom_tableau</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">nom_tableau</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  
+</code></pre></div>
+<h4 id="produit-des-valeurs">Produit des valeurs<a class="headerlink" href="#produit-des-valeurs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>  
+</code></pre></div>
+<h4 id="264-index-des-valeurs-maximum-des-colonnes">2.6.4) Index des valeurs maximum des colonnes<a class="headerlink" href="#264-index-des-valeurs-maximum-des-colonnes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="265-trier-les-valeurs">2.6.5) Trier les valeurs<a class="headerlink" href="#265-trier-les-valeurs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;quicksort&#39;</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="calculer-la-moyenne-des-valeurs">Calculer la moyenne des valeurs<a class="headerlink" href="#calculer-la-moyenne-des-valeurs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="266-calculer-la-mediane-des-valeurs">2.6.6) Calculer la médiane des valeurs<a class="headerlink" href="#266-calculer-la-mediane-des-valeurs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="calcul-de-la-variance">Calcul de la variance<a class="headerlink" href="#calcul-de-la-variance" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>  
+</code></pre></div>
+<h4 id="267-obtenir-les-valeurs-uniques">2.6.7) Obtenir les valeurs uniques<a class="headerlink" href="#267-obtenir-les-valeurs-uniques" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span>  
+</code></pre></div>
+avec l'effectif des valeurs:<br />
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+</code></pre></div></p>
+<h4 id="268-manipuler-des-valeurs-manquantes">2.6.8) Manipuler des valeurs manquantes<a class="headerlink" href="#268-manipuler-des-valeurs-manquantes" title="Permanent link">&para;</a></h4>
+<h5 id="2681-creer-des-valeurs-manquantes">2.6.8.1) Créer des valeurs manquantes<a class="headerlink" href="#2681-creer-des-valeurs-manquantes" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_tableau</span><span class="p">[</span><span class="n">ligne</span><span class="p">,</span><span class="n">colonne</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>  
+</code></pre></div>
+<h5 id="2682-obtenir-le-pourcentage-de-valeurs-manquantes">2.6.8.2) Obtenir le pourcentage de valeurs manquantes<a class="headerlink" href="#2682-obtenir-le-pourcentage-de-valeurs-manquantes" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span>  
+</code></pre></div>
+<h5 id="2683-obtenir-le-nombre-de-valeurs-manquantes">2.6.8.3) Obtenir le nombre de valeurs manquantes<a class="headerlink" href="#2683-obtenir-le-nombre-de-valeurs-manquantes" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">nom_tableau</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1887 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/">
+      
+      
+        <link rel="next" href="../Cours%20Power%20BI%20et%20Microsoft/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Cours Flask - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-bases-des-applis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cours Flask
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bases-des-applis" class="md-nav__link">
+    1) Bases des applis
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Bases des applis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-squelette-de-base" class="md-nav__link">
+    1.1) Squelette de base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-creer-plusieurs-pages" class="md-nav__link">
+    1.2) Créer plusieurs pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-faciliter-le-run-de-lappli" class="md-nav__link">
+    1.3) Faciliter le run de l'appli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-utiliser-un-template" class="md-nav__link">
+    1.4) Utiliser un template
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4) Utiliser un template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-utiliser-plusieurs-variables-dans-un-template" class="md-nav__link">
+    1.4.1) Utiliser plusieurs variables dans un template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-utiliser-un-dictionnaire-pour-stocker-les-variables" class="md-nav__link">
+    1.4.2) Utiliser un dictionnaire pour stocker les variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-utiliser-les-boucles-et-conditions-dans-les-templates" class="md-nav__link">
+    1.4.3) Utiliser les boucles et conditions dans les templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-gerer-les-pages-derreurs" class="md-nav__link">
+    1.6) Gérer les pages d'erreurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-faire-un-formulaire" class="md-nav__link">
+    1.7) Faire un formulaire
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7) Faire un formulaire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-methode-classique" class="md-nav__link">
+    1.7.1) Méthode classique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-avec-la-bibliotheque-wtf-what-the-form" class="md-nav__link">
+    1.7.2) Avec la bibliothèque WTF (What the form)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-utiliser-boostrap" class="md-nav__link">
+    1.9) Utiliser boostrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-utiliser-un-template-de-base-pour-tous-les-templates" class="md-nav__link">
+    1.10) Utiliser un template de base pour tous les templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-afficher-des-graphiques" class="md-nav__link">
+    1.11) Afficher des graphiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-daily-scrum-28-09" class="md-nav__link">
+    2.1) Daily scrum 28-09
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-bases-des-applis" class="md-nav__link">
+    1) Bases des applis
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Bases des applis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-squelette-de-base" class="md-nav__link">
+    1.1) Squelette de base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-creer-plusieurs-pages" class="md-nav__link">
+    1.2) Créer plusieurs pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-faciliter-le-run-de-lappli" class="md-nav__link">
+    1.3) Faciliter le run de l'appli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-utiliser-un-template" class="md-nav__link">
+    1.4) Utiliser un template
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4) Utiliser un template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-utiliser-plusieurs-variables-dans-un-template" class="md-nav__link">
+    1.4.1) Utiliser plusieurs variables dans un template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-utiliser-un-dictionnaire-pour-stocker-les-variables" class="md-nav__link">
+    1.4.2) Utiliser un dictionnaire pour stocker les variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-utiliser-les-boucles-et-conditions-dans-les-templates" class="md-nav__link">
+    1.4.3) Utiliser les boucles et conditions dans les templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-gerer-les-pages-derreurs" class="md-nav__link">
+    1.6) Gérer les pages d'erreurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-faire-un-formulaire" class="md-nav__link">
+    1.7) Faire un formulaire
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7) Faire un formulaire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-methode-classique" class="md-nav__link">
+    1.7.1) Méthode classique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-avec-la-bibliotheque-wtf-what-the-form" class="md-nav__link">
+    1.7.2) Avec la bibliothèque WTF (What the form)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-utiliser-boostrap" class="md-nav__link">
+    1.9) Utiliser boostrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-utiliser-un-template-de-base-pour-tous-les-templates" class="md-nav__link">
+    1.10) Utiliser un template de base pour tous les templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-afficher-des-graphiques" class="md-nav__link">
+    1.11) Afficher des graphiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-daily-scrum-28-09" class="md-nav__link">
+    2.1) Daily scrum 28-09
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Cours Flask</h1>
+
+<p><a href="https://file.obsidianshare.com/3f/11facbe7124c27d45b5c3fe1cc49e97a.html#EBHLEzO5BZnetq/DlTd/a5tielrVWDcpJwuMwcpx3Kk" target="_self" class="external-link" ><button class="image-button" style="position: fixed;top: 100px;left: 70px;box-shadow: none !important;"><img height=100 src="https://png.pngtree.com/png-vector/20190223/ourlarge/pngtree-vector-house-icon-png-image_695369.jpg"/></button></a>  </p>
+<blockquote>
+<p>[!sommaire]- Sommaire<br />
+<pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected token '&gt;'<br />
+    at DataviewInlineApi.eval (plugin:dataview:18618:21)<br />
+    at evalInContext (plugin:dataview:18619:7)<br />
+    at asyncEvalInContext (plugin:dataview:18629:32)<br />
+    at DataviewJSRenderer.render (plugin:dataview:18650:19)<br />
+    at DataviewJSRenderer.onload (plugin:dataview:18240:14)<br />
+    at e.load (app://obsidian.md/app.js:1:715707)<br />
+    at DataviewApi.executeJs (plugin:dataview:19171:18)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:2026)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:2:871)<br />
+    at new Promise (&lt;anonymous&gt;)<br />
+    at m (plugin:obsidian-mkdocs-publisher:2:691)<br />
+    at Kf (plugin:obsidian-mkdocs-publisher:28:1256)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:3257)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at r (plugin:obsidian-mkdocs-publisher:2:729)</pre>  </p>
+</blockquote>
+<p><a href="file:///D:\Projets\Projets%20CEFIM\Projet%20Flask">dossier de travail</a>  </p>
+<blockquote>
+<p>[!info]- <a href="../../image/Flask%20_%20pr%C3%A9sentation%20-%20Avec%20correction.pdf">Diaporama du cours</a><br />
+<img alt="Diaporama du cours" src="../../image/Flask%20_%20pr%C3%A9sentation%20-%20Avec%20correction.pdf" />  </p>
+</blockquote>
+<p>ORM : object relation ship management  </p>
+<blockquote>
+<p>[!info]- <a href="../../image/Flask%20-%20Projet%20_%20soci%C3%A9t%C3%A9%20Tout%E2%80%99roule%20.pdf">Fichier explication du projet</a><br />
+<img alt="Fichier explication du projet" src="../../image/Flask%20-%20Projet%20_%20soci%C3%A9t%C3%A9%20Tout%E2%80%99roule%20.pdf" />  </p>
+</blockquote>
+<h2 id="1-bases-des-applis">1) Bases des applis<a class="headerlink" href="#1-bases-des-applis" title="Permanent link">&para;</a></h2>
+<h3 id="11-squelette-de-base">1.1) Squelette de base<a class="headerlink" href="#11-squelette-de-base" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>   
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> <span class="c1"># app est le nom du fichier obligatoirement, on lui attribuel l&#39;objet Flask du nom du fichier  </span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="c1"># méthode qui permet de créer des pages web  </span>
+<span class="k">def</span> <span class="nf">f_index</span><span class="p">():</span>   
+    <span class="k">return</span> <span class="s2">&quot;Bonjour !&quot;</span>   
+</code></pre></div>
+<p>puis pour lancer l'appli:<br />
+<div class="highlight"><pre><span></span><code><span class="nb">set</span><span class="w"> </span><span class="nv">FLASK_ENV</span><span class="o">=</span>development<span class="w">  </span>
+<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">FLASK_APP</span><span class="o">=</span>app.py<span class="w">  </span>
+<span class="w"> </span>flask<span class="w"> </span>run<span class="w"> </span><span class="c1"># ou flask --app app run --debug pour le mode debug  </span>
+</code></pre></div></p>
+<p>on peut aussi écrire, qui est la seule facon possible de lancer si l'on veut mettre notre appli sur un hébergeur : <br />
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> <span class="c1"># si le nom du fichier est le nom du fichier principal  </span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>et lancer <code>{python} python app.py</code> sur le terminal  </p>
+<h3 id="12-creer-plusieurs-pages">1.2) Créer plusieurs pages<a class="headerlink" href="#12-creer-plusieurs-pages" title="Permanent link">&para;</a></h3>
+<p>On répète:<br />
+<div class="highlight"><pre><span></span><code><span class="c1"># Créer une nouelle page qui s&#39;appelle qui-suis-je  </span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/qui-suis-je&quot;</span><span class="p">)</span> <span class="c1"># nom de la page a mettre à la fin de l&#39;url pour y accéder  </span>
+<span class="k">def</span> <span class="nf">f_qui_suis_je</span><span class="p">():</span>  
+    <span class="k">return</span> <span class="s2">&quot;Melody Duplaix&quot;</span>  
+</code></pre></div></p>
+<p>Si la variable a retourner est définie avant :<br />
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/qui-suis-je&quot;</span><span class="p">)</span>  
+<span class="k">def</span> <span class="nf">f_qui_suis_je</span><span class="p">():</span>  
+    <span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Melody Duplaix&quot;</span>  
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2">&quot;</span>  
+</code></pre></div></p>
+<p>On peut aussi utiliser des balises HTML dans le return:<br />
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/qui-suis-je&quot;</span> <span class="p">)</span>   
+<span class="k">def</span> <span class="nf">f_qui_suis_je</span> <span class="p">():</span>   
+    <span class="k">return</span> <span class="s2">&quot;&lt;H1&gt;Jean-Lou Le Bars&lt;/H1&gt;&quot;</span>  
+</code></pre></div></p>
+<h3 id="13-faciliter-le-run-de-lappli">1.3) Faciliter le run de l'appli<a class="headerlink" href="#13-faciliter-le-run-de-lappli" title="Permanent link">&para;</a></h3>
+<p>avec la bibliothèque python-dotenv:<br />
+utiliser ces lignes dans un fichier .env pour paramétrer flask:<br />
+<div class="highlight"><pre><span></span><code>FLASK_DEBUG=1  
+FLASK_ENV=development   
+FLASK_APP=app.py  
+</code></pre></div>
+puis rajouter ceci dans le main py :<br />
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>   
+<span class="n">load_dotenv</span><span class="p">()</span>  
+</code></pre></div></p>
+<p>Pour ne pas activer le cache sur le Flask:<br />
+<div class="highlight"><pre><span></span><code><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;CACHE_TYPE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;null&quot;</span>  
+</code></pre></div></p>
+<h3 id="14-utiliser-un-template">1.4) Utiliser un template<a class="headerlink" href="#14-utiliser-un-template" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>  
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/code&quot;</span><span class="p">)</span>   
+<span class="k">def</span> <span class="nf">f_code</span><span class="p">():</span>   
+    <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">11</span><span class="p">](</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mf">11.</span><span class="n">md</span><span class="c1">#)   </span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tom&#39;</span><span class="p">,</span><span class="s1">&#39;Tim&#39;</span><span class="p">,</span><span class="s1">&#39;Tam&#39;</span><span class="p">])</span>   
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;t_code.html&quot;</span><span class="p">,</span> <span class="n">t_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>  
+</code></pre></div>
+ne pas oublier de faire un dossier templates<br />
+et un exemple de template en html:<br />
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>  
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span><span class="p">&gt;</span>  
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>  
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>  
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>  
+    {{t_df}}  
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>  
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>  
+</code></pre></div>
+ou<br />
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="err">!</span><span class="n">doctype</span> <span class="n">html</span><span class="o">&gt;</span>  
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Hello</span> <span class="kn">from</span> <span class="nn">Flask</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>  
+<span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">name</span> <span class="o">%</span><span class="p">}</span>  
+  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Hello</span> <span class="p">{{</span> <span class="n">name</span> <span class="p">}}</span><span class="err">!</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>  
+<span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>  
+  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Hello</span><span class="p">,</span> <span class="n">World</span><span class="err">!</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>  
+<span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>  
+</code></pre></div></p>
+<h4 id="141-utiliser-plusieurs-variables-dans-un-template">1.4.1) Utiliser plusieurs variables dans un template<a class="headerlink" href="#141-utiliser-plusieurs-variables-dans-un-template" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="c1"># méthode qui permet de créer des pages web  </span>
+<span class="k">def</span> <span class="nf">f_index</span><span class="p">():</span>   
+    <span class="n">v_texte</span> <span class="o">=</span> <span class="s2">&quot;Bonjour et bienvenue sur mon mega super hype top site&quot;</span>  
+    <span class="n">v_titre</span> <span class="o">=</span> <span class="s2">&quot;Page d&#39;acceuil&quot;</span>  
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;t_index.html&quot;</span><span class="p">,</span>   
+                           <span class="n">t_texte</span> <span class="o">=</span> <span class="n">v_texte</span><span class="p">,</span>   
+                           <span class="n">t_titre</span><span class="o">=</span><span class="n">v_titre</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="142-utiliser-un-dictionnaire-pour-stocker-les-variables">1.4.2) Utiliser un dictionnaire pour stocker les variables<a class="headerlink" href="#142-utiliser-un-dictionnaire-pour-stocker-les-variables" title="Permanent link">&para;</a></h4>
+<p>```python title:python<br />
+@app.route("/qui-suis-je" ) <br />
+def f_qui_suis_je (): <br />
+    prenom = "Melody"<br />
+    nom = "Duplaix"<br />
+    v_identite = {<br />
+        "prenom":prenom,<br />
+        "nom":nom,<br />
+        "test":"test"<br />
+    }<br />
+    return render_template("t_qui_suis_je.html", t_identite=v_identite )<br />
+<div class="highlight"><pre><span></span><code>```html title:html  
+&lt;!DOCTYPE html&gt;  
+&lt;html lang=&quot;en&quot;&gt;  
+&lt;head&gt;  
+    &lt;meta charset=&quot;UTF-8&quot;&gt;  
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;  
+    &lt;title&gt;Qui suis je&lt;/title&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+    &lt;p&gt;  
+    Je m&#39;appelle {{t_identite.prenom|capitalize}} {{t_identite.nom|upper}}.  
+    &lt;/p&gt;  
+    &lt;p&gt;  
+    Code de test: {{t_identite.test|striptags}}  
+    &lt;/p&gt;      
+&lt;/body&gt;  
+&lt;/html&gt;  
+</code></pre></div></p>
+<h4 id="143-utiliser-les-boucles-et-conditions-dans-les-templates">1.4.3) Utiliser les boucles et conditions dans les templates<a class="headerlink" href="#143-utiliser-les-boucles-et-conditions-dans-les-templates" title="Permanent link">&para;</a></h4>
+<p><code>python title:python  
+@app.route("/qui-suis-je" )  
+def f_qui_suis_je():   
+    v_prenom = "Jean-Lou"   
+    v_competences = ["Gestion de projet" , "Python", "Data"]   
+    return render_template("t_qui_suis_je.html", t_prenom = v_prenom, t_competences = v_competences)  
+<div class="highlight"><pre><span></span><code>```html title:html  
+&lt;h1&gt; {{ t_prenom }} &lt;/h1&gt; &lt;br&gt;   
+    {% for competence in t_competences %}   
+        &lt;li&gt;{{ competence }}&lt;/li&gt;   
+    {% endfor %}  
+</code></pre></div>
+autre exemple:</code>html title:html  </p>
+<ul>  
+        {% for competence in t_competences %}   
+            {% if competence == "Python" %}   
+                Il connaît très bien le langage <strong>{{competence | upper }}</strong>.   
+            {% endif %}   
+        {% endfor %}  
+    </ul>
+<div class="highlight"><pre><span></span><code>### 1.5) Utiliser un url dynamique  
+
+```python  
+@app.route(&quot;/&lt;v_nom&gt;&quot;)   
+def f_nom(v_nom):   
+    return f&quot;Bonjour {v_nom}&quot;  
+</code></pre></div>
+<blockquote>
+<p>[!warning] Les pages statiques sont supérieurs aux pages dynamique de base  </p>
+</blockquote>
+<h3 id="16-gerer-les-pages-derreurs">1.6) Gérer les pages d'erreurs<a class="headerlink" href="#16-gerer-les-pages-derreurs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">errorhandler</span> <span class="p">(</span><span class="mi">404</span><span class="p">)</span>   
+<span class="k">def</span> <span class="nf">page_introuvable</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>   
+    <span class="k">return</span> <span class="n">render_template</span> <span class="p">(</span><span class="s2">&quot;t_404.html&quot;</span> <span class="p">),</span> <span class="mi">404</span>  
+</code></pre></div>
+<h3 id="17-faire-un-formulaire">1.7) Faire un formulaire<a class="headerlink" href="#17-faire-un-formulaire" title="Permanent link">&para;</a></h3>
+<h4 id="171-methode-classique">1.7.1) Méthode classique<a class="headerlink" href="#171-methode-classique" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/formulaire&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>   
+<span class="k">def</span> <span class="nf">formulaire</span><span class="p">():</span>   
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>   
+        <span class="n">f_nom</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nom&#39;</span><span class="p">)</span>   
+        <span class="n">f_prenom</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;prenom&#39;</span><span class="p">)</span>   
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;   </span>
+<span class="s1">        &lt;h1&gt;Votre nom : </span><span class="si">{</span><span class="n">f_nom</span><span class="si">}</span><span class="s1">&lt;/h1&gt;   </span>
+<span class="s1">        &lt;h2&gt;Votre prénom : </span><span class="si">{</span><span class="n">f_prenom</span><span class="si">}</span><span class="s1">&lt;/h2&gt; &#39;&#39;&#39;</span>   
+    <span class="k">return</span> <span class="s1">&#39;&#39;&#39;   </span>
+<span class="s1">        &lt;form method=&quot;POST&quot;&gt;   </span>
+<span class="s1">        &lt;div&gt;  </span>
+<span class="s1">            &lt;label&gt;Votre nom :   </span>
+<span class="s1">                &lt;input type=&quot;text&quot; name=&quot;nom&quot;&gt;  </span>
+<span class="s1">            &lt;/label&gt;  </span>
+<span class="s1">        &lt;/div&gt;  </span>
+<span class="s1">        &lt;div&gt;  </span>
+<span class="s1">            &lt;label&gt;Votre prénom :   </span>
+<span class="s1">                &lt;input type=&quot;text&quot; name=&quot;prenom&quot;&gt;  </span>
+<span class="s1">            &lt;/label&gt;  </span>
+<span class="s1">        &lt;/div&gt;   </span>
+<span class="s1">            &lt;input type=&quot;submit&quot; value=&quot;Envoyer&quot;&gt;   </span>
+<span class="s1">        &lt;/form&gt;&#39;&#39;&#39;</span>  
+</code></pre></div>
+<h4 id="172-avec-la-bibliotheque-wtf-what-the-form">1.7.2) Avec la bibliothèque WTF (What the form)<a class="headerlink" href="#172-avec-la-bibliotheque-wtf-what-the-form" title="Permanent link">&para;</a></h4>
+<p><a href="https://flask-wtf.readthedocs.io/en/1.0.x/">site de la librairie</a><br />
+mvc : model vue controller   </p>
+<p>```python title:imports<br />
+from flask_wtf import FlaskForm <br />
+from wtforms import StringField, SubmitField<br />
+from wtforms.validators import DataRequired<br />
+<div class="highlight"><pre><span></span><code>```python title:&quot;config de la clé secrète&quot;  
+app.config[&#39;SECRET_KEY&#39;] = &quot;Ma super clé !&quot;  
+</code></pre></div></p>
+<p>```python title:"code python"<br />
+class c_Formulaire_enregistrement_informations(FlaskForm): <br />
+    wtf_nom = StringField( "Nom", validators =[DataRequired()]) <br />
+    wtf_envoyer = SubmitField( "Envoyer" )  </p>
+<p>@app.route("/formulaire") <br />
+def f_formulaire(): <br />
+    f_formulaire = c_Formulaire_enregistrement_informations() <br />
+    print(f"Formulaire créé ! {f_formulaire}.") <br />
+    return "Formulaire bien créé" <br />
+<div class="highlight"><pre><span></span><code>puis:  
+```python title:&quot;envoi forumaire&quot;  
+class t_Formulaire_enregistrement_informations(FlaskForm):   
+    wtf_nom = StringField( &quot;Nom&quot;, validators =[DataRequired()])   
+    wtf_envoyer = SubmitField( &quot;Envoyer&quot; )  
+
+
+@app.route(&quot;/formulaire&quot;, methods=[&quot;GET&quot;, &quot;POST&quot;])  
+def f_enregistrer_informations():  
+ f_formulaire = t_Formulaire_enregistrement_informations()  
+ if f_formulaire.validate_on_submit():  
+    f_nom = f_formulaire.wtf_nom.data  
+    f_formulaire.wtf_nom.data = &quot;&quot;  
+ return render_template(&quot;t_formulaire.html&quot; ,  
+                          t_titre = &quot;Formulaire d&#39;inscription&quot;,  
+                          html_formulaire = f_formulaire)  
+</code></pre></div></p>
+<p>```html title:html  </p>
+<!DOCTYPE html>
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>formulaire d'inscription</title>  
+</head>  
+<body>  
+    <H1>Formulaire d'enregistrement d'un intervenant</H1>   
+    <form method="POST">   
+        {{ html_formulaire.hidden_tag()}}   
+        {{ html_formulaire.wtf_nom.label }}   
+        {{ html_formulaire.wtf_nom() }}   
+        <br/>   
+        {{ html_formulaire.wtf_envoyer()}}   
+    </form>  
+</body>  
+</html>
+<div class="highlight"><pre><span></span><code>### 1.8) Insérer des images  
+
+les images doivent être dans un dossier images dans un dossier static  
+```html  
+&lt;img src=&quot;{{url_for(&#39;static&#39;, filename=&#39;images/photo_profil_linkedIn.excalidraw.png&#39;)}}&quot; class=&quot;photo&quot; width=50 heigth=50 &gt;  
+</code></pre></div>
+<h3 id="19-utiliser-boostrap">1.9) Utiliser boostrap<a class="headerlink" href="#19-utiliser-boostrap" title="Permanent link">&para;</a></h3>
+<p>Dans le head, rajouter ces lignes  pour lier aux css de bootstrap:<br />
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>  
+</code></pre></div></p>
+<p>puis regarder dans les docs de boostrap les class et attributs à utiliser pour obtenir tel forme d'élément  </p>
+<h3 id="110-utiliser-un-template-de-base-pour-tous-les-templates">1.10) Utiliser un template de base pour tous les templates<a class="headerlink" href="#110-utiliser-un-template-de-base-pour-tous-les-templates" title="Permanent link">&para;</a></h3>
+<p>```html title:"template de base (base.html)"  </p>
+<!DOCTYPE html>
+<html lang="en">   
+    <head>   
+        <meta charset="UTF-8">   
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <title>Document</title>   
+    </head>   
+    <body> EN-TETE<br/>   
+        {% block content %}   
+        {% endblock %}   
+        <p></p> PIED DE PAGE<br/>   
+    </body>   
+</html>
+<div class="highlight"><pre><span></span><code>```python title:&quot;contenu de chaque fichier utilisant ce template&quot;  
+{% extends &quot;base.html&quot; %}   
+{% block content %}   
+    &lt;h1&gt;{{ t_texte.upper() }}&lt;/h1&gt;   
+{% endblock %}  
+</code></pre></div>
+<h3 id="111-afficher-des-graphiques">1.11) Afficher des graphiques<a class="headerlink" href="#111-afficher-des-graphiques" title="Permanent link">&para;</a></h3>
+<p>Mettre toutes nos analyses dans un fichier analyses.py<br />
+On convertir les graphiques en json:<br />
+```python title:"analyses.py"<br />
+def analyse_kpi(): <br />
+    donnees = go.Bar(x = ["Tom", "Albert", "Georges"], y = [10, 12, 15]) <br />
+    graph = go.Figure(data = donnees) <br />
+    graph_JSON = json.dumps(graph, cls=plotly.utils.PlotlyJSONEncoder) <br />
+    return graph_JSON<br />
+<div class="highlight"><pre><span></span><code>puis pour afficher le graph:  
+```python title:&quot;app.py&quot;  
+@app.route(&quot;/graphique&quot;)   
+def f_graphiques():   
+    f_analyse_graphique = analyse_kpi()   
+    return render_template(&#39;t_graphiques.html&#39;, t_graphique=f_analyse_graphique)  
+</code></pre></div></p>
+<p>et on l'insère dans le template:<br />
+```html title:"template html"  </p>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<div id ="chart">   
+    <script type='text/javascript'>   
+        var graphs = {{ t_graphique | safe }};   
+        Plotly.plot("chart",graphs,{})   
+    </script>   
+</div>
+<div class="highlight"><pre><span></span><code>### 1.12) Schéma de fonctionnement  
+
+![1000](../../Cours%20Flask%20sch%C3%A9ma%20du%20fonctionnement.excalidraw.md#)  
+
+## 2) Projet en groupe  
+
+[dossier de travail](file:///D:\Projets\Projets%20CEFIM\projet_flask_asso)  
+[dossier de travail dans vscode](vscode://file/D:\Projets\Projets%20CEFIM\projet_flask_asso)  
+[dossier google drive](https://drive.google.com/drive/folders/1YVRCp_JS0YSynAyC5yk9ozHMueVXBrDQ)  
+[repo github](https://github.com/MelodyDuplaix/projet_flask)  
+[excalidraw du projet](https://excalidraw.com/#room=1ea4f5cdfadf1386bbe0,sgZwUA6XETmNKcY8N0J6Iw)  
+
+code de création des tables de données:  
+```sql  
+CREATE TABLE vehicule(  
+   id_vehicule INTEGER PRIMARY KEY,  
+   type VARCHAR(50) NOT NULL  
+);  
+
+CREATE TABLE chauffeurs(  
+   id_chauffeur INTEGER PRIMARY KEY,  
+   nom VARCHAR(50) NOT NULL,  
+   prenom VARCHAR(50) NOT NULL,  
+   genre VARCHAR(2) NOT NULL  
+);  
+
+CREATE TABLE trajets(  
+   id_trajet INTEGER PRIMARY KEY,  
+   km_fin INT NOT NULL,  
+   km_debut INT NOT NULL,  
+   commentaire VARCHAR(250),  
+   id_vehicule CHAR(50) NOT NULL,  
+   id_chauffeur INT NOT NULL,  
+   FOREIGN KEY(id_vehicule) REFERENCES vehicule(id_vehicule),  
+   FOREIGN KEY(id_chauffeur) REFERENCES chauffeurs(id_chauffeur)  
+);  
+</code></pre></div>
+<h3 id="21-daily-scrum-28-09">2.1) Daily scrum 28-09<a class="headerlink" href="#21-daily-scrum-28-09" title="Permanent link">&para;</a></h3>
+<p>envoie des données des trajets à la base<br />
+mise en page du formulaire<br />
+essai de validation des noms et prénoms avant envoie -&gt;  non marché difficulté<br />
+commencé page de visualisation des tables avec table des chauffeurs et table des véhicules<br />
+je vais finir la visualisation des des tables avec la table des trajets</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

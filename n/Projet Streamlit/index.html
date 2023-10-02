@@ -1,0 +1,1799 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Plotly/">
+      
+      
+        <link rel="next" href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Projet Streamlit - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-explication-du-projet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projet Streamlit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-explication-du-projet" class="md-nav__link">
+    1) Explication du projet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-composition-dune-appli-streamlit" class="md-nav__link">
+    2) Composition d'une appli streamlit
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Composition d'une appli streamlit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-titre" class="md-nav__link">
+    2.1) Titre
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1) Titre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-creation-dun-titre" class="md-nav__link">
+    2.1.1) Création d'un titre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-afficher-un-element" class="md-nav__link">
+    2.1.2) Afficher un élément
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-rajouter-une-image" class="md-nav__link">
+    2.1.3) Rajouter une image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-faire-des-colonnes" class="md-nav__link">
+    2.1.4) Faire des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-pour-modifier-favicon-nom-donglet-et-liens-du-menu" class="md-nav__link">
+    2.1.5) Pour modifier favicon ,nom d'onglet et liens du menu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-afficher-un-chargeur-de-fichier" class="md-nav__link">
+    2.1.6) Afficher un chargeur de fichier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-afficher-un-tableau" class="md-nav__link">
+    2.1.7) Afficher un tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-utiliser-streamlit-en-utilisant-des-fonctions" class="md-nav__link">
+    2.1.8) Utiliser streamlit en utilisant des fonctions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lancer-lapplication" class="md-nav__link">
+    3) Lancer l'application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-styliser-lapplication-avec-du-css" class="md-nav__link">
+    4) Styliser l'application avec du css
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Styliser l'application avec du css">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-appliquer-du-style-a-un-paragraphe" class="md-nav__link">
+    4.1) Appliquer du style à un paragraphe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-modifier-le-layout" class="md-nav__link">
+    5) Modifier le layout
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Modifier le layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-ajouter-un-sidebar" class="md-nav__link">
+    5.1) Ajouter un sidebar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-faire-plusieurs-pages" class="md-nav__link">
+    5.2) Faire plusieurs pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bon-a-connaitre" class="md-nav__link">
+    6) Bon à connaitre
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-explication-du-projet" class="md-nav__link">
+    1) Explication du projet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-composition-dune-appli-streamlit" class="md-nav__link">
+    2) Composition d'une appli streamlit
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Composition d'une appli streamlit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-titre" class="md-nav__link">
+    2.1) Titre
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1) Titre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-creation-dun-titre" class="md-nav__link">
+    2.1.1) Création d'un titre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-afficher-un-element" class="md-nav__link">
+    2.1.2) Afficher un élément
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-rajouter-une-image" class="md-nav__link">
+    2.1.3) Rajouter une image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-faire-des-colonnes" class="md-nav__link">
+    2.1.4) Faire des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-pour-modifier-favicon-nom-donglet-et-liens-du-menu" class="md-nav__link">
+    2.1.5) Pour modifier favicon ,nom d'onglet et liens du menu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#216-afficher-un-chargeur-de-fichier" class="md-nav__link">
+    2.1.6) Afficher un chargeur de fichier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#217-afficher-un-tableau" class="md-nav__link">
+    2.1.7) Afficher un tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#218-utiliser-streamlit-en-utilisant-des-fonctions" class="md-nav__link">
+    2.1.8) Utiliser streamlit en utilisant des fonctions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lancer-lapplication" class="md-nav__link">
+    3) Lancer l'application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-styliser-lapplication-avec-du-css" class="md-nav__link">
+    4) Styliser l'application avec du css
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Styliser l'application avec du css">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-appliquer-du-style-a-un-paragraphe" class="md-nav__link">
+    4.1) Appliquer du style à un paragraphe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-modifier-le-layout" class="md-nav__link">
+    5) Modifier le layout
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Modifier le layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-ajouter-un-sidebar" class="md-nav__link">
+    5.1) Ajouter un sidebar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-faire-plusieurs-pages" class="md-nav__link">
+    5.2) Faire plusieurs pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-bon-a-connaitre" class="md-nav__link">
+    6) Bon à connaitre
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Projet Streamlit</h1>
+
+<blockquote>
+<p>[!sommaire|outlined]- <br />
+<pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected token '&gt;'<br />
+    at DataviewInlineApi.eval (plugin:dataview:18404:21)<br />
+    at evalInContext (plugin:dataview:18405:7)<br />
+    at asyncEvalInContext (plugin:dataview:18415:32)<br />
+    at DataviewJSRenderer.render (plugin:dataview:18436:19)<br />
+    at DataviewJSRenderer.onload (plugin:dataview:18020:14)<br />
+    at e.load (app://obsidian.md/app.js:1:720327)<br />
+    at DataviewApi.executeJs (plugin:dataview:18954:18)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:2026)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:2:871)<br />
+    at new Promise (&lt;anonymous&gt;)<br />
+    at m (plugin:obsidian-mkdocs-publisher:2:691)<br />
+    at Gf (plugin:obsidian-mkdocs-publisher:28:1256)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:3257)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at r (plugin:obsidian-mkdocs-publisher:2:729)</pre>  </p>
+</blockquote>
+<h2 id="1-explication-du-projet">1) Explication du projet<a class="headerlink" href="#1-explication-du-projet" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!info]- <a href="https://docs.google.com/document/d/13sPOAO5Wy9ln6N1wxK6xBytp88l5QO1j-emM3RTN6V0/edit">Fiche Projet Streamlit</a><br />
+<iframe src='https://docs.google.com/document/d/13sPOAO5Wy9ln6N1wxK6xBytp88l5QO1j-emM3RTN6V0/edit' allow='fullscreen' allowfullscreen='' style='height: 100%; width: 100%; aspect-ratio: 1/1;'></iframe>  </p>
+</blockquote>
+<p><a href="https://drive.google.com/drive/u/0/folders/1tXTroYIkZ2Uj0DgUIpj-hCEv9enJHXRQ">lien du dossier partagé</a>  </p>
+<blockquote>
+<p>[!info]- <a href="https://docs.google.com/document/d/1rAKMMQIoGxYt144rZRtNZNDUcj0u2gVJidd2O-J2xZY/edit">Document de travail</a><br />
+<iframe src='https://docs.google.com/document/d/1rAKMMQIoGxYt144rZRtNZNDUcj0u2gVJidd2O-J2xZY/edit' allow='fullscreen' allowfullscreen='' style='height: 100%; width: 100%; aspect-ratio: 1/1;'></iframe>  </p>
+<p>[!info]- <a href="https://docs.google.com/spreadsheets/d/1djTlcbTI7zHcHMqN_YDB4gWvGhkTDM9okXPorAf6AHQ/edit#gid=0">Matrice RACI</a><br />
+<iframe src='https://docs.google.com/spreadsheets/d/1djTlcbTI7zHcHMqN_YDB4gWvGhkTDM9okXPorAf6AHQ/edit#gid=0' allow='fullscreen' allowfullscreen='' style='height: 100%; width: 100%; aspect-ratio: 1/1;'>/</iframe>  </p>
+</blockquote>
+<p><a href="https://app.diagrams.net/#G1Hxjhkzcq-aXdlMnRjHgt8ihwiPje2UQ3">Diagramme d'activité des algorithmes</a>  </p>
+<p><img alt="500" src="../../image/Projet%20Streamlit%202023-08-29%20maquette.excalidraw.svg" />  </p>
+<h2 id="2-composition-dune-appli-streamlit">2) Composition d'une appli streamlit<a class="headerlink" href="#2-composition-dune-appli-streamlit" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!info]- <a href="https://cheat-sheet.streamlit.app/">cheatsheet streamlit</a><br />
+<iframe src="https://cheat-sheet.streamlit.app/" allow="fullscreen" allowfullscreen="" style="height: 100%; width: 100%; aspect-ratio: 1/1;"></iframe>  </p>
+</blockquote>
+<h3 id="21-titre">2.1) Titre<a class="headerlink" href="#21-titre" title="Permanent link">&para;</a></h3>
+<h4 id="211-creation-dun-titre">2.1.1) Création d'un titre<a class="headerlink" href="#211-creation-dun-titre" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>  
+</code></pre></div>
+<p>On peut modifier le style avec du markdown, et des emojis via ces codes: https://share.streamlit.io/streamlit/emoji-shortcodes  </p>
+<h4 id="212-afficher-un-element">2.1.2) Afficher un élément<a class="headerlink" href="#212-afficher-un-element" title="Permanent link">&para;</a></h4>
+<p>équivalent du print  </p>
+<div class="highlight"><pre><span></span><code><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>  
+</code></pre></div>
+<h4 id="213-rajouter-une-image">2.1.3) Rajouter une image<a class="headerlink" href="#213-rajouter-une-image" title="Permanent link">&para;</a></h4>
+<p>avec la méthode <code>Image</code> de la bibliothèque <code>PIL</code><br />
+<div class="highlight"><pre><span></span><code><span class="n">logo</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;chemin image&quot;</span><span class="p">)</span>  
+<span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">logo</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>pour réduire une image:<br />
+<div class="highlight"><pre><span></span><code><span class="n">logo_reduit</span> <span class="o">=</span> <span class="n">logo</span><span class="o">.</span><span class="n">resize</span><span class="p">([</span><span class="n">largeur</span><span class="p">,</span><span class="n">longueur</span><span class="p">])</span>  
+</code></pre></div></p>
+<h4 id="214-faire-des-colonnes">2.1.4) Faire des colonnes<a class="headerlink" href="#214-faire-des-colonnes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">colonne1</span><span class="p">,</span> <span class="n">colonne2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">((</span><span class="mi">2</span><span class="p">))</span>  
+<span class="k">with</span> <span class="n">colonne1</span>  
+    <span class="n">contenu</span>  
+<span class="k">with</span> <span class="n">colonne2</span>  
+    <span class="n">contenu</span>  
+</code></pre></div>
+<h4 id="215-pour-modifier-favicon-nom-donglet-et-liens-du-menu">2.1.5) Pour modifier favicon ,nom d'onglet et liens du menu<a class="headerlink" href="#215-pour-modifier-favicon-nom-donglet-et-liens-du-menu" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span>  
+    <span class="n">page_title</span><span class="o">=</span><span class="s2">&quot;Analyse associations&quot;</span><span class="p">,</span>  
+    <span class="n">page_icon</span><span class="o">=</span><span class="s2">&quot;📊&quot;</span><span class="p">,</span>  
+    <span class="n">menu_items</span><span class="o">=</span><span class="p">{</span>  
+        <span class="s2">&quot;Get Help&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.cefim.eu/&quot;</span><span class="p">,</span>  
+        <span class="s2">&quot;About&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://www.linkedin.com/in/melody-duplaix-391672265&quot;</span>  
+    <span class="p">}</span>  
+<span class="p">)</span>  
+</code></pre></div>
+<h4 id="216-afficher-un-chargeur-de-fichier">2.1.6) Afficher un chargeur de fichier<a class="headerlink" href="#216-afficher-un-chargeur-de-fichier" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">fichier_charge</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">file_uploader</span><span class="p">(</span><span class="s2">&quot;Choisissez un fichier csv&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csv&quot;</span><span class="p">])</span>  
+</code></pre></div>
+<p>et l'utiliser:<br />
+<div class="highlight"><pre><span></span><code><span class="n">fichier_charge</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">file_uploader</span><span class="p">(</span><span class="s2">&quot;Choisissez un fichier csv&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csv&quot;</span><span class="p">])</span>  
+
+<span class="k">if</span> <span class="n">fichier_charge</span> <span class="p">:</span>  
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fichier_charge</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>  
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;siteweb&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>  
+</code></pre></div></p>
+<p>exploiter le nom du fichier:<br />
+<div class="highlight"><pre><span></span><code>    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Le fichier chargé est : &quot;</span><span class="p">,</span> <span class="n">fichier_charge</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  
+</code></pre></div></p>
+<h4 id="217-afficher-un-tableau">2.1.7) Afficher un tableau<a class="headerlink" href="#217-afficher-un-tableau" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/rna_waldec_20230801_dpt_37.csv&quot;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>  
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="218-utiliser-streamlit-en-utilisant-des-fonctions">2.1.8) Utiliser streamlit en utilisant des fonctions<a class="headerlink" href="#218-utiliser-streamlit-en-utilisant-des-fonctions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Import des bibliothèques  </span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>  
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>  
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+<span class="kn">import</span> <span class="nn">re</span>  
+
+<span class="c1"># Définitions des fonctions  </span>
+<span class="k">def</span> <span class="nf">charger_le_fichier</span><span class="p">():</span>  
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  </span>
+<span class="sd">    Nom : charger_le_fichier  </span>
+<span class="sd">    Paramètres : 0  </span>
+<span class="sd">    Traitement : charger un fichier au format csv grâce à file_uploader  </span>
+<span class="sd">    Retour : retourne le fichier csv dans la variable fichier_charge  </span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+    <span class="n">fichier_charge</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">file_uploader</span><span class="p">(</span><span class="s2">&quot;Choisissez un fichier csv&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csv&quot;</span><span class="p">])</span>  
+    <span class="k">return</span><span class="p">(</span><span class="n">fichier_charge</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">creer_le_jeu_de_donnes</span><span class="p">(</span><span class="n">f_fichier_donnee</span><span class="p">):</span>  
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  </span>
+<span class="sd">    Nom : creer_le_jeu_de_donnes  </span>
+<span class="sd">    Paramètres : 1 - Type : chaine de caractère  </span>
+<span class="sd">    Traitement : charger un dataset à partir d&#39;un fichier csv  </span>
+<span class="sd">    Retour : retourne le dataset dans la variable dataset  </span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f_fichier_donnee</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">thousands</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>  
+    <span class="k">return</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">rechercher_par_code_postal</span><span class="p">(</span><span class="n">f_dataset</span><span class="p">):</span>  
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{5}</span><span class="s1">&#39;</span><span class="p">)</span>  
+    <span class="n">text_input</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&quot;Taper le code postal :&quot;</span><span class="p">,</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;Code Postal&quot;</span><span class="p">,</span> <span class="n">max_chars</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Veuillez entrer le code postal pour filtrer les associations dans ce code postal.&quot;</span><span class="p">)</span>  
+    <span class="k">if</span> <span class="n">text_input</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text_input</span><span class="p">):</span>  
+        <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Ce code postal n&#39;est pas valide.&quot;</span><span class="p">)</span>  
+
+    <span class="n">f_dataset</span><span class="p">[</span><span class="s2">&quot;adrs_codepostal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_dataset</span><span class="p">[</span><span class="s2">&quot;adrs_codepostal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  
+    <span class="k">if</span> <span class="n">text_input</span> <span class="ow">and</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text_input</span><span class="p">):</span>  
+        <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Liste des associations du : &quot;</span> <span class="o">+</span> <span class="n">text_input</span><span class="p">)</span>  
+        <span class="n">dataset_codepostal</span> <span class="o">=</span> <span class="n">f_dataset</span><span class="p">[</span><span class="n">f_dataset</span><span class="p">[</span><span class="s2">&quot;adrs_codepostal&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">text_input</span><span class="p">]</span>  
+        <span class="k">return</span><span class="p">(</span><span class="n">dataset_codepostal</span><span class="p">)</span>  
+
+
+<span class="c1"># config de pages  </span>
+<span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span>  
+    <span class="n">page_title</span><span class="o">=</span><span class="s2">&quot;Analyse associations&quot;</span><span class="p">,</span>  
+    <span class="n">page_icon</span><span class="o">=</span><span class="s2">&quot;📊&quot;</span><span class="p">,</span>  
+    <span class="n">menu_items</span><span class="o">=</span><span class="p">{</span>  
+        <span class="s2">&quot;Get Help&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.cefim.eu/&quot;</span><span class="p">,</span>  
+        <span class="s2">&quot;About&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://www.linkedin.com/in/melody-duplaix-391672265&quot;</span>  
+    <span class="p">}</span>  
+<span class="p">)</span>  
+
+<span class="c1"># titre, contexte et logos  </span>
+<span class="n">contexte</span> <span class="o">=</span> <span class="s2">&quot;Cette application a pour objectif d&#39;analyser les associations au sein des départements 37 et 45.&quot;</span>  
+<span class="n">colonne_logo</span><span class="p">,</span> <span class="n">colonne_titre</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>  
+<span class="k">with</span> <span class="n">colonne_logo</span><span class="p">:</span>  
+    <span class="n">logo</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;images/photoprofillinkedIn.excalidraw.png&quot;</span><span class="p">)</span>  
+    <span class="n">logo_reduit</span> <span class="o">=</span> <span class="n">logo</span><span class="o">.</span><span class="n">resize</span><span class="p">([</span><span class="mi">60</span><span class="p">,</span><span class="mi">40</span><span class="p">])</span>  
+    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">logo_reduit</span><span class="p">)</span>  
+<span class="k">with</span> <span class="n">colonne_titre</span><span class="p">:</span>  
+    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;:red[Application d&#39;analyse des associations du 37 et du 45] :bar_chart:&quot;</span><span class="p">)</span>  
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">contexte</span><span class="p">)</span>  
+
+<span class="c1"># Code principal  </span>
+<span class="n">fichier_charge</span> <span class="o">=</span> <span class="n">charger_le_fichier</span><span class="p">()</span>  
+<span class="k">if</span> <span class="n">fichier_charge</span><span class="p">:</span>  
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vous venez de charger le fichier : </span><span class="si">{</span><span class="n">fichier_charge</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+
+<span class="n">dataset_charge</span> <span class="o">=</span> <span class="n">creer_le_jeu_de_donnes</span><span class="p">(</span><span class="n">fichier_charge</span><span class="p">)</span>  
+<span class="k">if</span> <span class="n">fichier_charge</span><span class="p">:</span>  
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dataset_charge</span><span class="p">)</span>  
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rechercher_par_code_postal</span><span class="p">(</span><span class="n">dataset_charge</span><span class="p">))</span>  
+</code></pre></div>
+<blockquote>
+<p>[!example]- Exemple autre possibilité par Jean Lou<br />
+<div class="highlight"><pre><span></span><code>  
+<span class="c1"># Autre possibilités  </span>
+<span class="c1"># import streamlit as st  </span>
+<span class="c1"># from PIL import Image   </span>
+<span class="c1"># import pandas as pd  </span>
+  
+<span class="c1"># st.set_page_config(  </span>
+<span class="c1">#     page_title=&quot;AssoApp&quot;,  </span>
+<span class="c1">#     page_icon=&quot;🧊&quot;,  </span>
+<span class="c1">#     menu_items={  </span>
+<span class="c1">#         &#39;Get Help&#39;: &#39;https://www.cefim.eu&#39;,  </span>
+<span class="c1">#         &#39;About&#39; : &#39;https://campus.cefim.eu&#39;}  </span>
+<span class="c1">#         )  </span>
+  
+<span class="c1"># contexte = &quot;Cette application a pour objectifs ......&quot;  </span>
+  
+  
+<span class="c1"># st.title(&quot;Application d&#39;analyse des associations du 37  :sparkles:&quot;)  </span>
+  
+<span class="c1"># st.write(contexte)  </span>
+  
+<span class="c1"># fichier_charge = st.file_uploader(&quot;Choisissez un fichier csv&quot;, type=[&quot;csv&quot;,&quot;xls&quot;,&quot;xlsx&quot;])  </span>
+  
+<span class="c1"># if fichier_charge:  </span>
+<span class="c1">#     dataset = pd.read_csv(fichier_charge,   </span>
+<span class="c1">#                       encoding=&quot;latin&quot;, sep=&quot;;&quot;)  </span>
+<span class="c1">#     st.write(f&quot;Vous venez de charger le fichier : {fichier_charge.name}.&quot;)  </span>
+<span class="c1">#     # st.write(fichier_charge)  </span>
+<span class="c1">#     dataset[&#39;adrs_codepostal&#39;] = dataset[&#39;adrs_codepostal&#39;].apply(str)  </span>
+<span class="c1">#     recherche_code_postal = st.text_input(&quot;Tapez un code postal 👇&quot;,   </span>
+<span class="c1">#                                       max_chars=5,  </span>
+<span class="c1">#                                       help=&quot;Tapez un code postal commençant par 37&quot;,   </span>
+<span class="c1">#                                       placeholder=&quot;Code postal en 37&quot;,  </span>
+<span class="c1">#                                       value=&quot;&quot;)  </span>
+  
+<span class="c1">#     try :  </span>
+<span class="c1">#         if recherche_code_postal:  </span>
+<span class="c1">#             st.write(dataset[dataset[&quot;adrs_codepostal&quot;] == recherche_code_postal])  </span>
+<span class="c1">#     except:  </span>
+<span class="c1">#         st.write(&quot;La recherche tapée n&#39;est pas correcte.&quot;)   </span>
+</code></pre></div></p>
+</blockquote>
+<h2 id="3-lancer-lapplication">3) Lancer l'application<a class="headerlink" href="#3-lancer-lapplication" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">streamlit</span> <span class="n">run</span> <span class="no">[nom fichier avec extension]</span>  
+</code></pre></div>
+<h2 id="4-styliser-lapplication-avec-du-css">4) Styliser l'application avec du css<a class="headerlink" href="#4-styliser-lapplication-avec-du-css" title="Permanent link">&para;</a></h2>
+<p>On créer un fichier style.css à la racine du fichier de l'application, dans lequel on met notre code css.<br />
+Puis dans le code, on  ajoute une fonction qui lie le fichier css:<br />
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">formatage_de_la_page</span><span class="p">(</span><span class="n">fichier_css</span><span class="p">):</span>  
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichier_css</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  
+        <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;style&gt;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="si">}</span><span class="s2">&lt;/style&gt;&quot;</span><span class="p">,</span> <span class="n">unsafe_allow_html</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>Puis on appelle la fonction après les configs de la page  </p>
+<h3 id="41-appliquer-du-style-a-un-paragraphe">4.1) Appliquer du style à un paragraphe<a class="headerlink" href="#41-appliquer-du-style-a-un-paragraphe" title="Permanent link">&para;</a></h3>
+<p>code:<br />
+<div class="highlight"><pre><span></span><code><span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;style&gt;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="si">}</span><span class="s2">&lt;/&lt;style&gt;   </span>
+            <span class="p">{</span><span class="n">contexte</span><span class="p">}</span><span class="s2">&quot;)  </span>
+</code></pre></div>
+avec dans le css:<br />
+p.contexte {}  </p>
+<h2 id="5-modifier-le-layout">5) Modifier le layout<a class="headerlink" href="#5-modifier-le-layout" title="Permanent link">&para;</a></h2>
+<h3 id="51-ajouter-un-sidebar">5.1) Ajouter un sidebar<a class="headerlink" href="#51-ajouter-un-sidebar" title="Permanent link">&para;</a></h3>
+<p>Avant tout contenue de la page, pour rajouter un titre de sidebar:<br />
+<div class="highlight"><pre><span></span><code><span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;filtre&quot;</span><span class="p">)</span>  
+</code></pre></div>
+Et pour rajouter n'importe quel contenue à la sidebar, on met st.sidebar. à la place de st.  </p>
+<h3 id="52-faire-plusieurs-pages">5.2) Faire plusieurs pages<a class="headerlink" href="#52-faire-plusieurs-pages" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>[!warning] Important : D'abord s'assurer que l'application marche sur une seule page  </p>
+</blockquote>
+<p>Créer un dossier pages, avec les différentes pages en fichier python dedans, commençant par un numéro qui sera l'ordre des pages.<br />
+Les différentes pages seront présentes dans la sidebar.  </p>
+<p>Pour renommer les pages et ajouter des sections, il faut utiliser l'extension st-pages (<a href="https://discuss.streamlit.io/t/new-package-st-pages-change-page-names-and-icons-in-sidebar-without-changing-filenames/33969">New package st-pages: change page names and icons</a>)  </p>
+<blockquote>
+<p>[!tip] Penser à faire l'en-tête et bas-de-page avec une fonction pour les appeler directement sur chaque page  </p>
+</blockquote>
+<h2 id="6-bon-a-connaitre">6) Bon à connaitre<a class="headerlink" href="#6-bon-a-connaitre" title="Permanent link">&para;</a></h2>
+<p><a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/">Button behavior and examples - Streamlit Docs</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

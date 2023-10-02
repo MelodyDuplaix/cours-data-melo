@@ -1,0 +1,2270 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Numpy/">
+      
+      
+        <link rel="next" href="../Petits%20projets%20python%20pour%20apprendre/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Pandas - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-pandas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pandas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-pandas" class="md-nav__link">
+    1) Pandas
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-identifier-la-version-dune-bibliotheque" class="md-nav__link">
+    1.1) Identifier la version d'une bibliothèque
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tableau-de-pandas" class="md-nav__link">
+    1.2) Tableau de pandas
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2) Tableau de pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-creer-un-tableau-pandas-avec-des-index-specifiques" class="md-nav__link">
+    1.2.1) Créer un tableau pandas avec des index spécifiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-afficher-une-valeur-selon-un-index" class="md-nav__link">
+    1.2.2) Afficher une valeur selon un index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-utilisation-dun-dataframe" class="md-nav__link">
+    1.3) Utilisation d'un dataframe
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3) Utilisation d'un dataframe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-les-bases-dun-dataframe" class="md-nav__link">
+    1.3.1) Les bases d'un dataframe
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.1) Les bases d'un dataframe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1311-creation-dun-dataframe" class="md-nav__link">
+    1.3.1.1) Création d'un dataframe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312-afficher-certaines-colonnes" class="md-nav__link">
+    1.3.1.2) Afficher certaines colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313-renommer-des-index" class="md-nav__link">
+    1.3.1.3) Renommer des index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-manipulations-sur-les-dataframes" class="md-nav__link">
+    1.4) Manipulations sur les dataframes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4) Manipulations sur les dataframes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1411-rajouter-une-colonne" class="md-nav__link">
+    1.4.1.1) Rajouter une colonne
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1412-afficher-les-valeurs-selon-une-condition" class="md-nav__link">
+    1.4.1.2) Afficher les valeurs selon une condition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1413-changer-les-valeurs-dune-colonne" class="md-nav__link">
+    1.4.1.3) Changer les valeurs d'une colonne
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1414-enlever-une-colonne-directement-sur-le-tableau" class="md-nav__link">
+    1.4.1.4) Enlever une colonne directement sur le tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1415-convertir-un-type-object-en-type-datetime" class="md-nav__link">
+    1.4.1.5) Convertir un type object en type datetime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-bases-des-methodes-sur-les-dataframe" class="md-nav__link">
+    1.4.2) Bases des méthodes sur les dataframe
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.2) Bases des méthodes sur les dataframe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1421-moyenne-dune-serie" class="md-nav__link">
+    1.4.2.1) Moyenne d'une série
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1422-trier-les-valeurs-en-descendantes" class="md-nav__link">
+    1.4.2.2) Trier les valeurs en descendantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1423-remplacer-les-index-avec-les-valeurs-dune-colonne" class="md-nav__link">
+    1.4.2.3) Remplacer les index avec les valeurs d'une colonne
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1424-programmer-un-methode-que-lon-applique-sur-des-lignes-dune-dataframe" class="md-nav__link">
+    1.4.2.4) Programmer un méthode que l'on applique sur des lignes d'une dataframe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1425-afficher-des-lignes-selon-plusieurs-conditions" class="md-nav__link">
+    1.4.2.5) Afficher des lignes selon plusieurs conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1426-conditions-booleennes" class="md-nav__link">
+    1.4.2.6) Conditions booléennes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1427-afficher-le-nombre-doccurences-dune-valeur" class="md-nav__link">
+    1.4.2.7) Afficher le nombre d'occurences d'une valeur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-premiere-lecture-des-donnees-dun-fichier" class="md-nav__link">
+    1.4.3) Première lecture des données d'un fichier
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.3) Première lecture des données d'un fichier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1431-afficher-les-infos-globales" class="md-nav__link">
+    1.4.3.1) Afficher les infos globales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1432-affiches-le-nombre-de-colonnes-et-de-lignes" class="md-nav__link">
+    1.4.3.2) Affiches le nombre de colonnes et de lignes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1433-afficher-lordre-des-index" class="md-nav__link">
+    1.4.3.3) Afficher l'ordre des index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1434-afficher-le-type-de-donnees-de-chaque-colonnes" class="md-nav__link">
+    1.4.3.4) Afficher le type de données de chaque colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1435-afficher-lintitule-des-colonnes" class="md-nav__link">
+    1.4.3.5) Afficher l'intitulé des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1436-afficher-une-colonne-specifique" class="md-nav__link">
+    1.4.3.6) Afficher une colonne spécifique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1437-afficher-le-nombre-doccurence-des-valeurs" class="md-nav__link">
+    1.4.3.7) Afficher le nombre d'occurence des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1438-afficher-des-valeurs-specifiques-avec-iloc" class="md-nav__link">
+    1.4.3.8) Afficher des valeurs spécifiques avec iloc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1439-afficher-valeurs-selon-des-criteres" class="md-nav__link">
+    1.4.3.9) Afficher valeurs selon des critères
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-nettoyer-les-donnees" class="md-nav__link">
+    2) Nettoyer les données
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Nettoyer les données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-identifier-les-valeurs-nulles" class="md-nav__link">
+    2.1) Identifier les valeurs nulles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-supprimer-les-colonnes-avec-plus-de-50-de-valeurs-nulles" class="md-nav__link">
+    2.2) Supprimer les colonnes avec plus de 50% de valeurs nulles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-remplacer-les-valeurs-manquantes-par-une-autre-valeur" class="md-nav__link">
+    2.3) Remplacer les valeurs manquantes par une autre valeur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-convertir-des-types-de-donnees" class="md-nav__link">
+    2.4) Convertir des types de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-modifier-des-valeurs-specifiques" class="md-nav__link">
+    2.5) Modifier des valeurs spécifiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-manipulations-avancees-sur-les-dataframes" class="md-nav__link">
+    3) Manipulations avancées sur les DataFrames
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Manipulations avancées sur les DataFrames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-parcourir-les-lignes-des-donnees" class="md-nav__link">
+    3.1) Parcourir les lignes des données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-grouper-des-valeurs-pour-des-calculs-avance" class="md-nav__link">
+    3.2) Grouper des valeurs pour des calculs avancé
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-convertir-un-fichier-ipynb-en-diapo" class="md-nav__link">
+    4) Convertir un fichier ipynb en diapo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creer-et-executer-un-fichier-python-en-ligne-de-commande" class="md-nav__link">
+    5) Créer et executer un fichier python en ligne de commande
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Créer et executer un fichier python en ligne de commande">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-comparer-des-dates-et-nombre-de-jours" class="md-nav__link">
+    5.1.1) Comparer des dates et nombre de jours
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-pandas" class="md-nav__link">
+    1) Pandas
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-identifier-la-version-dune-bibliotheque" class="md-nav__link">
+    1.1) Identifier la version d'une bibliothèque
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tableau-de-pandas" class="md-nav__link">
+    1.2) Tableau de pandas
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2) Tableau de pandas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-creer-un-tableau-pandas-avec-des-index-specifiques" class="md-nav__link">
+    1.2.1) Créer un tableau pandas avec des index spécifiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-afficher-une-valeur-selon-un-index" class="md-nav__link">
+    1.2.2) Afficher une valeur selon un index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-utilisation-dun-dataframe" class="md-nav__link">
+    1.3) Utilisation d'un dataframe
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3) Utilisation d'un dataframe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-les-bases-dun-dataframe" class="md-nav__link">
+    1.3.1) Les bases d'un dataframe
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.1) Les bases d'un dataframe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1311-creation-dun-dataframe" class="md-nav__link">
+    1.3.1.1) Création d'un dataframe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312-afficher-certaines-colonnes" class="md-nav__link">
+    1.3.1.2) Afficher certaines colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313-renommer-des-index" class="md-nav__link">
+    1.3.1.3) Renommer des index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-manipulations-sur-les-dataframes" class="md-nav__link">
+    1.4) Manipulations sur les dataframes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4) Manipulations sur les dataframes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1411-rajouter-une-colonne" class="md-nav__link">
+    1.4.1.1) Rajouter une colonne
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1412-afficher-les-valeurs-selon-une-condition" class="md-nav__link">
+    1.4.1.2) Afficher les valeurs selon une condition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1413-changer-les-valeurs-dune-colonne" class="md-nav__link">
+    1.4.1.3) Changer les valeurs d'une colonne
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1414-enlever-une-colonne-directement-sur-le-tableau" class="md-nav__link">
+    1.4.1.4) Enlever une colonne directement sur le tableau
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1415-convertir-un-type-object-en-type-datetime" class="md-nav__link">
+    1.4.1.5) Convertir un type object en type datetime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-bases-des-methodes-sur-les-dataframe" class="md-nav__link">
+    1.4.2) Bases des méthodes sur les dataframe
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.2) Bases des méthodes sur les dataframe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1421-moyenne-dune-serie" class="md-nav__link">
+    1.4.2.1) Moyenne d'une série
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1422-trier-les-valeurs-en-descendantes" class="md-nav__link">
+    1.4.2.2) Trier les valeurs en descendantes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1423-remplacer-les-index-avec-les-valeurs-dune-colonne" class="md-nav__link">
+    1.4.2.3) Remplacer les index avec les valeurs d'une colonne
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1424-programmer-un-methode-que-lon-applique-sur-des-lignes-dune-dataframe" class="md-nav__link">
+    1.4.2.4) Programmer un méthode que l'on applique sur des lignes d'une dataframe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1425-afficher-des-lignes-selon-plusieurs-conditions" class="md-nav__link">
+    1.4.2.5) Afficher des lignes selon plusieurs conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1426-conditions-booleennes" class="md-nav__link">
+    1.4.2.6) Conditions booléennes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1427-afficher-le-nombre-doccurences-dune-valeur" class="md-nav__link">
+    1.4.2.7) Afficher le nombre d'occurences d'une valeur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-premiere-lecture-des-donnees-dun-fichier" class="md-nav__link">
+    1.4.3) Première lecture des données d'un fichier
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4.3) Première lecture des données d'un fichier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1431-afficher-les-infos-globales" class="md-nav__link">
+    1.4.3.1) Afficher les infos globales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1432-affiches-le-nombre-de-colonnes-et-de-lignes" class="md-nav__link">
+    1.4.3.2) Affiches le nombre de colonnes et de lignes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1433-afficher-lordre-des-index" class="md-nav__link">
+    1.4.3.3) Afficher l'ordre des index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1434-afficher-le-type-de-donnees-de-chaque-colonnes" class="md-nav__link">
+    1.4.3.4) Afficher le type de données de chaque colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1435-afficher-lintitule-des-colonnes" class="md-nav__link">
+    1.4.3.5) Afficher l'intitulé des colonnes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1436-afficher-une-colonne-specifique" class="md-nav__link">
+    1.4.3.6) Afficher une colonne spécifique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1437-afficher-le-nombre-doccurence-des-valeurs" class="md-nav__link">
+    1.4.3.7) Afficher le nombre d'occurence des valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1438-afficher-des-valeurs-specifiques-avec-iloc" class="md-nav__link">
+    1.4.3.8) Afficher des valeurs spécifiques avec iloc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1439-afficher-valeurs-selon-des-criteres" class="md-nav__link">
+    1.4.3.9) Afficher valeurs selon des critères
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-nettoyer-les-donnees" class="md-nav__link">
+    2) Nettoyer les données
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Nettoyer les données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-identifier-les-valeurs-nulles" class="md-nav__link">
+    2.1) Identifier les valeurs nulles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-supprimer-les-colonnes-avec-plus-de-50-de-valeurs-nulles" class="md-nav__link">
+    2.2) Supprimer les colonnes avec plus de 50% de valeurs nulles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-remplacer-les-valeurs-manquantes-par-une-autre-valeur" class="md-nav__link">
+    2.3) Remplacer les valeurs manquantes par une autre valeur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-convertir-des-types-de-donnees" class="md-nav__link">
+    2.4) Convertir des types de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-modifier-des-valeurs-specifiques" class="md-nav__link">
+    2.5) Modifier des valeurs spécifiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-manipulations-avancees-sur-les-dataframes" class="md-nav__link">
+    3) Manipulations avancées sur les DataFrames
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Manipulations avancées sur les DataFrames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-parcourir-les-lignes-des-donnees" class="md-nav__link">
+    3.1) Parcourir les lignes des données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-grouper-des-valeurs-pour-des-calculs-avance" class="md-nav__link">
+    3.2) Grouper des valeurs pour des calculs avancé
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-convertir-un-fichier-ipynb-en-diapo" class="md-nav__link">
+    4) Convertir un fichier ipynb en diapo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creer-et-executer-un-fichier-python-en-ligne-de-commande" class="md-nav__link">
+    5) Créer et executer un fichier python en ligne de commande
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Créer et executer un fichier python en ligne de commande">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-comparer-des-dates-et-nombre-de-jours" class="md-nav__link">
+    5.1.1) Comparer des dates et nombre de jours
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Pandas</h1>
+
+<p><a href="./Cours%20python.md#">Cours python</a>  </p>
+<hr />
+<blockquote>
+<p>[!summary]-<br />
+<div class="highlight"><pre><span></span><code>
+</code></pre></div></p>
+</blockquote>
+<h2 id="1-pandas">1) Pandas<a class="headerlink" href="#1-pandas" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+</code></pre></div>
+<h3 id="11-identifier-la-version-dune-bibliotheque">1.1) Identifier la version d'une bibliothèque<a class="headerlink" href="#11-identifier-la-version-dune-bibliotheque" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span>  
+</code></pre></div>
+<h3 id="12-tableau-de-pandas">1.2) Tableau de pandas<a class="headerlink" href="#12-tableau-de-pandas" title="Permanent link">&para;</a></h3>
+<p><span style="background:rgba(240, 107, 5, 0.2)">une array Numpy est une serie pandas</span><br />
+une indexation est automatiquement crée<br />
+<div class="highlight"><pre><span></span><code><span class="n">vecteur_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>  
+<span class="n">serie_pandas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vecteur_numpy</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">serie_pandas</span><span class="p">)</span>  
+</code></pre></div></p>
+<p><code>nom_series.values</code> redonne les valeurs sous forme d'une array Numpy  </p>
+<h4 id="121-creer-un-tableau-pandas-avec-des-index-specifiques">1.2.1) Créer un tableau pandas avec des index spécifiques<a class="headerlink" href="#121-creer-un-tableau-pandas-avec-des-index-specifiques" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">mon_index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>  
+<span class="n">mes_valeurs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;Pandas&quot;</span><span class="p">,</span><span class="s2">&quot;Plotly&quot;</span><span class="p">]</span>  
+
+<span class="n">ma_serie_pandas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">mon_index</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mes_valeurs</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_serie_pandas</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="122-afficher-une-valeur-selon-un-index">1.2.2) Afficher une valeur selon un index<a class="headerlink" href="#122-afficher-une-valeur-selon-un-index" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">ma_serie_pandas</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>  
+</code></pre></div>
+<h3 id="13-utilisation-dun-dataframe">1.3) Utilisation d'un dataframe<a class="headerlink" href="#13-utilisation-dun-dataframe" title="Permanent link">&para;</a></h3>
+<h4 id="131-les-bases-dun-dataframe">1.3.1) Les bases d'un dataframe<a class="headerlink" href="#131-les-bases-dun-dataframe" title="Permanent link">&para;</a></h4>
+<h5 id="1311-creation-dun-dataframe">1.3.1.1) Création d'un dataframe<a class="headerlink" href="#1311-creation-dun-dataframe" title="Permanent link">&para;</a></h5>
+<p>a partir d'un dictionnaire: <br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_dictionnaire</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Note_Abigael&#39;</span> <span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>  
+                    <span class="s1">&#39;Note_Yolande&#39;</span> <span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">16</span><span class="p">)}</span>  
+<span class="n">mon_premier_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_premier_dataframe</span><span class="p">)</span>  
+</code></pre></div></p>
+<h5 id="1312-afficher-certaines-colonnes">1.3.1.2) Afficher certaines colonnes<a class="headerlink" href="#1312-afficher-certaines-colonnes" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;Note_Abigael&quot;</span><span class="p">,</span><span class="s2">&quot;Note_Yolande&quot;</span><span class="p">](</span><span class="o">%</span><span class="mi">22</span><span class="n">Note_Abigael</span><span class="o">%</span><span class="mi">22</span><span class="p">,</span><span class="o">%</span><span class="mi">22</span><span class="n">Note_Yolande</span><span class="o">%</span><span class="mf">22.</span><span class="n">md</span><span class="c1">#)  </span>
+</code></pre></div>
+avec seulement certaines lignes:<br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;Note_Abigael&quot;</span><span class="p">,</span><span class="s2">&quot;Note_Yolande&quot;</span><span class="p">](</span><span class="o">%</span><span class="mi">22</span><span class="n">Note_Abigael</span><span class="o">%</span><span class="mi">22</span><span class="p">,</span><span class="o">%</span><span class="mi">22</span><span class="n">Note_Yolande</span><span class="o">%</span><span class="mf">22.</span><span class="n">md</span><span class="c1">#)[:2]  </span>
+</code></pre></div></p>
+<h5 id="1313-renommer-des-index">1.3.1.3) Renommer des index<a class="headerlink" href="#1313-renommer-des-index" title="Permanent link">&para;</a></h5>
+<p>au moment de créer le dataframe:<br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mon_dictionnaire</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Math&quot;</span><span class="p">,</span><span class="s2">&quot;Physique&quot;</span><span class="p">,</span><span class="s2">&quot;Sport&quot;</span><span class="p">,</span><span class="s2">&quot;Français&quot;</span><span class="p">,</span><span class="s2">&quot;Anglais&quot;</span><span class="p">])</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_premier_dataframe</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>ce qui permet d'afficher une valeur selon:<br />
+<code>nom_dataframe["nom_colonne"]["index"]</code>  </p>
+<h3 id="14-manipulations-sur-les-dataframes">1.4) Manipulations sur les dataframes<a class="headerlink" href="#14-manipulations-sur-les-dataframes" title="Permanent link">&para;</a></h3>
+<h5 id="1411-rajouter-une-colonne">1.4.1.1) Rajouter une colonne<a class="headerlink" href="#1411-rajouter-une-colonne" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;Note_Hector&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_premier_dataframe</span><span class="p">)</span>  
+</code></pre></div>
+liste_valeurs peut être un range()  </p>
+<h5 id="1412-afficher-les-valeurs-selon-une-condition">1.4.1.2) Afficher les valeurs selon une condition<a class="headerlink" href="#1412-afficher-les-valeurs-selon-une-condition" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="n">mon_premier_dataframe</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">])</span>  
+</code></pre></div>
+<h5 id="1413-changer-les-valeurs-dune-colonne">1.4.1.3) Changer les valeurs d'une colonne<a class="headerlink" href="#1413-changer-les-valeurs-dune-colonne" title="Permanent link">&para;</a></h5>
+<p>avec une liste:<br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;Note_Hector&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_premier_dataframe</span><span class="p">)</span>  
+</code></pre></div>
+avec une chaine de caractère splité:<br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;Note_Abigael&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;7 8 12 14 9&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_premier_dataframe</span><span class="p">)</span>  
+</code></pre></div></p>
+<h5 id="1414-enlever-une-colonne-directement-sur-le-tableau">1.4.1.4) Enlever une colonne directement sur le tableau<a class="headerlink" href="#1414-enlever-une-colonne-directement-sur-le-tableau" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="k">del</span> <span class="n">nom_dataframe</span><span class="p">[</span><span class="s2">&quot;nom_colonne&quot;</span><span class="p">]</span>  
+</code></pre></div>
+ou<br />
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span> <span class="o">=</span> <span class="n">nom_dataframe</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;nom_colonne&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+</code></pre></div>
+ou<br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Note_Yolande&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_premier_dataframe</span><span class="p">)</span>  
+</code></pre></div></p>
+<h5 id="1415-convertir-un-type-object-en-type-datetime">1.4.1.5) Convertir un type object en type datetime<a class="headerlink" href="#1415-convertir-un-type-object-en-type-datetime" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_fin_certification&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_fin_certification&#39;</span><span class="p">])</span>  
+</code></pre></div>
+<h4 id="142-bases-des-methodes-sur-les-dataframe">1.4.2) Bases des méthodes sur les dataframe<a class="headerlink" href="#142-bases-des-methodes-sur-les-dataframe" title="Permanent link">&para;</a></h4>
+<h5 id="1421-moyenne-dune-serie">1.4.2.1) Moyenne d'une série<a class="headerlink" href="#1421-moyenne-dune-serie" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;Note_Abigael&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  
+</code></pre></div>
+<h5 id="1422-trier-les-valeurs-en-descendantes">1.4.2.2) Trier les valeurs en descendantes<a class="headerlink" href="#1422-trier-les-valeurs-en-descendantes" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;Note_Abigael&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  
+</code></pre></div>
+ou<br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_dataframe</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Note_Abigael&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  
+</code></pre></div></p>
+<h5 id="1423-remplacer-les-index-avec-les-valeurs-dune-colonne">1.4.2.3) Remplacer les index avec les valeurs d'une colonne<a class="headerlink" href="#1423-remplacer-les-index-avec-les-valeurs-dune-colonne" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;nom_colonne&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+</code></pre></div>
+<h5 id="1424-programmer-un-methode-que-lon-applique-sur-des-lignes-dune-dataframe">1.4.2.4) Programmer un méthode que l'on applique sur des lignes d'une dataframe<a class="headerlink" href="#1424-programmer-un-methode-que-lon-applique-sur-des-lignes-dune-dataframe" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Programmer un fonction qui additione chaque valeurs d&#39;une ligne  </span>
+<span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">ligne</span><span class="p">):</span>  
+    <span class="k">return</span> <span class="n">ligne</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  
+
+<span class="n">mon_premier_dataframe</span><span class="p">[</span><span class="s2">&quot;note_finale_complexe&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mon_premier_dataframe</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">somme</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+<span class="n">mon_premier_dataframe</span>  
+</code></pre></div>
+créé une colonne additionnant les valeurs pour chaque ligne  </p>
+<p>On peut aussi utiliser une lambda fonction:<br />
+<div class="highlight"><pre><span></span><code><span class="n">dataframe_exercice</span><span class="p">[</span><span class="s2">&quot;note_finale_complexe&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataframe_exercice</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">valeur</span><span class="p">:</span><span class="n">valeur</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+</code></pre></div></p>
+<h5 id="1425-afficher-des-lignes-selon-plusieurs-conditions">1.4.2.5) Afficher des lignes selon plusieurs conditions<a class="headerlink" href="#1425-afficher-des-lignes-selon-plusieurs-conditions" title="Permanent link">&para;</a></h5>
+<p>On ne peut pas utiliser des and, or et not dans les conditions de dataframe, il faut utiliser des conditions booléennes &amp; (and) , | (ou inclusif) ou ^ (ou exclusif)<br />
+exemple:<br />
+<div class="highlight"><pre><span></span><code><span class="n">dataframe_exercice</span><span class="p">[(</span><span class="n">dataframe_exercice</span><span class="p">[</span><span class="s2">&quot;note_math&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataframe_exercice</span><span class="p">[</span><span class="s2">&quot;note_francais&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)]</span>  
+</code></pre></div></p>
+<h5 id="1426-conditions-booleennes">1.4.2.6) Conditions booléennes<a class="headerlink" href="#1426-conditions-booleennes" title="Permanent link">&para;</a></h5>
+<blockquote>
+<p>[!important] <br />
+-     &amp; : ET - Toutes les conditions sont vraies<br />
+-    | : OU inclusif - Au moins une condition est vraie, voir toutes sont vraies<br />
+-     ^ : OU exclusif - Au moins est une condition est vraie, mais pas toutes ensemble   </p>
+</blockquote>
+<h5 id="1427-afficher-le-nombre-doccurences-dune-valeur">1.4.2.7) Afficher le nombre d'occurences d'une valeur<a class="headerlink" href="#1427-afficher-le-nombre-doccurences-dune-valeur" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="p">[</span><span class="s2">&quot;nom_colonne&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="143-premiere-lecture-des-donnees-dun-fichier">1.4.3) Première lecture des données d'un fichier<a class="headerlink" href="#143-premiere-lecture-des-donnees-dun-fichier" title="Permanent link">&para;</a></h4>
+<h5 id="1431-afficher-les-infos-globales">1.4.3.1) Afficher les infos globales<a class="headerlink" href="#1431-afficher-les-infos-globales" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>  
+</code></pre></div>
+<h5 id="1432-affiches-le-nombre-de-colonnes-et-de-lignes">1.4.3.2) Affiches le nombre de colonnes et de lignes<a class="headerlink" href="#1432-affiches-le-nombre-de-colonnes-et-de-lignes" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">shape</span>  
+</code></pre></div>
+<h5 id="1433-afficher-lordre-des-index">1.4.3.3) Afficher l'ordre des index<a class="headerlink" href="#1433-afficher-lordre-des-index" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">index</span>  
+</code></pre></div>
+<h5 id="1434-afficher-le-type-de-donnees-de-chaque-colonnes">1.4.3.4) Afficher le type de données de chaque colonnes<a class="headerlink" href="#1434-afficher-le-type-de-donnees-de-chaque-colonnes" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">dtype</span>  
+</code></pre></div>
+<h5 id="1435-afficher-lintitule-des-colonnes">1.4.3.5) Afficher l'intitulé des colonnes<a class="headerlink" href="#1435-afficher-lintitule-des-colonnes" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">columns</span>  
+</code></pre></div>
+pour n'obtenir que les valeurs: on rajoute .value  </p>
+<h5 id="1436-afficher-une-colonne-specifique">1.4.3.6) Afficher une colonne spécifique<a class="headerlink" href="#1436-afficher-une-colonne-specifique" title="Permanent link">&para;</a></h5>
+<p><div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="p">[</span><span class="s2">&quot;nom_colonne&quot;</span><span class="p">]</span>  
+</code></pre></div>
+ou<br />
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">nom_colonne</span>  
+</code></pre></div>
+pour plusieurs colonnes:<br />
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="p">[</span><span class="s2">&quot;nom_colonne&quot;</span><span class="p">](</span><span class="o">%</span><span class="mi">22</span><span class="n">nom_colonne</span><span class="o">%</span><span class="mf">22.</span><span class="n">md</span><span class="c1">#)  </span>
+</code></pre></div></p>
+<h5 id="1437-afficher-le-nombre-doccurence-des-valeurs">1.4.3.7) Afficher le nombre d'occurence des valeurs<a class="headerlink" href="#1437-afficher-le-nombre-doccurence-des-valeurs" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="p">[</span><span class="s1">&#39;nom_colonne&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_count</span><span class="p">()</span>  
+</code></pre></div>
+<h5 id="1438-afficher-des-valeurs-specifiques-avec-iloc">1.4.3.8) Afficher des valeurs spécifiques avec iloc<a class="headerlink" href="#1438-afficher-des-valeurs-specifiques-avec-iloc" title="Permanent link">&para;</a></h5>
+<p>pour afficher une ligne:  <br />
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index_ligne</span><span class="p">]</span>  
+</code></pre></div>
+pour afficher une valeur:<br />
+<div class="highlight"><pre><span></span><code><span class="n">nom_dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index_ligne</span><span class="p">,</span> <span class="n">numéro_colonne</span><span class="p">]</span>  
+</code></pre></div>
+ou<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;titre&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;valeur&quot;</span><span class="p">]</span>  
+</code></pre></div></p>
+<h5 id="1439-afficher-valeurs-selon-des-criteres">1.4.3.9) Afficher valeurs selon des critères<a class="headerlink" href="#1439-afficher-valeurs-selon-des-criteres" title="Permanent link">&para;</a></h5>
+<p>avec isin:<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">])]</span>  
+</code></pre></div>
+avec query:<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;position == &#39;A&#39;&quot;</span><span class="p">)</span>  
+</code></pre></div>
+Pour identifier plusieurs valeurs possibles<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;position in (&#39;A&#39;, &#39;S&#39;)&quot;</span><span class="p">)</span>  
+<span class="c1"># ou  </span>
+<span class="n">requete</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">]</span>  
+<span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;position in @requete&quot;</span><span class="p">)</span>  
+</code></pre></div>
+pour des critères basés sur des chaînes de caractères:<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s2">&quot;titre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;SO&quot;</span><span class="p">)</span>  
+</code></pre></div>
+ou<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s2">&quot;titre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;SO&quot;</span><span class="p">)</span>  
+</code></pre></div>
+Il est possible d'utiliser des chaînes regex<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s2">&quot;titre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;^SO|^AM&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+</code></pre></div></p>
+<h2 id="2-nettoyer-les-donnees">2) Nettoyer les données<a class="headerlink" href="#2-nettoyer-les-donnees" title="Permanent link">&para;</a></h2>
+<h3 id="21-identifier-les-valeurs-nulles">2.1) Identifier les valeurs nulles<a class="headerlink" href="#21-identifier-les-valeurs-nulles" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s2">&quot;titre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Il y a </span><span class="si">{</span><span class="n">valeurs_nulles</span><span class="si">}</span><span class="s2"> valeurs non-renseignées dans la colonne.&quot;</span><span class="p">)</span>  
+</code></pre></div>
+<h3 id="22-supprimer-les-colonnes-avec-plus-de-50-de-valeurs-nulles">2.2) Supprimer les colonnes avec plus de 50% de valeurs nulles<a class="headerlink" href="#22-supprimer-les-colonnes-avec-plus-de-50-de-valeurs-nulles" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">pourcentage_de_suppression</span> <span class="o">=</span> <span class="mi">50</span>  
+
+<span class="k">for</span> <span class="n">colonne</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>  
+    <span class="n">valeurs_nulles_par_colonne</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">colonne</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  
+    <span class="k">if</span> <span class="n">valeurs_nulles_par_colonne</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>  
+        <span class="n">pourcentage_valeur_vide</span> <span class="o">=</span> <span class="n">valeurs_nulles_par_colonne</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Il y a </span><span class="si">{</span><span class="n">valeurs_nulles_par_colonne</span><span class="si">}</span><span class="s2"> dans la colonne </span><span class="si">{</span><span class="n">colonne</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cela correspond à =============&gt; </span><span class="si">{</span><span class="n">pourcentage_valeur_vide</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%.&quot;</span><span class="p">)</span>  
+        <span class="k">if</span> <span class="n">pourcentage_valeur_vide</span> <span class="o">&gt;</span> <span class="n">pourcentage_de_suppression</span> <span class="p">:</span>  
+            <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">colonne</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>  
+</code></pre></div>
+<h3 id="23-remplacer-les-valeurs-manquantes-par-une-autre-valeur">2.3) Remplacer les valeurs manquantes par une autre valeur<a class="headerlink" href="#23-remplacer-les-valeurs-manquantes-par-une-autre-valeur" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;observation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;None&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;observation&quot;</span><span class="p">]</span>  
+</code></pre></div>
+<h3 id="24-convertir-des-types-de-donnees">2.4) Convertir des types de données<a class="headerlink" href="#24-convertir-des-types-de-donnees" title="Permanent link">&para;</a></h3>
+<p>convertir une colonne:<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s2">&quot;titre&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>pour plusieurs colonnes en même temps:<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;colonne1&quot;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span> <span class="s2">&quot;colonne2&quot;</span><span class="p">:</span><span class="nb">type</span><span class="p">})</span>  
+</code></pre></div></p>
+<p>pour les dates:<br />
+<div class="highlight"><pre><span></span><code><span class="n">to_datetime</span><span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="s1">&#39;titre&#39;</span><span class="p">],</span> <span class="n">error</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>  
+</code></pre></div></p>
+<h3 id="25-modifier-des-valeurs-specifiques">2.5) Modifier des valeurs spécifiques<a class="headerlink" href="#25-modifier-des-valeurs-specifiques" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;titre&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;valeur&#39;</span><span class="p">,</span> <span class="s1">&#39;titre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nouvelle_valeur&#39;</span>  
+</code></pre></div>
+pour plusieurs variables:<br />
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_publi&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0001-01-01&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;objet&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">)</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;date_publi&#39;</span><span class="p">,</span> <span class="s1">&#39;objet&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;Neant&#39;</span><span class="p">]</span>  
+</code></pre></div></p>
+<h2 id="3-manipulations-avancees-sur-les-dataframes">3) Manipulations avancées sur les DataFrames<a class="headerlink" href="#3-manipulations-avancees-sur-les-dataframes" title="Permanent link">&para;</a></h2>
+<h3 id="31-parcourir-les-lignes-des-donnees">3.1) Parcourir les lignes des données<a class="headerlink" href="#31-parcourir-les-lignes-des-donnees" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>  
+</code></pre></div>
+Cette méthode renvois 2 arguments: l'index et l'enregistrement de la ligne<br />
+Elle est généralement encapsulé dans une boucle for  </p>
+<h3 id="32-grouper-des-valeurs-pour-des-calculs-avance">3.2) Grouper des valeurs pour des calculs avancé<a class="headerlink" href="#32-grouper-des-valeurs-pour-des-calculs-avance" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">[</span><span class="s2">&quot;colonne1&quot;</span><span class="p">,</span> <span class="s2">&quot;colonne2&quot;</span><span class="p">]</span>  
+</code></pre></div>
+à utiliser avec .mean(), .sum(), .count()  ou .sort_values("colonne", ascending=False)  </p>
+<h2 id="4-convertir-un-fichier-ipynb-en-diapo">4) Convertir un fichier ipynb en diapo<a class="headerlink" href="#4-convertir-un-fichier-ipynb-en-diapo" title="Permanent link">&para;</a></h2>
+<p>On peut convertir une cellule en cellule de diapo<br />
+- diapo: navigation horizontale<br />
+- sous-diapo: navigation verticale en dessous de chaque diapo<br />
+- extrait: s'affiche juste en dessous de la diapo juste avant  </p>
+<p>On peut ensuite les convertir en slide avec "reveal js slides" dans Download as, dans fichier  </p>
+<h2 id="5-creer-et-executer-un-fichier-python-en-ligne-de-commande">5) Créer et executer un fichier python en ligne de commande<a class="headerlink" href="#5-creer-et-executer-un-fichier-python-en-ligne-de-commande" title="Permanent link">&para;</a></h2>
+<p>créer un fichier:<br />
+<div class="highlight"><pre><span></span><code>copy con instruction nom_fichier.py  
+</code></pre></div></p>
+<p>executer un fichier:<br />
+<div class="highlight"><pre><span></span><code>python nom_fichier.py  
+</code></pre></div></p>
+<h4 id="511-comparer-des-dates-et-nombre-de-jours">5.1.1) Comparer des dates et nombre de jours<a class="headerlink" href="#511-comparer-des-dates-et-nombre-de-jours" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;date_creation_JO&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">date</span><span class="p">())</span><span class="o">.</span><span class="n">days</span> <span class="o">&lt;=</span> <span class="mi">180</span>  
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1907 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/">
+      
+      
+        <link rel="next" href="../%F0%9F%93%8A%20Cours%20DataViz/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>📇 Cours python Bases de données - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-les-manieres-de-stocker-des-donnees" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📇 Cours python   Bases de données
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-les-manieres-de-stocker-des-donnees" class="md-nav__link">
+    1) Les manières de stocker des données
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-etude-de-cas-conception-base-de-donnees" class="md-nav__link">
+    2) Etude de cas conception base de données
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Etude de cas conception base de données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-vocabulaire" class="md-nav__link">
+    2.1) Vocabulaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-utilisation-de-looping" class="md-nav__link">
+    2.2) Utilisation de looping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-la-normalisation-des-donnees" class="md-nav__link">
+    2.3) La normalisation des données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sqlite" class="md-nav__link">
+    3) SQLite
+  </a>
+  
+    <nav class="md-nav" aria-label="3) SQLite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-creation-dune-base-de-donnees-avec-sqlite" class="md-nav__link">
+    3.1) Création d'une base de données avec SQLite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-sur-letude-de-cas" class="md-nav__link">
+    3.2) Sur l'étude de cas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-utilisation-sous-python" class="md-nav__link">
+    3.3) Utilisation sous python
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3) Utilisation sous python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-creation-dune-base-de-donnees" class="md-nav__link">
+    3.3.1) Création d'une base de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-inserer-des-donnees-dans-la-base" class="md-nav__link">
+    3.3.2) Insérer des données dans la base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-afficher-des-donnees" class="md-nav__link">
+    3.3.3) Afficher des données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334-creation-de-triggers" class="md-nav__link">
+    3.3.4) Création de triggers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335-code-qui-creer-la-base-la-table-et-les-donnees-par-des-inputs" class="md-nav__link">
+    3.3.5) Code qui créer la base, la table et les données par des inputs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-les-manieres-de-stocker-des-donnees" class="md-nav__link">
+    1) Les manières de stocker des données
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-etude-de-cas-conception-base-de-donnees" class="md-nav__link">
+    2) Etude de cas conception base de données
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Etude de cas conception base de données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-vocabulaire" class="md-nav__link">
+    2.1) Vocabulaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-utilisation-de-looping" class="md-nav__link">
+    2.2) Utilisation de looping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-la-normalisation-des-donnees" class="md-nav__link">
+    2.3) La normalisation des données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sqlite" class="md-nav__link">
+    3) SQLite
+  </a>
+  
+    <nav class="md-nav" aria-label="3) SQLite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-creation-dune-base-de-donnees-avec-sqlite" class="md-nav__link">
+    3.1) Création d'une base de données avec SQLite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-sur-letude-de-cas" class="md-nav__link">
+    3.2) Sur l'étude de cas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-utilisation-sous-python" class="md-nav__link">
+    3.3) Utilisation sous python
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3) Utilisation sous python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-creation-dune-base-de-donnees" class="md-nav__link">
+    3.3.1) Création d'une base de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-inserer-des-donnees-dans-la-base" class="md-nav__link">
+    3.3.2) Insérer des données dans la base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-afficher-des-donnees" class="md-nav__link">
+    3.3.3) Afficher des données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334-creation-de-triggers" class="md-nav__link">
+    3.3.4) Création de triggers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335-code-qui-creer-la-base-la-table-et-les-donnees-par-des-inputs" class="md-nav__link">
+    3.3.5) Code qui créer la base, la table et les données par des inputs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>📇 Cours python   Bases de données</h1>
+
+<p><a href="./Cours%20python.md#">Cours python</a>  </p>
+<hr />
+<p>diaporama du cours : <a href="../image/Python%20et%20base%20de%20donn%C3%A9es.pdf#">Python et base de données.pdf</a>  </p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h2 id="1-les-manieres-de-stocker-des-donnees">1) Les manières de stocker des données<a class="headerlink" href="#1-les-manieres-de-stocker-des-donnees" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fichiers  <ul>
+<li>fichiers tableurs  </li>
+<li>fichiers textes  </li>
+<li>fichiers binaire (SQLite)  </li>
+</ul>
+</li>
+<li>Base de données ( propriétaires: SQLServer, Oracle, DB2; ou libres de droits: MySQL, PostGreSQL, Maria DB)  <ul>
+<li>SGBDR (relationnels)  </li>
+<li>NoSQL (non relationnelles)  </li>
+</ul>
+</li>
+<li>BDD Online  <ul>
+<li>Microsoft Azure / dataverse  </li>
+<li>Amazon : AWS  </li>
+<li>Facebook : Cassandra  </li>
+<li>Google : Firebase  </li>
+</ul>
+</li>
+</ul>
+<p>Pour gérer des bases de données que l'on ne connaît pas et créer les schémas des tables: DBeaver et DBschema  </p>
+<h2 id="2-etude-de-cas-conception-base-de-donnees">2) Etude de cas conception base de données<a class="headerlink" href="#2-etude-de-cas-conception-base-de-donnees" title="Permanent link">&para;</a></h2>
+<p>objectif : <a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_entit%C3%A9-association">concevoir un modèle conceptuel de données</a> + un dictionnaire des données<br />
+méthode : <a href="https://fr.wikipedia.org/wiki/Merise_(informatique)">MERISE</a><br />
+logiciel : <a href="https://www.looping-mcd.fr/">Looping</a>  </p>
+<h3 id="21-vocabulaire">2.1) Vocabulaire<a class="headerlink" href="#21-vocabulaire" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>UML</strong> : formalisme permettant notamment de formaliser un SGBD (Système de Gestion de base de données)  </li>
+<li><strong>MERISE</strong> : méthode pour formaliser un système d'information. notamment les données à travers plusieurs schémas dont les MCO. MLO. MP O. Le vocabulaire pour un MCD est suivant est utilisé :  <ul>
+<li><strong>entité</strong> : composant d'une base de données. Une entité est un nom commun. elle est unique, écrit en minuscule. au pluriel. sans signe diacritique et sans espace.  </li>
+<li><strong>association</strong> : relation entre 2 entités. une association est un verbe à l'infinitif écrit en minuscule.  </li>
+<li><strong>schéma entité association</strong> : représentation graphique  </li>
+<li><strong>attribut</strong> : propriétés d'une entité.  <ul>
+<li>Exemple : entité personne peut avoir comme attribut : nom. prenom  </li>
+</ul>
+</li>
+<li><strong>clé</strong> : attribut particulier identifiant de façon unique les propriété d'une entité une clé peut etre unique (une seule propriété) ou composée (plusieurs propriétés).  </li>
+<li><strong>occurrence</strong> : données contenues dans une entité.  </li>
+<li><strong>cardinalité</strong> : nombre d'entités reliées entre elles par une association.  <ul>
+<li>Exemple :  <ul>
+<li>une personne (entité)  </li>
+<li>possède (association)  </li>
+<li>aucun ou plusieurs (cardinalité)  </li>
+<li>animaux (entité)  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Dépendance fonctionnelle</strong> : à partir d'une valeur ou plusieurs valeurs, j'ai accès à une et une seule valeur.  <ul>
+<li>Exemple :  <ul>
+<li>dépendance élémentaire : à partir d'un no de sécurité sociale, j'ai accès à un seul individu  </li>
+<li>dépendance non élémentaire : à partir d'un code produit et d'une quantité, j'ai accès au montant  </li>
+</ul>
+</li>
+<li>Il est possible de représenter ces dépendances avec un <strong>graphe de couverture</strong> minimum.  </li>
+</ul>
+</li>
+</ul>
+<h3 id="22-utilisation-de-looping">2.2) Utilisation de looping<a class="headerlink" href="#22-utilisation-de-looping" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Création d'un nouveau fichier  </li>
+<li>Création d'entités  <ul>
+<li>nom : en minuscule, au pluriel  </li>
+<li>création de champs/variable  <ul>
+<li>nom  </li>
+<li>type  </li>
+<li>clé primaire (1) : généralement id_<em>nomd'identifiant</em>   </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>On peut cliquer sur scripts SQL tout à droite pour afficher le code correspondant  <ul>
+<li>attention, il ne doit pas y avoir d'entité vides  </li>
+</ul>
+</li>
+<li>Création d'associations, en cliquant sur lien et en faisant glisser  </li>
+<li>double-cliquer pour modifier l'association  <ul>
+<li>nom = verbe d'action  </li>
+<li>cardinalité (règles)  <ul>
+<li>de l'entité vers l'autre entité en passant vers le verbe d'action, avec la cardinalité la plus proche de l'entité d'origine  </li>
+<li>0,1 : un apprenant peut suivre 0 ou 1 formation  </li>
+<li>1,1 : un apprenant peut suivre 1 seule formation  </li>
+<li>0,n : un apprenant peut suivre 0 ou plusieurs formations  </li>
+<li>1,n : un apprenant peut suivre 1 ou plusieurs formations  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Création de règles possible pour completer les liens, mais alourdit la lecture  </li>
+<li>Affichage du Scripts SQL, du MLD textuel  </li>
+</ul>
+<h3 id="23-la-normalisation-des-donnees">2.3) La normalisation des données<a class="headerlink" href="#23-la-normalisation-des-donnees" title="Permanent link">&para;</a></h3>
+<p><u>objectifs : </u><br />
+- eviter les redondances<br />
+- avoir une base de connaissance cohérentes<br />
+- faciliter les mises à jour  </p>
+<p>2 entités qui ont les mêmes attributs doivent être fusionné -&gt; association réflexive<br />
+<img alt="image - Bases de données avec python-1.png" src="../../image/image%20-%20Bases%20de%20donn%C3%A9es%20avec%20python-1.png" /><br />
+<img alt="image - Bases de données avec python-2.png" src="../../image/image%20-%20Bases%20de%20donn%C3%A9es%20avec%20python-2.png" />  </p>
+<h2 id="3-sqlite">3) SQLite<a class="headerlink" href="#3-sqlite" title="Permanent link">&para;</a></h2>
+<ul>
+<li>intégré de base à Python  </li>
+<li>système de base de données open source léger  </li>
+<li>librairie  </li>
+<li>système de commande en ligne  </li>
+<li>5 type de données + sous-types  <ul>
+<li>null  </li>
+<li>int  </li>
+<li>real  </li>
+<li>text  </li>
+<li>blob  </li>
+</ul>
+</li>
+</ul>
+<h3 id="31-creation-dune-base-de-donnees-avec-sqlite">3.1) Création d'une base de données avec SQLite<a class="headerlink" href="#31-creation-dune-base-de-donnees-avec-sqlite" title="Permanent link">&para;</a></h3>
+<ol>
+<li>connexion si elle existe, creation sinon  </li>
+<li>création table et champs  </li>
+<li>transmet ces informations (commit)  </li>
+<li>ferme la table  </li>
+</ol>
+<p>tutoriel : <a href="https://www.sqlitetutorial.net/">SQLite Tutorial - An Easy Way to Master SQLite Fast</a>  </p>
+<h3 id="32-sur-letude-de-cas">3.2) Sur l'étude de cas<a class="headerlink" href="#32-sur-letude-de-cas" title="Permanent link">&para;</a></h3>
+<p>Avec DB browser:<br />
+1. creation d'une base<br />
+2. copier-coller le code depuis looping<br />
+3. modifier certains champs : clés, bytes<br />
+    - bien vérifier 1 table = 1 clé primaire sauf les tables de liaison verbe<br />
+4. écrire des données en faisant attention au sens d'écriture (sans clés étrangères en premier)<br />
+5. écrire des déclencheurs (triggers) pour les mails  </p>
+<h3 id="33-utilisation-sous-python">3.3) Utilisation sous python<a class="headerlink" href="#33-utilisation-sous-python" title="Permanent link">&para;</a></h3>
+<p><img alt="500|center" src="../../image/Sch%C3%A9ma%20SQLite%20sous%20python.excalidraw.svg" />  </p>
+<h4 id="331-creation-dune-base-de-donnees">3.3.1) Création d'une base de données<a class="headerlink" href="#331-creation-dune-base-de-donnees" title="Permanent link">&para;</a></h4>
+<p>Import SQLite3:<br />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlite3</span>  
+</code></pre></div></p>
+<p>Sous forme de fichier:<br />
+<div class="highlight"><pre><span></span><code><span class="n">connexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;mabase.db&quot;</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>Sous forme de base de donnée en mémoire:<br />
+<div class="highlight"><pre><span></span><code><span class="n">connexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>Les deux permettent à la fois de se connecter ou de créer une base.<br />
+La base est crée au même niveau que le fichier de code.  </p>
+<p>Pour réaliser des actions, il faut un curseur, un objet qui me permettre de réaliser des actions:<br />
+<div class="highlight"><pre><span></span><code><span class="n">curseur</span> <span class="o">=</span> <span class="n">connexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>  
+</code></pre></div></p>
+<p>On peut ensuite créer des tables et des champs avec:<br />
+<div class="highlight"><pre><span></span><code><span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;  </span>
+<span class="s2">    CREATE TABLE intervenants (  </span>
+<span class="s2">    prenom_bdd text,  </span>
+<span class="s2">    nom_bdd text,  </span>
+<span class="s2">    mail_bdd text  </span>
+<span class="s2">    )  </span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>  
+</code></pre></div>
+<em>les docstrings servent à plus de lisibilité en étendant sur plusieurs lignes</em>  </p>
+<p><strong><font color="#76923c"> Bonne pratique </font></strong> : créer une variables pour toute requête<br />
+<div class="highlight"><pre><span></span><code><span class="n">table_intervenants</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;  </span>
+<span class="s2">                CREATE TABLE intervenants (  </span>
+<span class="s2">                    prenom_bdd text,  </span>
+<span class="s2">                    nom_bdd text,  </span>
+<span class="s2">                    mail_bdd text  </span>
+<span class="s2">                )  </span>
+<span class="s2">                &quot;&quot;&quot;</span>  
+<span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">table_intervenants</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>On peut ensuite envoyer les infos à la base et la fermer:<br />
+<div class="highlight"><pre><span></span><code><span class="n">connexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>  
+<span class="n">connexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  
+</code></pre></div></p>
+<p>Pour éviter d'écraser une base, on ajoute une instruction qui ne crée la base que si elle n'existe pas déja:<br />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>  
+<span class="kn">import</span> <span class="nn">sqlite3</span>  
+<span class="k">def</span> <span class="nf">f_creerLaBaseDeDonnees</span><span class="p">():</span>  
+   <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;base_intervenants.db&#39;</span><span class="p">):</span>  
+       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;la base existe déjà.&quot;</span><span class="p">)</span>  
+   <span class="k">else</span> <span class="p">:</span>  
+       <span class="n">connexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;base_intervenants.db&quot;</span><span class="p">)</span>  
+       <span class="n">curseur</span> <span class="o">=</span> <span class="n">connexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>  
+       <span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;  </span>
+<span class="s2">               …….  </span>
+</code></pre></div></p>
+<h4 id="332-inserer-des-donnees-dans-la-base">3.3.2) Insérer des données dans la base<a class="headerlink" href="#332-inserer-des-donnees-dans-la-base" title="Permanent link">&para;</a></h4>
+<p>On utilise aussi le curseur:<br />
+<div class="highlight"><pre><span></span><code><span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;  </span>
+<span class="s2">      INSERT INTO intervenants VALUES (  </span>
+<span class="s2">      &#39;Jean-Lou&#39;, &#39;Le Bars&#39;, &#39;jllebars@gmail.com&#39;  </span>
+<span class="s2">)  </span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>  
+</code></pre></div>
+ceci est sous forme de tupple  </p>
+<p>Pour le faire sous forme de liste:<br />
+<div class="highlight"><pre><span></span><code><span class="n">liste_intervenants</span> <span class="o">=</span> <span class="p">[</span>  
+     <span class="p">(</span><span class="s1">&#39;Harris&#39;</span><span class="p">,</span> <span class="s1">&#39;Tote&#39;</span><span class="p">,</span> <span class="s1">&#39;h.tote@hotmail.com&#39;</span><span class="p">),</span>  
+     <span class="p">(</span><span class="s1">&#39;Eva&#39;</span><span class="p">,</span> <span class="s1">&#39;Nouie&#39;</span><span class="p">,</span> <span class="s1">&#39;e.nouie@gmail.com&#39;</span><span class="p">),</span>  
+     <span class="p">(</span><span class="s1">&#39;Tugudule&#39;</span><span class="p">,</span> <span class="s1">&#39;Niguedouille&#39;</span><span class="p">,</span> <span class="s1">&#39;t.niguedouille@wanadoo.fr&#39;</span><span class="p">)</span>  
+               <span class="p">]</span>  
+<span class="n">curseur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s2">&quot;INSERT INTO intervenants VALUES(?,?,?)&quot;</span><span class="p">,</span> <span class="n">liste_intervenants</span><span class="p">)</span>  
+</code></pre></div></p>
+<h4 id="333-afficher-des-donnees">3.3.3) Afficher des données<a class="headerlink" href="#333-afficher-des-donnees" title="Permanent link">&para;</a></h4>
+<p>On sélectionne les données puis on les affiche:<br />
+<div class="highlight"><pre><span></span><code><span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM intervenants&quot;</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">curseur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>  
+</code></pre></div></p>
+<p>On peut stocker la selection dans une variable:<br />
+<div class="highlight"><pre><span></span><code><span class="n">liste_intervenants</span> <span class="o">=</span> <span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM intervenants&quot;</span><span class="p">)</span>  
+  <span class="k">for</span> <span class="n">intervenant</span> <span class="ow">in</span> <span class="n">liste_intervenants</span><span class="p">:</span>  
+     <span class="nb">print</span><span class="p">(</span><span class="n">intervenant</span><span class="p">)</span>  
+</code></pre></div></p>
+<h4 id="334-creation-de-triggers">3.3.4) Création de triggers<a class="headerlink" href="#334-creation-de-triggers" title="Permanent link">&para;</a></h4>
+<p>Instruction SQL qui permet de vérifier des données ou de manipuler des données  </p>
+<p>exemple de trigger:<br />
+<div class="highlight"><pre><span></span><code><span class="n">trigger_forme</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;  </span>
+<span class="s2">                CREATE TRIGGER IF NOT EXISTS verification_forme  </span>
+<span class="s2">                BEFORE INSERT ON casseroles  </span>
+<span class="s2">                FOR EACH ROW  </span>
+<span class="s2">                    WHEN NEW.forme NOT IN (&#39;russe&#39;, &#39;sauteuse&#39;)  </span>
+<span class="s2">                    BEGIN  </span>
+<span class="s2">                        SELECT RAISE(ABORT, &#39;Seules les valeurs russe et sauteuse sont acceptées pour le champ forme&#39;);  </span>
+<span class="s2">                    END;  </span>
+<span class="s2">                &quot;&quot;&quot;</span>  
+<span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">trigger_forme</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>Pour avoir une saisie de données avec erreur bien formaté:<br />
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">inserer_produits_avec_verification</span><span class="p">()</span> <span class="p">:</span>  
+
+    <span class="n">marque</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quelle est la marque : &quot;</span><span class="p">)</span>  
+    <span class="n">taille</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quelle est la taille : &quot;</span><span class="p">)</span>  
+    <span class="n">forme</span> <span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quelle est la forme : &quot;</span><span class="p">)</span>  
+    <span class="n">induction</span> <span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Est-elle à induction (0 = non ; 1 = oui) : &quot;</span><span class="p">))</span>  
+    <span class="n">materiau</span> <span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quelle est son matériau : &quot;</span><span class="p">)</span>  
+    <span class="n">manche</span> <span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quelle est la matière de son manche : &quot;</span><span class="p">)</span>  
+    <span class="n">four</span> <span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Peut-on la mettre au four (0 = non ; 1 = oui) : &quot;</span><span class="p">))</span>  
+    <span class="n">revetement</span> <span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel est son revetement : &quot;</span><span class="p">)</span>  
+
+    <span class="n">reponse</span> <span class="o">=</span> <span class="p">[</span><span class="n">marque</span><span class="p">,</span> <span class="n">taille</span><span class="p">,</span> <span class="n">forme</span><span class="p">,</span> <span class="n">induction</span><span class="p">,</span> <span class="n">materiau</span><span class="p">,</span> <span class="n">manche</span><span class="p">,</span> <span class="n">four</span><span class="p">,</span> <span class="n">revetement</span><span class="p">]</span>  
+
+    <span class="k">return</span> <span class="n">reponse</span>  
+
+<span class="n">encore_une_saisie</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span>  
+
+<span class="k">while</span> <span class="n">encore_une_saisie</span> <span class="o">!=</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>   
+
+    <span class="n">saisie_produits</span> <span class="o">=</span> <span class="n">inserer_produits_avec_verification</span><span class="p">()</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="n">saisie_produits</span><span class="p">)</span>  
+
+    <span class="k">try</span> <span class="p">:</span>   
+        <span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO casseroles VALUES(?,?,?,?,?,?,?,?)&quot;</span><span class="p">,</span> <span class="n">saisie_produits</span><span class="p">)</span>  
+    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">IntegrityError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>  
+
+    <span class="n">encore_une_saisie</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Voulez-vous continuer (o/n)&quot;</span><span class="p">)</span>  
+</code></pre></div></p>
+<h4 id="335-code-qui-creer-la-base-la-table-et-les-donnees-par-des-inputs">3.3.5) Code qui créer la base, la table et les données par des inputs<a class="headerlink" href="#335-code-qui-creer-la-base-la-table-et-les-donnees-par-des-inputs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlite3</span>  
+<span class="kn">import</span> <span class="nn">os</span>  
+
+<span class="k">def</span> <span class="nf">creer_bdd</span><span class="p">(</span><span class="n">bdd</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;str&quot;</span><span class="p">:</span>  
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  </span>
+<span class="sd">    :name : creer_bdd  </span>
+<span class="sd">    :param : nom de la base de données sans extension  </span>
+<span class="sd">    :return : soit la base de données, soit un message d&#39;erreur.  </span>
+<span class="sd">    :desc : création du nom de la base de données puis tests la création / l&#39;existence de la base de données.  </span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+    <span class="n">nom_bdd</span> <span class="o">=</span> <span class="n">bdd</span> <span class="o">+</span> <span class="s2">&quot;.db&quot;</span>  
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;============== REQUETE POUR LA CREATION DE LA BASE =======================&quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le nom de la base de données est :  </span><span class="si">{</span><span class="n">nom_bdd</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==========================================================================&quot;</span><span class="p">)</span>  
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">nom_bdd</span><span class="p">):</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La base de données </span><span class="si">{</span><span class="n">nom_bdd</span><span class="si">}</span><span class="s2"> existe DEJA.&quot;</span><span class="p">)</span>  
+        <span class="k">return</span> <span class="n">nom_bdd</span>  
+    <span class="k">else</span> <span class="p">:</span>   
+        <span class="k">try</span> <span class="p">:</span>  
+            <span class="n">connexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">nom_bdd</span><span class="p">)</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La base de donnée &#39;</span><span class="si">{</span><span class="n">nom_bdd</span><span class="si">}</span><span class="s2">&#39; a BIEN été créée.&quot;</span><span class="p">)</span>  
+            <span class="n">connexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  
+            <span class="k">return</span> <span class="n">nom_bdd</span>  
+        <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Il y a eu un souci : </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">se_connecter</span><span class="p">(</span><span class="n">bdd</span><span class="p">,</span> <span class="n">requete</span><span class="p">):</span>  
+    <span class="n">connexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">bdd</span><span class="p">)</span>  
+    <span class="n">curseur</span> <span class="o">=</span> <span class="n">connexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>  
+    <span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">requete</span><span class="p">)</span>  
+    <span class="n">connexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>  
+    <span class="n">curseur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  
+    <span class="n">connexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  
+
+<span class="k">def</span> <span class="nf">creer_table</span><span class="p">(</span><span class="n">bdd</span><span class="p">,</span> <span class="n">name_table</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span>  
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  </span>
+<span class="sd">    :name : creer_table  </span>
+<span class="sd">    :param : la base de données, la table  </span>
+<span class="sd">    :return : un message indiquant si la table a bien été créée ou pas.  </span>
+<span class="sd">    :desc : je créé la requête de création d&#39;une table. J&#39;y intègre aussi un chmp id et date  </span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+    <span class="n">requete_creation_table</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;CREATE TABLE </span><span class="si">{</span><span class="n">name_table</span><span class="si">}</span><span class="s2"> \  </span>
+                <span class="p">(</span><span class="nb">id</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span> \  
+                 <span class="n">date</span> <span class="n">DATETIME</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">DEFAULT</span> <span class="p">(</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span> <span class="s1">&#39;now&#39;</span><span class="p">,</span> <span class="s1">&#39;localtime&#39;</span><span class="p">)));</span><span class="s2">&quot;  </span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;============== REQUETE POUR LA CREATION DE LA TABLE =======================&quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===========================================================================&quot;</span><span class="p">)</span>  
+    <span class="k">try</span><span class="p">:</span>  
+        <span class="n">se_connecter</span><span class="p">(</span><span class="n">bdd</span><span class="p">,</span> <span class="n">requete_creation_table</span><span class="p">)</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La table &#39;</span><span class="si">{</span><span class="n">name_table</span><span class="si">}</span><span class="s2">&#39; a bien été créée.&quot;</span><span class="p">)</span>  
+    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERREUR: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">creer_champs</span><span class="p">(</span><span class="n">bdd</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">champs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Affichage des champs de la table&quot;</span><span class="p">:</span>  
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  </span>
+<span class="sd">    :name : creer_champs  </span>
+<span class="sd">    :param : la base de données, la table, le/les champs sous forme de liste  </span>
+<span class="sd">    :return : un message indiquant si la / les champs ont bien été créés.  </span>
+<span class="sd">    :desc : je modifie les colonnes de la base de données avec le / les intitulés de la liste  </span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;============== REQUETE POUR LA CREATION DES CHAMPS =======================&quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==========================================================================&quot;</span><span class="p">)</span>  
+
+    <span class="k">for</span> <span class="n">champ</span> <span class="ow">in</span> <span class="n">champs</span><span class="p">:</span>  
+        <span class="n">requete_creation_champs</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ALTER TABLE </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2"> ADD COLUMN </span><span class="si">{</span><span class="n">champ</span><span class="si">}</span><span class="s2">;&quot;</span>  
+        <span class="k">try</span><span class="p">:</span>  
+            <span class="n">se_connecter</span><span class="p">(</span><span class="n">bdd</span><span class="p">,</span> <span class="n">requete_creation_champs</span><span class="p">)</span>  
+        <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+            <span class="k">raise</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERREUR: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Les champs </span><span class="si">{</span><span class="n">champs</span><span class="si">}</span><span class="s2"> de la base de données ont bien été ajoutés.&quot;</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">enregistrer_donnees</span><span class="p">(</span><span class="n">bdd</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">champs</span><span class="p">,</span> <span class="n">donnees</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Enregistrer les données la base de données&quot;</span><span class="p">:</span>  
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  </span>
+<span class="sd">    :name : enregistrer_donnees  </span>
+<span class="sd">    :param : la base de données, la table, le/les champs, les données  </span>
+<span class="sd">    :return : un message indiquant si les données ont bien été enregistrées.  </span>
+<span class="sd">    :desc : les données des listes champs et table sont converties en chaîne de caractères séparées par des virgules.  </span>
+<span class="sd">            Les données doivent être entourées de &#39; &#39;.  </span>
+<span class="sd">    &quot;&quot;&quot;</span>  
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;============== REQUETE L&#39;AJOUT D&#39;UNE DONNE ===============================&quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==========================================================================&quot;</span><span class="p">)</span>  
+    <span class="c1"># Je convertis les champs qui sont sous forme de liste en suite de caractères séparés par des ,  </span>
+    <span class="n">liste_des_champs</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">champs</span><span class="p">)</span>  
+
+    <span class="c1"># Je convertis les données qui sont sous forme de liste en suite de caractère.  </span>
+    <span class="c1"># ATTENTION : les valeurs de VALUES sont de la forme (&#39;val1&#39;, &#39;Val2&#39;). Je dois donc rajouter des &#39;  </span>
+    <span class="k">for</span> <span class="n">donnee</span> <span class="ow">in</span> <span class="n">donnees</span> <span class="p">:</span>  
+        <span class="n">liste_des_valeurs</span> <span class="o">=</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="s2">&quot;&#39;,&#39;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">donnee</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span>  
+
+    <span class="n">requete_enregistrement_donnees</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;INSERT INTO </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">liste_des_champs</span><span class="si">}</span><span class="s2">) VALUES (</span><span class="si">{</span><span class="n">liste_des_valeurs</span><span class="si">}</span><span class="s2">)&quot;</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="n">requete_enregistrement_donnees</span><span class="p">)</span>  
+
+    <span class="k">try</span><span class="p">:</span>  
+        <span class="n">se_connecter</span><span class="p">(</span><span class="n">bdd</span><span class="p">,</span> <span class="n">requete_enregistrement_donnees</span><span class="p">)</span>  
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Les données ont été enregistrées.&quot;</span><span class="p">)</span>  
+    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERREUR: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>  
+
+    <span class="c1"># CREATION DE LA BASE DE DONNEES  </span>
+    <span class="n">nom_bdd</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel est le NOM de la BASE DE DONNEES : &quot;</span><span class="p">)</span>  
+    <span class="n">BASE_DE_DONNEES</span> <span class="o">=</span> <span class="n">creer_bdd</span><span class="p">(</span><span class="n">nom_bdd</span><span class="p">)</span>  
+
+    <span class="c1"># CREATION DE LA TABLE  </span>
+    <span class="n">nom_table</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel est le NOM de la TABLE : &quot;</span><span class="p">)</span>  
+
+    <span class="n">creer_table</span><span class="p">(</span><span class="n">BASE_DE_DONNEES</span><span class="p">,</span> <span class="n">nom_table</span><span class="p">)</span>  
+
+    <span class="c1"># CREATION DES CHAMPS  </span>
+    <span class="n">liste_des_champs</span> <span class="o">=</span> <span class="p">[]</span>  
+    <span class="n">encore_champs</span> <span class="o">=</span> <span class="kc">True</span>  
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vous allez créer les CHAMPS de la base de données.&quot;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pour arrêter de saisir les champs, appuyer sur  &gt;&gt; Entrée &lt;&lt; sans entrer de données.&quot;</span><span class="p">)</span>  
+    <span class="n">numero</span> <span class="o">=</span> <span class="mi">1</span>  
+    <span class="k">while</span> <span class="n">encore_champs</span> <span class="p">:</span>  
+        <span class="n">champ_nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;=====&gt;   CHAMP n°</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> : &quot;</span><span class="p">)</span>  
+        <span class="k">if</span> <span class="n">champ_nom</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>  
+            <span class="n">encore_champs</span> <span class="o">=</span> <span class="kc">False</span>  
+        <span class="k">else</span><span class="p">:</span>  
+            <span class="k">if</span> <span class="s2">&quot; &quot;</span> <span class="ow">in</span> <span class="n">champ_nom</span> <span class="p">:</span>  
+                <span class="n">champ_nom</span> <span class="o">=</span> <span class="n">champ_nom</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>  
+            <span class="n">liste_des_champs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">champ_nom</span><span class="p">)</span>  
+            <span class="n">numero</span> <span class="o">+=</span> <span class="mi">1</span>  
+
+    <span class="n">creer_champs</span><span class="p">(</span><span class="n">BASE_DE_DONNEES</span><span class="p">,</span> <span class="n">nom_table</span><span class="p">,</span> <span class="n">liste_des_champs</span><span class="p">)</span>  
+
+    <span class="c1"># INSERTION DES DONNEES  </span>
+    <span class="n">encore_donnees</span> <span class="o">=</span> <span class="kc">True</span>  
+    <span class="n">liste_des_donnees</span> <span class="o">=</span> <span class="p">[]</span>  
+
+    <span class="k">while</span> <span class="n">encore_donnees</span><span class="p">:</span>  
+        <span class="n">ajouter_des_donnees</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prêt à ajouter les DONNEES (o/n) : &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  
+
+        <span class="k">if</span> <span class="n">ajouter_des_donnees</span> <span class="o">==</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span>  
+            <span class="n">ligne</span> <span class="o">=</span> <span class="p">[]</span>  
+            <span class="k">for</span> <span class="n">champ</span> <span class="ow">in</span> <span class="n">liste_des_champs</span> <span class="p">:</span>  
+                <span class="n">information</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quelle est votre DONNEE pour le champ </span><span class="si">{</span><span class="n">champ</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> : &quot;</span><span class="p">)</span>  
+                <span class="n">ligne</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">information</span><span class="p">)</span>  
+            <span class="k">if</span> <span class="n">ligne</span><span class="p">:</span>  
+                <span class="n">liste_des_donnees</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>  
+            <span class="n">enregistrer_donnees</span><span class="p">(</span><span class="n">BASE_DE_DONNEES</span><span class="p">,</span> <span class="n">nom_table</span><span class="p">,</span> <span class="n">liste_des_champs</span><span class="p">,</span> <span class="n">liste_des_donnees</span><span class="p">)</span>  
+        <span class="k">else</span> <span class="p">:</span>  
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin de la saisie des données.&quot;</span><span class="p">)</span>  
+            <span class="n">encore_donnees</span> <span class="o">=</span> <span class="kc">False</span>  
+</code></pre></div>
+<p>%%<br />
+parent:: <a href="../image/Python%20et%20base%20de%20donn%C3%A9es.pdf#">Python et base de données.pdf</a><br />
+exemple:: <a href="Bases%20de%20donn%C3%A9es%20avec%20python-1.png#">Bases de données avec python-1.png</a>, <a href="Bases%20de%20donn%C3%A9es%20avec%20python-2.png#">Bases de données avec python-2.png</a>, <a href="../../Sch%C3%A9ma%20SQLite%20sous%20python.excalidraw.md#">Schéma SQLite sous python.excalidraw</a><br />
+précédent:: <a href="./Cours%20python.md#">Cours python</a><br />
+%%</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

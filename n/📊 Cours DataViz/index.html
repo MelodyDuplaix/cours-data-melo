@@ -1,0 +1,2026 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/">
+      
+      
+        <link rel="next" href="../%F0%9F%93%91%20Cours%20Excel/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>📊 Cours DataViz - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-apprendre-a-decomposer-une-visualisation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📊 Cours DataViz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-apprendre-a-decomposer-une-visualisation" class="md-nav__link">
+    1) Apprendre à décomposer une visualisation
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Apprendre à décomposer une visualisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-semiologie-graphique" class="md-nav__link">
+    1.1) Sémiologie graphique
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1) Sémiologie graphique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-composants" class="md-nav__link">
+    1.1.1) Composants
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vocabulaire" class="md-nav__link">
+    2) Vocabulaire
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Vocabulaire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-le-mapping" class="md-nav__link">
+    2.1.1) Le Mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proprietes-graphiques" class="md-nav__link">
+    3) propriétés graphiques
+  </a>
+  
+    <nav class="md-nav" aria-label="3) propriétés graphiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-types-de-donnees" class="md-nav__link">
+    3.1) types de données :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-types-de-graphiques" class="md-nav__link">
+    4) Types de graphiques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-regles-de-bases" class="md-nav__link">
+    5) Règles de bases
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Règles de bases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-exercice-pratique" class="md-nav__link">
+    5.1) Exercice pratique
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1) Exercice pratique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-critiques-et-points-positives" class="md-nav__link">
+    5.1.1) Critiques et points positives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-quel-est-le-message" class="md-nav__link">
+    5.1.2) Quel est le message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-a-qui-est-elle-destinee" class="md-nav__link">
+    5.1.3) A qui est-elle destinée ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-les-differents-composants" class="md-nav__link">
+    5.1.4) Les différents composants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515-alternative-au-graphique" class="md-nav__link">
+    5.1.5) Alternative au graphique
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-construire-une-dataviz-pertinente" class="md-nav__link">
+    6) Construire une dataviz pertinente
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Construire une dataviz pertinente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-methodologie-dune-dataviz" class="md-nav__link">
+    6.1) Méthodologie d'une dataviz
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1) Méthodologie d'une dataviz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-cadrer" class="md-nav__link">
+    6.1.1) Cadrer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-lapproche-five-design-sheet" class="md-nav__link">
+    6.2) L'approche Five design Sheet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-application" class="md-nav__link">
+    6.3) Application
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3) Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-identifier-un-probleme" class="md-nav__link">
+    6.3.1) Identifier un problème
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632-imaginer-un-cas-dapplications-avec-les-5-w" class="md-nav__link">
+    6.3.2) Imaginer  un cas d'applications avec les 5 W
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633-elaborer-une-maquette-avec-la-methode-des-fds" class="md-nav__link">
+    6.3.3) Elaborer une maquette avec la méthode des FDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-manipuler-son-auditoire-ou-ne-pas-commettre-des-erreurs" class="md-nav__link">
+    7) Manipuler son auditoire ou ne pas commettre des erreurs
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Manipuler son auditoire ou ne pas commettre des erreurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-les-erreurs-les-plus-courantes" class="md-nav__link">
+    7.1) Les erreurs les plus courantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-apprendre-a-decomposer-une-visualisation" class="md-nav__link">
+    1) Apprendre à décomposer une visualisation
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Apprendre à décomposer une visualisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-semiologie-graphique" class="md-nav__link">
+    1.1) Sémiologie graphique
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1) Sémiologie graphique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-composants" class="md-nav__link">
+    1.1.1) Composants
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vocabulaire" class="md-nav__link">
+    2) Vocabulaire
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Vocabulaire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-le-mapping" class="md-nav__link">
+    2.1.1) Le Mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proprietes-graphiques" class="md-nav__link">
+    3) propriétés graphiques
+  </a>
+  
+    <nav class="md-nav" aria-label="3) propriétés graphiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-types-de-donnees" class="md-nav__link">
+    3.1) types de données :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-types-de-graphiques" class="md-nav__link">
+    4) Types de graphiques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-regles-de-bases" class="md-nav__link">
+    5) Règles de bases
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Règles de bases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-exercice-pratique" class="md-nav__link">
+    5.1) Exercice pratique
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1) Exercice pratique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-critiques-et-points-positives" class="md-nav__link">
+    5.1.1) Critiques et points positives
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-quel-est-le-message" class="md-nav__link">
+    5.1.2) Quel est le message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-a-qui-est-elle-destinee" class="md-nav__link">
+    5.1.3) A qui est-elle destinée ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-les-differents-composants" class="md-nav__link">
+    5.1.4) Les différents composants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515-alternative-au-graphique" class="md-nav__link">
+    5.1.5) Alternative au graphique
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-construire-une-dataviz-pertinente" class="md-nav__link">
+    6) Construire une dataviz pertinente
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Construire une dataviz pertinente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-methodologie-dune-dataviz" class="md-nav__link">
+    6.1) Méthodologie d'une dataviz
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1) Méthodologie d'une dataviz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-cadrer" class="md-nav__link">
+    6.1.1) Cadrer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-lapproche-five-design-sheet" class="md-nav__link">
+    6.2) L'approche Five design Sheet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-application" class="md-nav__link">
+    6.3) Application
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3) Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-identifier-un-probleme" class="md-nav__link">
+    6.3.1) Identifier un problème
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632-imaginer-un-cas-dapplications-avec-les-5-w" class="md-nav__link">
+    6.3.2) Imaginer  un cas d'applications avec les 5 W
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633-elaborer-une-maquette-avec-la-methode-des-fds" class="md-nav__link">
+    6.3.3) Elaborer une maquette avec la méthode des FDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-manipuler-son-auditoire-ou-ne-pas-commettre-des-erreurs" class="md-nav__link">
+    7) Manipuler son auditoire ou ne pas commettre des erreurs
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Manipuler son auditoire ou ne pas commettre des erreurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-les-erreurs-les-plus-courantes" class="md-nav__link">
+    7.1) Les erreurs les plus courantes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>📊 Cours DataViz</h1>
+
+<p><img alt="banner higher" src="../../image/image%20-%20%20Cours%20DataViz%20-%20banniere.png" />  </p>
+<p><a href="../../CEFIM%20note%20principale.md#">Cefim note principale</a>  </p>
+<hr />
+<blockquote>
+<p>[!summary]+<br />
+<pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected token '&gt;'<br />
+    at DataviewInlineApi.eval (plugin:dataview:18404:21)<br />
+    at evalInContext (plugin:dataview:18405:7)<br />
+    at asyncEvalInContext (plugin:dataview:18415:32)<br />
+    at DataviewJSRenderer.render (plugin:dataview:18436:19)<br />
+    at DataviewJSRenderer.onload (plugin:dataview:18020:14)<br />
+    at e.load (app://obsidian.md/app.js:1:720327)<br />
+    at DataviewApi.executeJs (plugin:dataview:18954:18)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:2026)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:2:871)<br />
+    at new Promise (&lt;anonymous&gt;)<br />
+    at m (plugin:obsidian-mkdocs-publisher:2:691)<br />
+    at Gf (plugin:obsidian-mkdocs-publisher:28:1256)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:3257)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at r (plugin:obsidian-mkdocs-publisher:2:729)</pre>  </p>
+</blockquote>
+<p><img alt="image - 📊 Cours DataViz  - 1.png" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%201.png" />  </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> à reprendre avec le diapo , les éléments avec un x italique ✅ 2023-05-09  </li>
+</ul>
+<p>L'enjeu n'est pas la donnée, qui augmente de façon exponentielle, mais de les exploiter et de leur donnée du sens.<br />
+Comment faire sens des données, les utiliser dans les processus de décision, ne pas être surchargé.  </p>
+<h2 id="1-apprendre-a-decomposer-une-visualisation">1) Apprendre à décomposer une visualisation<a class="headerlink" href="#1-apprendre-a-decomposer-une-visualisation" title="Permanent link">&para;</a></h2>
+<h3 id="11-semiologie-graphique">1.1) Sémiologie graphique<a class="headerlink" href="#11-semiologie-graphique" title="Permanent link">&para;</a></h3>
+<p>Mettre des règles communes, établit un language commun sur la façon sont on construit une visualisation<br />
+L'ensembles des règles permettant l'utilisation d'un système graphique de signes pour la transmission d'une information correcte et accessible au lecteur.<br />
+Comment définir ces variables graphiques ? Quels sont les éléments modifiables dans une visualisation ? Quels sont ceux qui rendent une visualisation efficace et pertinente ?<br />
+- visuel: obéir aux règles générales de la perception<br />
+- Universel: compréhensible par tous<br />
+- Clair et cohérent: éviter les redondances et la surcharge d'informations  </p>
+<h4 id="111-composants">1.1.1) Composants<a class="headerlink" href="#111-composants" title="Permanent link">&para;</a></h4>
+<ul>
+<li>données(que veut on montrer)  </li>
+<li>esthétique(comment va t-on le montrer)  </li>
+<li>echelle(comment passe-t-on des données à la visualisation)  </li>
+<li>objets géométriques(sortes de marqueurs visuels): aires, barres, lignes, pictogrammes  </li>
+<li>statistiques(statistiques)  </li>
+<li>facettes(comment on divises les données en multiples représentations)  </li>
+<li>système de coordonnées(comment positionner les différentes données sur l'écran): polaires, logarithmiques, tridimensionnels  </li>
+</ul>
+<p><font color="#05b305">Exemple avec les graphiques du diapo:</font><br />
+<strong>données</strong>: 4 graphiques de 11 points<br />
+<strong>esthétiques:</strong> grille, 4*4, 2 axes chacun, utilisation de couleurs différentes pour chaque jeu de données<br />
+<strong>echelle:</strong> points mappées linéaires sur un axe allant de 0-21 et 0-13<br />
+<strong>objets géométriques:</strong> des points, pareille pour tous les nuages de points<br />
+<strong>statistiques:</strong> dispersion des points en comparaison avec une régression linéaire<br />
+<strong>facettes</strong>: graphes séparées et non un seul, donc 4 facettes<br />
+<strong>système de coordonnées</strong>: valeurs brute représentées sur des axes dons  l'espace x/y(coordonnées cartésiennes)  </p>
+<p><font color="#05b305">Exercice avec le graphique du diapo:</font><br />
+<strong>données</strong>: 1 graphique de 5 secteurs, inflation en pourcentage de 5 produits au cours du temps<br />
+<strong>esthétiques</strong>: grille, 30*9, graphique en baton  et courbe de tendance, évolution, et couleurs<br />
+<strong>l'échelle:</strong> axe linéaire allant de -1 à 7, axe de abscisse de 2021 à 2023<br />
+<strong>objets géométriques:</strong> barres combinées par secteurs, et lignes<br />
+<strong>statistiques:</strong> evolution des prix en fonction du temps, données brutes<br />
+<strong>facettes:</strong> 1 graphe reprenant tous les secteurs -&gt; 1 facette<br />
+<strong>système de coordonnées:</strong> représentées dans des axes x/y(coordonnées cartésiennes)<br />
+ici, le fait de réunir en un seul graphique n'était pas forcément adéquat si l'on veut montrer les tendances individuelles des secteurs  </p>
+<h2 id="2-vocabulaire">2) Vocabulaire<a class="headerlink" href="#2-vocabulaire" title="Permanent link">&para;</a></h2>
+<p><img alt="image - 📊 Cours DataViz  - 2.png" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%202.png" /><br />
+<strong>attribut</strong>: mesure ou observation d'une grandeur (couleur, forme, taille)<br />
+<strong>classe</strong>: catégorie<br />
+<strong>élément item ou individu</strong>: entité individuelle avec toutes ses caractéristiques<br />
+<strong>lien</strong>: relation entre 2 éléments  </p>
+<h4 id="211-le-mapping">2.1.1) Le Mapping<a class="headerlink" href="#211-le-mapping" title="Permanent link">&para;</a></h4>
+<p><img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%203.png" /><br />
+on passe d'unespace de données à un espace de visualisation  </p>
+<p>Quel encodage visuel dois-je utiliser ?<br />
+Comment élaborer une représentation visuelle à partir des données brutes ?<br />
+Quels sont les motifs que l'ont va utiliser pour faire ressortir nos données et les rendre compréhensibles ?<br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%204.png" />  </p>
+<h2 id="3-proprietes-graphiques">3) propriétés graphiques<a class="headerlink" href="#3-proprietes-graphiques" title="Permanent link">&para;</a></h2>
+<p><img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%205.png" /><br />
+permet d'exprimer visuellement l'inportance des données, on choisit avec le type de données  </p>
+<p><strong>forme</strong><br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%206.png" />  </p>
+<p>Nous pouvons utiliser la façon dont nous percevons les éléments et notre intuition des différents canaux visuels (formes, couleurs…) pour choisir ceux adéquats par rapport à la façon dont les données changent<br />
+<strong>expressivité</strong>: l'encodage visuel doit exprimer uniquement l'information de l'attribut visuel<br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%207.png" /><br />
+<strong>efficacité:</strong> l'importance de l'attribut doit transparaître dans le choix du canal utilisé<br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%208.png" />  </p>
+<p>Exercice dataviz avec 3 jeux de données:<br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%209.png" /><br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2010.png" />  </p>
+<p>Les couleurs peuvent conduire à une mauvaise interprétations. Il faut essaye d'aligner le sens sémantique des données avec les couleurs que l'on va utiliser pour les représenter.<br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2011.png" />  </p>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2012.png" />  </p>
+<p>Plus les marqueurs sont petits, plus les couleurs doivent être distinguables  </p>
+<p>Recap :<br />
+<img alt="image - 📊 Cours DataViz  - 13.png" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2013.png" /><br />
+<img alt="image - 📊 Cours DataViz  - 14.png" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2014.png" />  </p>
+<h3 id="31-types-de-donnees">3.1) types de données :<a class="headerlink" href="#31-types-de-donnees" title="Permanent link">&para;</a></h3>
+<p>[listroot(root((types de données)))|list2mindmap]<br />
+- variables qualitatives<br />
+    - variables ordinales<br />
+    - variables catégoriques<br />
+- variables quantitatives<br />
+    - variables disrètes<br />
+    - variables continues  </p>
+<p>couleur des yeux: qualitative catégorique<br />
+sexe d'une personne: qualitative catégorique<br />
+nombre d'articles dans un magasin: qualitative discrète<br />
+taille d'une personne: quantitative continue<br />
+taille d'un vêtement: quantitative discrète<br />
+note: quantitative discrète ou qualitative ordinale<br />
+température:  quantitative continue<br />
+nombre d'enfant: quantitative discrète  </p>
+<h2 id="4-types-de-graphiques">4) Types de graphiques<a class="headerlink" href="#4-types-de-graphiques" title="Permanent link">&para;</a></h2>
+<p>ressources pour des types variées:<br />
+https://datavizproject.com/<br />
+https://www.data-to-viz.com/  </p>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2015.png" /><br />
+pour montrer des comparaisons entre des catégories  </p>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2016.png" /><br />
+généralement pour montrer comment une information en deux dimensions change à travers le temps  </p>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2017.png" /><br />
+pour rapidement voir les termes les plus importants  </p>
+<p><img alt="hs-med" src="image%20data%2018.md#" /><br />
+pour montrer une comparaison  </p>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2019.png" /><br />
+pour montrer comment une valeur initiale est affecté par une série de valeurs positives ou négatives  </p>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2019.png" /><br />
+pour montrer comment une variable change selon 3 composants  </p>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2020.png" /><br />
+pour montrer la composition en 3 éléments de plusieurs éléments<br />
+<img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2021.png" />]<br />
+pour montrer rapidement une évolution  </p>
+<p>SCATTER WITH MARGINAL POINT<br />
+<img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2022.png" /><br />
+pour montrer la relation entre 2 variables et leur distribution  </p>
+<p>Graphique tige et feuille<br />
+<img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2023.png" /><br />
+pour voir la répartition d'une variable  </p>
+<h2 id="5-regles-de-bases">5) Règles de bases<a class="headerlink" href="#5-regles-de-bases" title="Permanent link">&para;</a></h2>
+<p><strong>digrammes en barres ou histogrammes:</strong> variables quantitatives, si continues on peut les regrouper en classe<br />
+<strong>digramme en secteur:</strong> variables qualitatives si pas beaucoup de classes<br />
+<strong>nuage de points</strong>(+bloxplot): variables quantitatives continues, idée simple de la façon dont les données sont dispersées, boite à mouche: valeurs aberrantes et extrêmes  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">données</th>
+<th style="text-align: left;">type de données</th>
+<th style="text-align: left;">type de diagramme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">couleur des yeux</td>
+<td style="text-align: left;">qualitative catégorique</td>
+<td style="text-align: left;">secteur</td>
+</tr>
+<tr>
+<td style="text-align: left;">sexe d'une personne</td>
+<td style="text-align: left;">qualitative catégorique</td>
+<td style="text-align: left;">secteur</td>
+</tr>
+<tr>
+<td style="text-align: left;">nombre d'articles dans un magasin</td>
+<td style="text-align: left;">qualitative discrète</td>
+<td style="text-align: left;">histogramme</td>
+</tr>
+<tr>
+<td style="text-align: left;">taille d'une personne</td>
+<td style="text-align: left;">quantitative continue</td>
+<td style="text-align: left;">nuage de points, boit à moustache</td>
+</tr>
+<tr>
+<td style="text-align: left;">taille d'un vêtement</td>
+<td style="text-align: left;">qualitative catégorique</td>
+<td style="text-align: left;">secteur</td>
+</tr>
+<tr>
+<td style="text-align: left;">note</td>
+<td style="text-align: left;">quantitative discrète ou qualitative ordinale</td>
+<td style="text-align: left;">histogramme</td>
+</tr>
+<tr>
+<td style="text-align: left;">température</td>
+<td style="text-align: left;">quantitative continue</td>
+<td style="text-align: left;">nuage de point ou courbe</td>
+</tr>
+<tr>
+<td style="text-align: left;">nombre d'enfant</td>
+<td style="text-align: left;">quantitative discrète</td>
+<td style="text-align: left;">histogramme ou secteur</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="hs-med" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2024.png" />  </p>
+<h3 id="51-exercice-pratique">5.1) Exercice pratique<a class="headerlink" href="#51-exercice-pratique" title="Permanent link">&para;</a></h3>
+<h4 id="511-critiques-et-points-positives">5.1.1) Critiques et points positives<a class="headerlink" href="#511-critiques-et-points-positives" title="Permanent link">&para;</a></h4>
+<p>- beaucoup d'informations donc perdue visuellement<br />
+- on ne voit pas bien les différences entre les pays qui sont minimes<br />
+- manque de différences de couleur entre l'espérance de vie et l'âge moyen de départ à la retraite  </p>
+<p>+ titre clair, tous les éléments du graphiques et source<br />
++ la moyenne générale se voit assez vite visuellement<br />
++ les différences de couleurs selon le sexe<br />
++ les histogrammes sont un bon choix  </p>
+<h4 id="512-quel-est-le-message">5.1.2) Quel est le message<a class="headerlink" href="#512-quel-est-le-message" title="Permanent link">&para;</a></h4>
+<p>On cherche à montrer l'âge moyen de départ à la retraite, selon les pays de l'OCDE, et en particulier celui de la France, pour le comparer par rapport aux autres pays. On cherche aussi à montrer que l'espérance de vie après le départ à la retraite est plus élevé chez les Français que dans les autres pays de l'OCDE.  </p>
+<h4 id="513-a-qui-est-elle-destinee">5.1.3) A qui est-elle destinée ?<a class="headerlink" href="#513-a-qui-est-elle-destinee" title="Permanent link">&para;</a></h4>
+<p>Elle est destinée à l'ensemble de la population qui chercheraient à comprendre l'âge de la retraite en France par rapport à d'autres pays.  </p>
+<h4 id="514-les-differents-composants">5.1.4) Les différents composants<a class="headerlink" href="#514-les-differents-composants" title="Permanent link">&para;</a></h4>
+<ul>
+<li>données: âge moyen d'espérance de vie et de départ à la retraite pour les 12 pays de l'OCDE, 4 jeux de données de 12 pays  </li>
+<li>esthétique: barre coloré selon le sexe et selon les 2 variables départ à la retraite et espérance de vie  </li>
+<li>echelle: barre mappée de 0 à 90  </li>
+<li>objets géométriques: barres de couleurs  </li>
+<li>statistiques: données brutes de moyennes  </li>
+<li>facettes: 1 seul facette représentant 4 ensemble de données  </li>
+<li>système de coordonnées: valeurs brutes représenté dans un seul axe en ordonnées  </li>
+</ul>
+<h4 id="515-alternative-au-graphique">5.1.5) Alternative au graphique<a class="headerlink" href="#515-alternative-au-graphique" title="Permanent link">&para;</a></h4>
+<p><img alt="600" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2025.png" /><br />
+et un autre idem pour les hommes  </p>
+<blockquote>
+<p>[!TIP| background-red]<br />
+- jouer sur les contrastes<br />
+- jouer sur les couleurs<br />
+- l'oeil doit être attiré par le message<br />
+- respecter les conventions (temps en x)<br />
+- ne jamais présenter un chiffre seul sans comparaison, ou en comparaison avec des chiffres qui ne représentent pas la même chose<br />
+- ne pas introduire plusieurs éléments en même temps, ou les afficher les uns après les autres<br />
+- Expliquer le contexte  </p>
+</blockquote>
+<p><img alt="300" src="../../image/image%20-%20%F0%9F%93%8A%20Cours%20DataViz%20%20-%2026.png" />  </p>
+<h2 id="6-construire-une-dataviz-pertinente">6) Construire une dataviz pertinente<a class="headerlink" href="#6-construire-une-dataviz-pertinente" title="Permanent link">&para;</a></h2>
+<h3 id="61-methodologie-dune-dataviz">6.1) Méthodologie d'une dataviz<a class="headerlink" href="#61-methodologie-dune-dataviz" title="Permanent link">&para;</a></h3>
+<ul>
+<li>cadrer le projet  </li>
+<li>nettoyer et explorer (repérer les infos manquantes et les erreurs, s'ouvrir à pleins de pistes)  </li>
+<li>co-construire (échange avec les métiers, trouver les bons indicateurs)  </li>
+<li>simplifier et épurer (pour présenter, message clair, compréhensible et sans ambiguïté, retire les fioritures, effacer ce qui est redondant, montrer la donnée, gagner en visibilité sans perdre l'information)  </li>
+<li>publier ou déployer et itérer (demander un feedback)  </li>
+</ul>
+<h4 id="611-cadrer">6.1.1) Cadrer<a class="headerlink" href="#611-cadrer" title="Permanent link">&para;</a></h4>
+<p><strong>pourquoi</strong>: quel est l'objet de la visualisation ? Objectifs opérationnels A quels besoins la visualisation doit-elle répondre<br />
+savoir déterminer quels sont les objectifs des utilisateurs finaux (explorer, comparer, confirmer, présenter)<br />
+<strong>comment</strong>: Quels éléments vont me permettre de servir les objectifs ? Quel support doit-on fournir ?<br />
+comment l'utilisateur compte interagir avec la données -&gt; support adéquat (navigation: dashboard, organisation: synthèse ou dashboard statique, établir des relations)<br />
+<strong>qui</strong>: A qui est elle destinée ?(profil-nb d'utilisateurs) Qui sont les parties prenantes ? Qui sont ceux qui disposent des informations dont je dispose ?<br />
+<strong>quoi</strong>: Que souhaite-on montrer , mettre en évidence, alerter ? Quelles sont les données en entrées et quelles statistiques ?<br />
+évaluer la qualité, la nature et le sens de la donnée (type, complète ?, qualité ?, analyse)<br />
+<strong>quand</strong>: Dans quel délai ? Prendre en compte la date de mise à disposition/contraintes métiers/rafraichissement des données…<br />
+<strong>où</strong>: Où sont les données ?  </p>
+<p>Analyse:<br />
+- Pour chacune des variables à considerer:<br />
+    - au niveau micro: points individuels, cas particulier, valeurs spécifiques<br />
+    - au niveau macro: tendances générales, statistiques classiques, moyenne, médianes<br />
+- Pour plusieurs variables à considérer, on cherche les liens et les corrélations entre elles  </p>
+<h3 id="62-lapproche-five-design-sheet">6.2) L'approche Five design Sheet<a class="headerlink" href="#62-lapproche-five-design-sheet" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>[!WARNING] Long, se fixer des horaires  </p>
+</blockquote>
+<p>source:<br />
+<a href="https://towardsdatascience.com/five-design-sheet-methodology-approach-to-data-visualisation-603d760f2418">https://towardsdatascience.com/five-design-sheet-methodology-approach-to-data-visualisation-603d760f2418</a><br />
+<img alt="no-h" src="../../M%C3%A9thode%20Five%20design%20sheet.md#highlights" /><br />
+<a href="../../The%20Five%20Design%20Sheet%20Methodology.md#">The Five Design Sheet Methodology</a>  </p>
+<h3 id="63-application">6.3) Application<a class="headerlink" href="#63-application" title="Permanent link">&para;</a></h3>
+<h4 id="631-identifier-un-probleme">6.3.1) Identifier un problème<a class="headerlink" href="#631-identifier-un-probleme" title="Permanent link">&para;</a></h4>
+<p>Identifier les compagnies par prix moins cher ou par temps de trajet ou par nombre d'escales pour un trajet<br />
+Identifier les destinations les moins chers  </p>
+<h4 id="632-imaginer-un-cas-dapplications-avec-les-5-w">6.3.2) Imaginer  un cas d'applications avec les 5 W<a class="headerlink" href="#632-imaginer-un-cas-dapplications-avec-les-5-w" title="Permanent link">&para;</a></h4>
+<p>pourquoi: permettre au voyageur de choisir son vol avec son prix ou son temps de trajet, explorer et comparer<br />
+comment: dashboard dynamique<br />
+quoi: données: informations et prix des vols proposées par les compagnies aériennes, données complètes sauf une ligne non remplies qui sera écarté, de qualité<br />
+quand: délai 1h15, non connaissance de la date de rafraichissement des données, besoin de rafraichissement<br />
+qui: demande de la part de particuliers ou d'une compagnie de voyage  </p>
+<h4 id="633-elaborer-une-maquette-avec-la-methode-des-fds">6.3.3) Elaborer une maquette avec la méthode des FDS<a class="headerlink" href="#633-elaborer-une-maquette-avec-la-methode-des-fds" title="Permanent link">&para;</a></h4>
+<p>https://onedrive.live.com/edit.aspx?resid=D91836E916F7A72C!437&amp;ithint=file%2cpptx&amp;authkey=!AEYW5QtqpOTPOxE  </p>
+<p>A rajouter comme idée problématique ? Est-ce que toutes les régions sont desservies de manière égale ou l'une est favorisé ?  </p>
+<h2 id="7-manipuler-son-auditoire-ou-ne-pas-commettre-des-erreurs">7) Manipuler son auditoire ou ne pas commettre des erreurs<a class="headerlink" href="#7-manipuler-son-auditoire-ou-ne-pas-commettre-des-erreurs" title="Permanent link">&para;</a></h2>
+<p>Notre cerveau fait un test visuel lorsque l'on voit une image, il formule des hypothèses.<br />
+La datavisualisation s'appui sur des méthodes de comparaisons implicites et explicites<br />
+explicite: couleur, forme, orientation  </p>
+<p>Les données ne mentent pas, mais on peut facilement de faire mentir des graphiques ou stats par erreur, ignorance, ou tromperie.   </p>
+<p>L'agencement de la visualisation est toujours porteuses d'un message et peut parfois véhiculer certains biais.  </p>
+<h3 id="71-les-erreurs-les-plus-courantes">7.1) Les erreurs les plus courantes<a class="headerlink" href="#71-les-erreurs-les-plus-courantes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Faire des erreurs mathématiques (moyennes et médiane confuses par exemple)  </li>
+<li>Omettre une partie des données (ex: courbe où l'on met 1 année sur 2 pour cacher les baisses )  </li>
+<li>Jouer sur les axes et échelles (ex: mettre des doubles axes avec des 2 échelles totalement différentes, distordre les axes, échelle qui ne commence pas à 0)  </li>
+<li>Jouer sur la taille des éléments graphiques (ex: éléments plus gros pour mettre en avant un certain élément)  </li>
+<li>Jouer sur les couleurs (ex: ne pas répartir les couleurs comme les chiffres le montrent, mettre les mauvaises couleurs)  </li>
+<li>Préférer l'esthétique à l'information (ex: graphique où l'on ne comprend rien, esthétique qui n'a aucun sens)  </li>
+<li>Surcharger la visualisation  </li>
+<li>Utiliser une représentation visuelle non adéquate ou non conforme aux données (ex: corrélations qui n'ont aucun sens, faux calculs de pourcentage, évolution cumulative, échelle non conforme, évolution en pourcentage par rapport à quoi ?, diagramme en secteur en 3D)  </li>
+</ul>
+<p>%%<br />
+parent:: <a href="../../CEFIM%20note%20principale.md#">Cefim note principale</a><br />
+enfant:: <a href="../../M%C3%A9thode%20Five%20design%20sheet.md#">Méthode Five design sheet</a>, <a href="../../The%20Five%20Design%20Sheet%20Methodology.md#">The Five Design Sheet Methodology</a>, <a href="../../M%C3%A9thode%20Five%20design%20sheet.md#">Méthode Five design sheet</a><br />
+%%  </p>
+<hr />
+<p><a href="../../CEFIM%20note%20principale.md#">Cefim note principale</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1856 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%F0%9F%90%8D%20Projet%20python/">
+      
+      
+        <link rel="next" href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>👀 Aide mémoire des cours - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              👀 Aide mémoire des cours
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>👀 Aide mémoire des cours</h1>
+
+<ul>
+<li>cours CEFIM  <ul>
+<li>Dataviz  <ul>
+<li>definition: conversion d'une source de données brutes en représentation visuelle  </li>
+<li>cycle de la vie d'une visualisation  <ul>
+<li>data(lignes)  </li>
+<li>transformations(tables)  </li>
+<li>visual mapping(structures)  </li>
+<li>transformations de vues(vues)  </li>
+</ul>
+</li>
+<li>règles communes  <ul>
+<li>visuel: obéir aux règles générales de la perception  </li>
+<li>universel: compréhensible par tous  </li>
+<li>clair et cohérent: éviter les redondances et la surcharge d'informations  </li>
+</ul>
+</li>
+<li>composants  <ul>
+<li>données : que veut-on montrer  </li>
+<li>esthétique: comment va t-on le montrer  </li>
+<li>échelle  </li>
+<li>objets géométriques: marqueurs visuels  </li>
+<li>statistique  </li>
+<li>facettes : 1 graphique = 1 facette  </li>
+<li>système de coordonnée: polaire, logarithmique, tridimensionnel  </li>
+</ul>
+</li>
+<li>choix des propriétés graphiques selon type de variable  <ul>
+<li>quantitatives discrète  <ul>
+<li>taille  </li>
+</ul>
+</li>
+<li>quantitative continue  <ul>
+<li>intensité/luminosité  </li>
+</ul>
+</li>
+<li>quantitative ordinale  <ul>
+<li>grain  </li>
+<li>intensité/luminosité  </li>
+</ul>
+</li>
+<li>qualitative nominale  <ul>
+<li>couleur  </li>
+<li>grain  </li>
+<li>orientation  </li>
+<li>forme  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>type de diagrammes selon variable  <ul>
+<li>barre ou histogramme  <ul>
+<li>quantitative discrète  </li>
+<li>quantitative continue regroupées en classe  </li>
+<li>qualitative si beaucoup de classe  </li>
+</ul>
+</li>
+<li>secteur  <ul>
+<li>qualitative si pas beaucoup de classe  </li>
+</ul>
+</li>
+<li>nuage de points (+ boite à mouche)  <ul>
+<li>quantitative continue  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>méthodologie d'une dataviz  <ul>
+<li>cadrer le projet avec les 5W  </li>
+<li>nettoyer et explorer les données  </li>
+<li>co-construire avec les métiers  </li>
+<li>simplifier et épurer  </li>
+<li>publier ou déployer et itérer (demander un feedback)  </li>
+</ul>
+</li>
+<li>erreurs les plus courantes  <ul>
+<li>erreurs mathématiques  </li>
+<li>omettre une partie des données  </li>
+<li>jouer sur les axes et échelles  </li>
+<li>jouer sur la taille des éléments graphiques  </li>
+<li>jouer sur les couleurs  </li>
+<li>preferer l'ésthetique à l'information  </li>
+<li>surcharger la visualisation  </li>
+<li>utiliser une représentation non adéquates ou non conforme aux données  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Excel  <ul>
+<li>fonctions  <ul>
+<li>statistiques  <ul>
+<li>somme  </li>
+<li>moyenne  </li>
+<li>min  </li>
+<li>max  </li>
+<li>médiane  </li>
+<li>nb : nombre de nombre  </li>
+<li>nbval : nombre de cellules non vides  </li>
+<li>ecartype  </li>
+<li>nb.vide : nombre de cellules vides  </li>
+</ul>
+</li>
+<li>recherche  <ul>
+<li>recherchev VRAI : recherche avec un intervalle  </li>
+<li>recherchev FAUX : recherche précise  </li>
+<li>equiv : recherche l'index  </li>
+<li>index : recherche avec l'index  </li>
+</ul>
+</li>
+<li>logiques  <ul>
+<li>si : retourne une valeur selon une condition  </li>
+<li>et/ou/non : combine plusieurs conditions  </li>
+</ul>
+</li>
+<li>informations  <ul>
+<li>esterreur : affiche si une valeur renvoie une erreur  </li>
+<li>sierreur : renvoie le résultat d'une formule , ou une autre valeur si erreur  </li>
+</ul>
+</li>
+<li>agrégations  <ul>
+<li>nbsi/sommesi/moyennesi : calcule selon une condition  </li>
+<li>nbsiens/sommesiens : calcule selon plusieurs conditions  </li>
+<li>sommeprod : somme des produits de 2 matrices  </li>
+<li>rang : renvoie le rang d'une valeur numérique dans une liste  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>formatage  <ul>
+<li>format personnalisé de données  <ul>
+<li>penser à mettre les espaces entre " " sinon c'est une division par 1000  </li>
+</ul>
+</li>
+<li>mise en forme conditionnelle  <ul>
+<li>format par contenu de cellules  </li>
+<li>échelle de couleurs par échelle de valeur  </li>
+<li>règles personnalisé  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>tableaux croisées dynamique  <ul>
+<li>toujours transformer la base de données en tableau avant de faire des TCD  </li>
+<li>prérequis : base de données relationnelle  <ul>
+<li>lignes représentant un enregistrement  </li>
+<li>colonnes représentant un champs de données  </li>
+<li>en-tête de colonnes dans la première ligne  </li>
+</ul>
+</li>
+<li>champs calculé : pour ajouter un champ directement dans le TCD avec une formule  </li>
+</ul>
+</li>
+<li>visualisations  <ul>
+<li>courbe : changement dans la durée  </li>
+<li>barres/histogramme : comparer et classer des données  </li>
+<li>camembert/donut : représentation en pourcentage  </li>
+<li>rayon de soleils : rapport hiérarchique  </li>
+<li>combinaison de graphiques : evolution de plusieurs mesures ensemble  </li>
+<li>carte : pour une visualisation géographique  </li>
+</ul>
+</li>
+<li>dashboards  <ul>
+<li>slicers/timeline : filtres simplifiées pour les dashboards  </li>
+<li>bonnes pratiques  <ul>
+<li>connaitre votre objectif et votre public  </li>
+<li>exploiter l'endroit le plus visité (supérieur gauche)  </li>
+<li>limiter le nombre de graphique (2 ou 3 max)  </li>
+<li>désencombrer la vue  </li>
+<li>limiter les couleurs  </li>
+</ul>
+</li>
+<li>construction  <ul>
+<li>structure avec des formes  </li>
+<li>rajouter les KPI dynamiques (chiffres clés)  </li>
+<li>ajouter les graphiques  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>règles du classeur  <ul>
+<li>limiter les choix de l'utilisateur (validation de données)  </li>
+<li>nommer une cellule ou une plage de valeur si besoin réel  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Analyse avec python  <ul>
+<li>étapes  <ul>
+<li>créer un environnement virtuel  </li>
+<li>créer le dossier de travail  </li>
+<li>définir un plan de classement  </li>
+<li>collecter/créer des fichiers  </li>
+<li>créer un programme python  <ul>
+<li>expliquer le programme  </li>
+<li>programmer en python  <ul>
+<li>définir la nomenclature des variables  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bibliothèques  <ul>
+<li>dir(bibliothèque) affiche toutes les méthodes que l'on peut utiliser  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RGPD  <ul>
+<li>les règles d'or  <ul>
+<li>finalités du traitement  <ul>
+<li>objectif en vue duquel les données sont collectées, enregistrées, exploitées, transmises, conservées  </li>
+<li>non-respect : détournement de finalité  </li>
+<li>elle peut évoluer en toute transparence et dans le respect des droits des personnes  </li>
+<li>3 finalité jugées expressément compatible avec la finalité initiale  <ul>
+<li>à des fins archivistes dans l'intéret public  </li>
+<li>à des fins de recherches scientifiques ou historiques  </li>
+<li>à des fins statistiques  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>licéité du traitement  <ul>
+<li>base légale de la collecte  </li>
+<li>une des conditions doit être remplie  <ul>
+<li>la personne concerné à consenti au traitement pour une ou plusieurs finalités spécifiques  <ul>
+<li>consentement libre, spécifique(pouvoir choisir séparément pour plusieurs finalités), éclairé et univoque  </li>
+</ul>
+</li>
+<li>le traitement est nécessaires à l'execution d'un contrat ou de mesures précontractuelles  </li>
+<li>le traitement est nécessaires au respect d'une obligation légale à laquelle le responsable de traitement est soumis  </li>
+<li>le traitement est nécessaire à la sauvegarde des intérêts vitaux de la personne  </li>
+<li>le traitement est nécessaire à l'execution d'une mission d'intérêt public ou relevant de l'exercice de l'autorité publique  </li>
+<li>le traitement est nécessaire aux fins des intérêts légitimes poursuivies par le responsables de traitement ou par un tiers  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>minimisation des données  <ul>
+<li>découle de la finalité  </li>
+<li>les données doivent être:  <ul>
+<li>adéquates  </li>
+<li>pertinentes  </li>
+<li>limitées  </li>
+<li>exactes  </li>
+</ul>
+</li>
+<li>bonnes pratiques  <ul>
+<li>faire le tri  </li>
+<li>se questionner sur les solutions alternatives  </li>
+<li>bannir les collectes préventives  </li>
+<li>pseudonomiser les données  </li>
+<li>limiter les zones de commentaires libres  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>protection des données sensibles  </li>
+<li>conservation limité des données  </li>
+<li>obligation de sécurité  </li>
+<li>transparence  </li>
+<li>droits des personnes  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Statistiques descriptive  <ul>
+<li>étapes  <ul>
+<li>collecter les données utiles  </li>
+<li>trier, ordonner, calculer, analyser  </li>
+<li>visualiser les indicateurs pertinents  </li>
+<li>interprétez les résultats pour prendre les décisions adéquates  </li>
+</ul>
+</li>
+<li>utilité  <ul>
+<li>Le cerveau n'est pas capable de traiter une quantité volumineuse d'informations  </li>
+<li>L'analyse humaine induit des biais psychologiques comme le biais de confirmations  </li>
+</ul>
+</li>
+<li>vocabulaire  <ul>
+<li>population : ensemble concerné par une étude statistique  </li>
+<li>individu : un élément d'une population concerné  </li>
+<li>échantillon : sous-ensemble de la population sur lequel sont réalisé des tests  </li>
+<li>variable : information ou caractéristique dont on va recueillir la valeur pour chaque individu  </li>
+<li>variable aléatoire : variable qui peut prendre plusieurs valeurs possible  </li>
+</ul>
+</li>
+<li>loi normale  <ul>
+<li>courbe en forme de cloche  </li>
+<li>valeurs continues et symétriques  </li>
+<li>courbe caractérisé par son espérance et son écart-type  </li>
+<li>on peut calculer les probabilité d'une valeur facilement  </li>
+</ul>
+</li>
+<li>propriété d'une population  <ul>
+<li>position  <ul>
+<li>moyenne : somme des valeurs / effectifs  </li>
+<li>médiane : partage la distribution en deux parties égales  </li>
+<li>mode : valeur la plus présente  </li>
+<li>fréquence : proportion d'une valeur dans la liste  </li>
+<li>effectif : nombre de données ayant cette valeur  </li>
+</ul>
+</li>
+<li>forme  <ul>
+<li>coefficient d'applatissement  </li>
+<li>coefficient de symétrie  </li>
+</ul>
+</li>
+<li>dispersion  <ul>
+<li>étendue : différence entre la plus petite et la plus grande valeur  </li>
+<li>variance : moyenne du carré des écarts à la moyenne des valeurs  </li>
+<li>écart-type : mesure la dispersion d'un ensemble de valeurs autour de la moyenne  </li>
+<li>quartile : valeurs qui partage une distribution en 4 parties égales  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>étapes d'une analyse univariée  <ul>
+<li>dimension des données  </li>
+<li>nom et signification des variables  </li>
+<li>types de variables  </li>
+<li>présence des valeurs manquantes ou nulles  </li>
+<li>caractéristiques de forme/position/distribution  </li>
+</ul>
+</li>
+<li>corrélation entre 2 variables  <ul>
+<li>coefficient de corrélation ou de pearson  <ul>
+<li>signe : sens de liaison  </li>
+<li>valeur absolue : intensité (1 absolue, 0 aucun)  </li>
+</ul>
+</li>
+<li>nuage de points  </li>
+<li>matrice de corrélation entre plusieurs variables  </li>
+</ul>
+</li>
+<li>Test du Khi2  <ul>
+<li>corrélation avec des variables qualitatives  </li>
+<li>on pose 2 hypothèse  <ul>
+<li>H0 : les 2 variables sont indépendantes  </li>
+<li>H1 : les 2 variables sont dépendantes  </li>
+</ul>
+</li>
+<li>on calcule les totaux de chaque lignes et colonnes, puis les pourcentages  </li>
+<li>on calcule combien on devrait avoir si les pourcentages étaient respectés  </li>
+<li>on calcule le khi 2 pour chaque valeur : ((effectif observé - effectif théorique)²)/effectif théorique  </li>
+<li>on calcule le khi 2 total avec la somme  </li>
+<li>on regarde le khi 2 théorique avec les 2 paramètres  <ul>
+<li>degré de liberté : (nombre de ligne - 1) * (nombre de colonne - 1)  </li>
+<li>seuil de significativité : ɑ souvent fixé à 0,05  </li>
+</ul>
+</li>
+<li>on compare le khi2 théorique au khi2 calculé  <ul>
+<li>Si Khi2 &gt; Khi2 critique : on rejette l'hypthèse H0  </li>
+<li>Si Khi2 &lt; Khi2 critique : on accepte l'hypothèse H1  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Design Thinking  <ul>
+<li>Définition  <ul>
+<li>penser pour faire quelque chose qui sera fonctionnel  </li>
+<li>collaboration, intelligence collective  </li>
+</ul>
+</li>
+<li>Méthode  <ul>
+<li>brief  <ul>
+<li>définir les attentes clients  </li>
+<li>comprendre les enjeux, objectifs  </li>
+<li>fixer les participants nécessaires  </li>
+<li>documents contractuels du projet  </li>
+</ul>
+</li>
+<li>cadrage  <ul>
+<li>clarifier la problématique/objectifs  </li>
+<li>vérifier les publics cibles et parties prenantes  </li>
+<li>mindmap  </li>
+<li>QQOQCCP  </li>
+<li>5 pourquoi  </li>
+</ul>
+</li>
+<li>empathie  <ul>
+<li>observer, identifier, analyser le contexte, les besoins pour définir le problème  </li>
+<li>comprendre les usages des publics cibles, les situations, le contexte  </li>
+<li>dégager les irritants  </li>
+<li>benchmark, interview, persona, carte d'empathie, custom journey map  </li>
+</ul>
+</li>
+<li>définition problématique  <ul>
+<li>formuler pour l'attaquer sous le bon angle  </li>
+<li>problématiser les problèmes, pour les transformer en défi créatif  </li>
+<li>je -&gt; nous  </li>
+<li>lien entre concept de problème et solutions opérationnelles  </li>
+<li>CPN: Comment pourrions-nous  </li>
+</ul>
+</li>
+<li>idéation  <ul>
+<li>formaliser et choisir les solutions  </li>
+<li>maximum d'idées sans filtres  </li>
+<li>opérer des synthèses  </li>
+<li>brainstorming post-it  </li>
+<li>trier et prioriser les idées  </li>
+<li>fiches projets  </li>
+</ul>
+</li>
+<li>prototypage  <ul>
+<li>outil de test, mise en oeuvre des tests  </li>
+<li>types: basse fidélité, haute fidélité, d'experience, parallèle  </li>
+<li>maquettes, story-board, croquis, scénarii  </li>
+<li>crazy height 8 écrans, 8 idées, 8 minutes  </li>
+</ul>
+</li>
+<li>tests  <ul>
+<li>éprouver la résistance de mise en oeuvre  </li>
+<li>tests par les utilisateurs  </li>
+<li>custom journey map  </li>
+<li>retours utilisateurs  </li>
+</ul>
+</li>
+<li>pitch  <ul>
+<li>nom  </li>
+<li>besoin utilisateur  </li>
+<li>bénéficiaire et acteurs  </li>
+<li>solution  </li>
+<li>vision: caractère innovant  </li>
+<li>ambition et péripéties  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SQL  <ul>
+<li>Notions  <ul>
+<li>base de données relationnelles  <ul>
+<li>reliés par des clés  </li>
+</ul>
+</li>
+<li>clés  <ul>
+<li>clés primaires  <ul>
+<li>1 table = 0 ou 1 clé primaire  </li>
+<li>1 clé primaire = 1 ou plusieurs colonnes  </li>
+<li>identifiants uniques d'une table  </li>
+<li>valeurs nulles non possibles  </li>
+</ul>
+</li>
+<li>clés étrangère  <ul>
+<li>clé unique d'une autre table  </li>
+</ul>
+</li>
+<li>clés uniques  <ul>
+<li>possible d'avoir une valeur nulle  </li>
+<li>1 table = 0, 1 ou plusieurs clés uniques  </li>
+<li>1 clé unique = 1 ou plusieurs colonnes  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>modélisation  <ul>
+<li>diagramme ER (Entité-Relation)  </li>
+<li>schémas relationnels  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Types de données  <ul>
+<li>données textuelles  <ul>
+<li>char: longueur fixe (max 255)  </li>
+<li>varchar : longueur variable (max 65 535)  </li>
+<li>enum: choix sélectif parmi une liste  </li>
+</ul>
+</li>
+<li>données numérique  <ul>
+<li>int: nombre entier  </li>
+<li>décimal; nombre exact  </li>
+<li>float: valeur arrondie d'un nombre  </li>
+</ul>
+</li>
+<li>autres types de données  <ul>
+<li>date: YYYY-MM-DD  </li>
+<li>datetime: date + heure  </li>
+<li>timestamp  </li>
+<li>blob: fichier au format binaire  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Commandes  <ul>
+<li>DDL (data definition language) : définir ou modifier les éléments de la base de données  <ul>
+<li>create: créer table ou données  </li>
+<li>drop: supprimer table  ou données  </li>
+<li>truncate: supprimer contenu d'une table  </li>
+<li>alter: modifier table et colonnes  </li>
+<li>rename: renommer objet ou table  </li>
+</ul>
+</li>
+<li>DML (date manipulation language) : manipuler les données  <ul>
+<li>insert to: insérer des données  </li>
+<li>update: modification de lignes existantes  </li>
+<li>delete: supprimer des lignes  </li>
+</ul>
+</li>
+<li>DCL (data control language) : gérer les droits d'accès aux tables  <ul>
+<li>grant: donne des permissions aux utilisateurs  </li>
+<li>revoke: supprime les permissions d'un utilisateur  </li>
+</ul>
+</li>
+<li>TCL (transaction control language) : contrôler la bonne execution des transactions  <ul>
+<li>commit: modifications définitives et visibles par tous  </li>
+<li>rollback: annulation des modifications de la transaction  </li>
+</ul>
+</li>
+<li>Suppression  <ul>
+<li>DROP: supprime la table  </li>
+<li>TRUNCATE: supprimer les données d'une table, refait l'auto-incrémentation  </li>
+<li>DELETE: supprime les données d'une table: garde l'auto-incrémentation  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Syntaxe  <ul>
+<li>SELECT  <ul>
+<li>SELECT (obligatoire) nom_colonne  <ul>
+<li>fonctions : (AVG, COUNT, MAX, MIN, SUM)  </li>
+<li>DISTINCT pour enlever les doubles  </li>
+</ul>
+</li>
+<li>FROM(obligatoire) nom_table  </li>
+<li>WHERE conditions  <ul>
+<li>Opérateur: =, &gt;, &lt;, &gt;=, &lt;=, !=  </li>
+<li>Prédicat: IN, BETWEEN, LIKE, IS NULL, IS NOT NULL  </li>
+<li>OR, AND, NOT  </li>
+</ul>
+</li>
+<li>GROUP BY nom_colonne  </li>
+<li>HAVING conditions  </li>
+<li>ORDER BY nom_colonne (DESC)  </li>
+<li>LIMIT nombre  </li>
+</ul>
+</li>
+<li>Création et utilisation base de données  <ul>
+<li><code>CREATE DATABASE IF NOT EXISTS nom_table; USE nom_table;</code>  </li>
+</ul>
+</li>
+<li>Création d'une table avec clé primaire  <ul>
+<li><code>CREATE TABLE nom_table ( nom_colonne type_données PRIMARY KEY, nom_colonne type_données …);</code>  </li>
+</ul>
+</li>
+<li>Ajout d'une clé étrangère dans une table  <ul>
+<li><code>ALTER TABLE nom_table ADD CONSTRAINT nom_colonne FOREIGN KEY (nom_colonne) REFERENCES nom_table(nom_colonne) ON DELETE CASCADE;</code>  </li>
+</ul>
+</li>
+<li>Insertion de données dans la table  <ul>
+<li><code>INSERT INTO nom_table(nom_colonne1, nom_colonne2…) VALUES (value1, value2…);</code>  </li>
+</ul>
+</li>
+<li>Ajout d'une valeur par default dans une colonne  <ul>
+<li><code>ALTER TABLE nom_table CHANGE COLUMN nom_colonne nom_colonne type_données DEFAULT valeur_par_defaut;</code>  </li>
+</ul>
+</li>
+<li>Suppression d'une valeur par défaut pour une colonne  <ul>
+<li><code>ALTER TABLE nom_table ALTER COLUMN nom_colonne DROP DEFAULT;</code>  </li>
+</ul>
+</li>
+<li>Insertion données d'une table dans une autre  <ul>
+<li><code>INSERT INTO nom_table (nom_colonne, nom_colonne…) SELECT nom_colonne, nom_colonne… FROM nom_table WHERE conditions;</code>  </li>
+</ul>
+</li>
+<li>Modifier des lignes existantes  <ul>
+<li><code>UPADTE nom_table SET nom_colonne = valeur, nom_colonne = valeur WHERE conditions;</code>  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>OpenClassroom  <ul>
+<li>Nettoyer et analyser les données  <ul>
+<li>Vocabulaire et tour d'horizon  </li>
+<li>En statistiques, un jeu de données correspond à un échantillon d'une population globale étudiée.  </li>
+<li>Un jeu de données est organisée sous forme de tableau où les lignes sont des individus et les colonnes des variables.  </li>
+<li>Le domaine de la statistique est concentré sur l'explication et la description objective d'un phénomène passé.  </li>
+<li>Le domaine de la probabilité est plus intéressé au futur potentiel d'un évènement à venir.  <ul>
+<li>Il existe 4 grands domaines de la statistique :  <ul>
+<li>
+<ol>
+<li>Les statistiques descriptives  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>L'analyse multidimensionnelle  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Les statistiques inférentielles  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>La modélisation statistique  </li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Les 4 types de variables  </li>
+<li>Les variables quantitatives sont les valeurs numériques  </li>
+<li>Une variable quantitative peux être continue si le nombre de valeurs possibles est potentiellement infinie, discrète sinon  </li>
+<li>Les variables qualitatives caractérisent l'appartenance de l'individu à un groupe( ou une catégorie)  </li>
+<li>Les valeurs possibles d'une variable qualitative sont des modalités  </li>
+<li>Une variable qualitative peut être ordinale si les modalités peuvent ête ordonnées selon une hiérarchie ou importance, nominale sinon  </li>
+<li>Gérez Les Différentes Erreurs D'un Jeu De Données  </li>
+<li>Pour traiter des valeurs manquantes, on peut chercher la vraie valeur, travailler avec un jeu de donnée à trou, oublier une variable ou des individus, essayer de deviner ou deviner à partir d'autres variables. Il faut préciser les méthodes utilisées dans les résultats d'analyse.  </li>
+<li>Pour traiter des outliers, il faut regarder le contexte pour savoir s'il est possible de connaître la valeur réelle. Les méthodes "robustes" sont peu impactées par les outliers. Les outliers peuvent être cités dans l'analyse s'ils ont de l'intérêt.  </li>
+<li>Pour éliminer les doublons, il faut se fier à la structure des données et savoir comment ils ont été détectés. Il est préférable de regrouper les doublons plutôt que de supprimer au hasard l'une des deux lignes.  </li>
+<li>Toute modification des données introduit un biais qu'il faut prendre en compte lors de l'analyse.  </li>
+<li>repérez les différents types d'erreurs  </li>
+<li>Nettoyer les données avant de les analyser est crucial.  </li>
+<li>Les erreurs peuvent causer des plantages et des résultats inexacts.  </li>
+<li>Différents types d'erreurs dans les données : valeurs manquantes, erreurs lexicales, erreurs d'irrégularités, erreurs de formatage, outlier, doublons.  </li>
+<li>La gestion des erreurs dépend de l'utilisation des données.  </li>
+<li>Des solutions pour gérer les différents types d'erreurs, telles que la suppression de valeurs erronées, la fixation d'un dictionnaire, la normalisation des unités, etc.  </li>
+<li>Si une variable contient peu d'erreurs, il est possible de supprimer les erreurs, sinon, il est préférable de créer un programme pour corriger les erreurs.  </li>
+<li>Nettoyez Vos Données Avec Python  </li>
+<li>Pour charger un fichier CSV dans un DataFrame, on utilise <code>pandas.read_csv()</code> et on peut afficher les premières ou les dernières lignes avec <code>head()</code> ou <code>tail()</code>.  </li>
+<li>Pour détecter les valeurs manquantes, on utilise <code>.isnull().sum()</code>.  </li>
+<li>Pour détecter les doublons, on peut utiliser <code>.duplicated()</code> et <code>.loc[]</code>.  </li>
+<li>Pour traiter les erreurs, on peut utiliser des conditions et des masks pour sélectionner les lignes qui nécessitent des corrections. On peut aussi utiliser des listes de valeurs valides pour remplacer les valeurs non valides, et des méthodes spécifiques pour les chaînes de caractères ou les datetime.  </li>
+<li>Pour modifier les colonnes d'un DataFrame, on utilise la syntaxe: <code>data['column_name'] = new_column</code>.  </li>
+<li>Pour modifier seulement une partie de la colonne, on utilise un mask et la syntaxe: <code>data.loc[mask, 'column_name'] = new_values</code>.  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

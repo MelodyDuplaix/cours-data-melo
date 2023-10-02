@@ -1,0 +1,1885 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/">
+      
+      
+        <link rel="next" href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>🎯 Cours Statistiques - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-a-quoi-sert-les-statistiques" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🎯 Cours Statistiques
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-a-quoi-sert-les-statistiques" class="md-nav__link">
+    1) A quoi sert les statistiques ?
+  </a>
+  
+    <nav class="md-nav" aria-label="1) A quoi sert les statistiques ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-etapes" class="md-nav__link">
+    1.1) Etapes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-pourquoi-ne-pourrait-on-pas-se-suffire-dune-analyse-purement-humaine-gapminder" class="md-nav__link">
+    1.2) Pourquoi ne pourrait-on pas se suffire d'une analyse purement humaine ? (Gapminder)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-definition-du-cadre-de-travail" class="md-nav__link">
+    2) Définition du cadre de travail
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Définition du cadre de travail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-vocabulaire" class="md-nav__link">
+    2.1) Vocabulaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-types-de-variables" class="md-nav__link">
+    2.2) Types de variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-notions-de-variabilite" class="md-nav__link">
+    2.3) Notions de variabilité
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-la-loi-normale" class="md-nav__link">
+    2.4) La loi normale
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-la-statistique-descriptive" class="md-nav__link">
+    3) La statistique descriptive
+  </a>
+  
+    <nav class="md-nav" aria-label="3) La statistique descriptive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-definition" class="md-nav__link">
+    3.1) Définition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-caracteristiques-de-position" class="md-nav__link">
+    3.2) Caractéristiques de position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-caracteristiques-de-forme" class="md-nav__link">
+    3.3) Caractéristiques de forme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-caracteristiques-de-dispersion" class="md-nav__link">
+    3.4) Caractéristiques de dispersion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-exercice" class="md-nav__link">
+    3.5) Exercice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-analyse-de-plusieurs-valeurs" class="md-nav__link">
+    4) Analyse de plusieurs valeurs
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Analyse de plusieurs valeurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-les-correlations-entre-les-variables" class="md-nav__link">
+    4.1) Les corrélations entre les variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-etapes-dune-analyse-statistique-exhaustive-univariee" class="md-nav__link">
+    4.2) Etapes d'une analyse statistique exhaustive univariée
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-exercice-2" class="md-nav__link">
+    4.3) Exercice 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-test-du-khi2" class="md-nav__link">
+    5) Test du Khi2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-exercice-4" class="md-nav__link">
+    6) Exercice 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-exercice-methode-kmeans-et-cah" class="md-nav__link">
+    7) Exercice méthode Kmeans et CAH
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-a-quoi-sert-les-statistiques" class="md-nav__link">
+    1) A quoi sert les statistiques ?
+  </a>
+  
+    <nav class="md-nav" aria-label="1) A quoi sert les statistiques ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-etapes" class="md-nav__link">
+    1.1) Etapes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-pourquoi-ne-pourrait-on-pas-se-suffire-dune-analyse-purement-humaine-gapminder" class="md-nav__link">
+    1.2) Pourquoi ne pourrait-on pas se suffire d'une analyse purement humaine ? (Gapminder)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-definition-du-cadre-de-travail" class="md-nav__link">
+    2) Définition du cadre de travail
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Définition du cadre de travail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-vocabulaire" class="md-nav__link">
+    2.1) Vocabulaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-types-de-variables" class="md-nav__link">
+    2.2) Types de variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-notions-de-variabilite" class="md-nav__link">
+    2.3) Notions de variabilité
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-la-loi-normale" class="md-nav__link">
+    2.4) La loi normale
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-la-statistique-descriptive" class="md-nav__link">
+    3) La statistique descriptive
+  </a>
+  
+    <nav class="md-nav" aria-label="3) La statistique descriptive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-definition" class="md-nav__link">
+    3.1) Définition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-caracteristiques-de-position" class="md-nav__link">
+    3.2) Caractéristiques de position
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-caracteristiques-de-forme" class="md-nav__link">
+    3.3) Caractéristiques de forme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-caracteristiques-de-dispersion" class="md-nav__link">
+    3.4) Caractéristiques de dispersion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-exercice" class="md-nav__link">
+    3.5) Exercice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-analyse-de-plusieurs-valeurs" class="md-nav__link">
+    4) Analyse de plusieurs valeurs
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Analyse de plusieurs valeurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-les-correlations-entre-les-variables" class="md-nav__link">
+    4.1) Les corrélations entre les variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-etapes-dune-analyse-statistique-exhaustive-univariee" class="md-nav__link">
+    4.2) Etapes d'une analyse statistique exhaustive univariée
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-exercice-2" class="md-nav__link">
+    4.3) Exercice 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-test-du-khi2" class="md-nav__link">
+    5) Test du Khi2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-exercice-4" class="md-nav__link">
+    6) Exercice 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-exercice-methode-kmeans-et-cah" class="md-nav__link">
+    7) Exercice méthode Kmeans et CAH
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>🎯 Cours Statistiques</h1>
+
+<p><img alt="banner" src="../image/image%20-%20%20Cours%20Statistiques%20-%20banniere.png" />  </p>
+<blockquote>
+<p>[!summary]- Sommaire<br />
+<pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected token '&gt;'<br />
+    at DataviewInlineApi.eval (plugin:dataview:18404:21)<br />
+    at evalInContext (plugin:dataview:18405:7)<br />
+    at asyncEvalInContext (plugin:dataview:18415:32)<br />
+    at DataviewJSRenderer.render (plugin:dataview:18436:19)<br />
+    at DataviewJSRenderer.onload (plugin:dataview:18020:14)<br />
+    at e.load (app://obsidian.md/app.js:1:720143)<br />
+    at DataviewApi.executeJs (plugin:dataview:18954:18)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:2026)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:2:871)<br />
+    at new Promise (&lt;anonymous&gt;)<br />
+    at m (plugin:obsidian-mkdocs-publisher:2:691)<br />
+    at Gf (plugin:obsidian-mkdocs-publisher:28:1256)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:3257)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at r (plugin:obsidian-mkdocs-publisher:2:729)</pre>  </p>
+</blockquote>
+<h2 id="1-a-quoi-sert-les-statistiques">1) A quoi sert les statistiques ?<a class="headerlink" href="#1-a-quoi-sert-les-statistiques" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A les comprendre  </li>
+<li>A les "analyser"  </li>
+<li>A les organiser<br />
+      <font color="#05b305">C'est la science qui permet de prendre des notes de toutes les données et d'expliquer les évènements ou de comprendre les phénomènes mis en jeu en apportant une objectivité dans l'interpretation. Elle permet ainsi de prendre des décisions fondées dur la connaissance des fait et d'établir des relations.</font>  </li>
+</ul>
+<h3 id="11-etapes">1.1) Etapes<a class="headerlink" href="#11-etapes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><font color="#974806">Collecter les données utiles (achats, avis clients, ventes, données clients</font> :  </li>
+<li>comprendre la problématiques métiers, a quoi mes données vont-elles servir ?  </li>
+<li>sélectionner un échantillon représentatif de la population que l''on cherche à étudier  </li>
+<li>Comprendre les enjeux du pronlème  </li>
+<li>Interroger les parties prenantes  </li>
+<li>Faires l'inventaire des ressources  </li>
+<li>Collecter les données nécessaires manquantes  </li>
+<li><font color="#974806">Trier, ordonner, calculer, analyser</font>  </li>
+<li><font color="#974806">Visualiser les indicateurs pertinents</font>  </li>
+<li>voir les tendances et les valeurs aberrantes, visualisation plus rapide  </li>
+<li><font color="#974806">Interprétez les résultats pour prendre les décisions adéquates</font>  </li>
+<li>alerter les services concernés  </li>
+</ul>
+<h3 id="12-pourquoi-ne-pourrait-on-pas-se-suffire-dune-analyse-purement-humaine-gapminder">1.2) Pourquoi ne pourrait-on pas se suffire d'une analyse purement humaine ? (<a href="https://www.gapminder.org/">Gapminder</a>)<a class="headerlink" href="#12-pourquoi-ne-pourrait-on-pas-se-suffire-dune-analyse-purement-humaine-gapminder" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Le cerveau n'est pas capable de traiter une quantité volumineuse d'informations  </li>
+<li>L'analyse humaine induit des biais psychologiques comme le biais de confirmations  </li>
+</ul>
+<h2 id="2-definition-du-cadre-de-travail">2) Définition du cadre de travail<a class="headerlink" href="#2-definition-du-cadre-de-travail" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Statistique descriptive  </li>
+<li>décrire ce que contiennent les données  </li>
+<li>représentations graphiques  </li>
+<li>caractéristiques numériques  </li>
+<li>les résultats ne sont que sur les résultats que l'on a  </li>
+<li>objectif: repérez les valeurs atypiques, les valeurs extrêmes, visualiser les tendances  </li>
+<li>Statistique inférentielle  </li>
+<li>analyses et tests  </li>
+<li>objectif: prédire, estimer, les comportement d'une population et expliquer les chances d'occurence d'un évènement à partir d'une échantillon aléatoire  </li>
+</ul>
+<h3 id="21-vocabulaire">2.1) Vocabulaire<a class="headerlink" href="#21-vocabulaire" title="Permanent link">&para;</a></h3>
+<ul>
+<li><font color="#ff0000">population</font>: ensemble concerné par une étude statistique  </li>
+<li><font color="#ff0000">individu</font>: un élément d'une population concerné = observation  </li>
+<li><font color="#ff0000">échantillon</font>: sous-ensemble de la population sur lequel sont réalisé des tests  </li>
+<li><font color="#ff0000">variable</font>: information ou caractéristique dont on va recueillir la valeur pour chaque individu d'une population  </li>
+<li><font color="#ff0000">variable aléatoire</font>: variable qui peut prendre plusieurs valeurs possible pour une experience aléatoire donnée  </li>
+<li><font color="#ff0000">variable explicative</font>: celle ci permet d'expliquer les valeurs obtenues par une autre variable  </li>
+<li><font color="#ff0000">variable cible, expliquée</font>: celle que l'on veut expliquer  </li>
+</ul>
+<h3 id="22-types-de-variables">2.2) Types de variables<a class="headerlink" href="#22-types-de-variables" title="Permanent link">&para;</a></h3>
+<p><img alt="500" src="../image/Drawing%20Types%20de%20variables.excalidraw.svg" /><br />
+<pre class="mermaid"><code>flowchart TB  
+    A([types de données]) --&gt; B([quantitatives]) &amp; C([qualitatives])  
+    B(["fas:fa-sort-numeric-up-alt quantitatives"]) --&gt; D([continues]) &amp; E([discrètes])  
+   C(["fa:fa-font qualitatives"]) --&gt; F([nominales]) &amp; G([ordinales])  
+    style A fill:#b425c700,stroke:#ffc04d,stroke-width:2px,color:#f08c00  
+    style B fill:#ffffff00,stroke:#171717,stroke-width:1.5px  
+    style C fill:#ffffff00,stroke:#171717,stroke-width:1px  
+    class D,E,F,G child  
+    classDef child fill:#ffffff00, stroke:#171717  </code></pre></p>
+<h3 id="23-notions-de-variabilite">2.3) Notions de variabilité<a class="headerlink" href="#23-notions-de-variabilite" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Quelle que soit sa nature, des fluctuations ou variabilités sont présentes dans un phénomène  </li>
+<li>On peut décrire cette variabilité avec des lois statistiques  <ul>
+<li>exemple: loi normale  </li>
+</ul>
+</li>
+</ul>
+<h3 id="24-la-loi-normale">2.4) La loi normale<a class="headerlink" href="#24-la-loi-normale" title="Permanent link">&para;</a></h3>
+<ul>
+<li>sous la forme d'une courbe en forme de cloche  </li>
+<li>les valeurs sont continues et symétriques  </li>
+<li>cette courbe est caractérisée par son espérance et son écart-type  </li>
+<li>On peut calculer les probabilités d'une valeur facilement  </li>
+</ul>
+<h2 id="3-la-statistique-descriptive">3) La statistique descriptive<a class="headerlink" href="#3-la-statistique-descriptive" title="Permanent link">&para;</a></h2>
+<h3 id="31-definition">3.1) Définition<a class="headerlink" href="#31-definition" title="Permanent link">&para;</a></h3>
+<ul>
+<li>permet de décrire la donnée spar des représentations graphiques et des caractéristiques numériques  </li>
+<li>propriétés  </li>
+<li>caractéristiques de position: moyenne, médiane, mode  </li>
+<li>de forme: coefficient de symétrie, coef d'aplatissement  </li>
+<li>de dispersion: variance, écart-type, étendues, quartiles  </li>
+<li>graphiques et tableaux  </li>
+<li>décrire une situation en se basant uniquement sur les résultats des échantillons  </li>
+</ul>
+<h3 id="32-caracteristiques-de-position">3.2) Caractéristiques de position<a class="headerlink" href="#32-caracteristiques-de-position" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Moyenne  </li>
+<li>Pour une variable quantitative, la moyenne est la valeur uniforme que devrait présenter chaque individu d’une population ou d’un échantillon pour que le total de l’ensemble reste inchangé. La moyenne arithmétique s’obtient en divisant la somme des valeurs par l’effectif : la moyenne de la somme des 10 premiers nombres est 55/10, autrement dit 5,5.  </li>
+<li>Médiane  </li>
+<li>Si on ordonne une distribution, la médiane  partage cette distribution en deux parties d’effectifs égaux.<br />
+      Ainsi, pour une distribution de salaires, 50 % des salaires se situent sous la médiane et 50 % au-dessus.  </li>
+<li>Mode  </li>
+<li>En statistique, le mode, ou valeur dominante, est la valeur la plus représentée d'une variable quelconque dans une population donnée.  </li>
+<li>Fréquence  </li>
+<li>La fréquence d’une valeur donnée, c’est le quotient (la division) de l’effectif de la valeur par l’effectif total. Intuitivement, elle indique la proportion de la présence de la valeur dans la liste.  </li>
+<li>Effectif  </li>
+<li>L'EFFECTIF d'une valeur est le nombre de données qui ont cette valeur (nombre de fois où cette valeur apparaît). L'EFFECTIF TOTAL est le nombre d'individus de la population étudiée, c'est-à-dire le nombre de données collectées.  </li>
+</ul>
+<h3 id="33-caracteristiques-de-forme">3.3) Caractéristiques de forme<a class="headerlink" href="#33-caracteristiques-de-forme" title="Permanent link">&para;</a></h3>
+<ul>
+<li>coefficient d'aplattisement  </li>
+<li>coefficient de symétrie  </li>
+</ul>
+<h3 id="34-caracteristiques-de-dispersion">3.4) Caractéristiques de dispersion<a class="headerlink" href="#34-caracteristiques-de-dispersion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>L'étendue  </li>
+<li>L’étendue d’une série statistique est la différence entre la valeur la plus grande et la valeur la plus petite de cette série.  </li>
+<li>La variance  </li>
+<li>La variance  est définie comme la moyenne du carré des écarts à la moyenne des valeurs de la distribution.  </li>
+<li>Le calcul de la variance est nécessaire pour calculer l'écart type.  </li>
+<li>L'écart-type  </li>
+<li>L'écart-type sert à mesurer la dispersion, ou l'étalement, d'un ensemble de valeurs autour de leur moyenne. Plus l'écart-type est faible, plus la population est homogène.  </li>
+<li>Le quartile  </li>
+<li>Si on ordonne une distribution de salaires, de revenus, de chiffre d'affaires…, les quartiles sont les valeurs qui partagent cette distribution en quatre parties égales.  </li>
+</ul>
+<h3 id="35-exercice">3.5) Exercice<a class="headerlink" href="#35-exercice" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<ol>
+<li>De quelle population s’agit-il ? Il s'agit d'une population de 80 étudiants  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Quelle est la variable statistique mise en jeu ? C'est une note à un test  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Cette variable est -elle discrète ou continue ? Discrète  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Construisez une visualisation adéquate pour représenter les effectifs<br />
+<img alt="300" src="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%203.png" />  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Mettez en évidence le nombre d’étudiants ayant répondu plus de 6 fois correctement<br />
+<img alt="300" src="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%204.png" />  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Quel est le nombre de réponses correctes qui apparaît le plus souvent ? Comment appelle-ton cette valeur ? 7 , c'est le mode  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Quelle est la moyenne obtenue pour ce test ? 6,475  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Quel est le nombre de réponses correctes pour lequel 50% des élèves se situent en dessous et 50% en dessus ? Comment appelle-t-on cette valeur ? 7 , c'est la médiane  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Construisez une boîte à moustache et retrouver les valeurs précédentes.<br />
+<img alt="300" src="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%205.png" />  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Calculer la variance et l’écart type ? variance = 3,949375 écart-type = 1,99984177  </li>
+</ol>
+</li>
+</ul>
+<h2 id="4-analyse-de-plusieurs-valeurs">4) Analyse de plusieurs valeurs<a class="headerlink" href="#4-analyse-de-plusieurs-valeurs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Après avoir visualiser les variables une à une , il reste encore à savoir si les variables explicatives entretiennent un lien entre elles, est-ce qu'elles sont corrélées ?  </li>
+<li>rôle de l'analyse bivariée, objectif : relation qui existe entre 2 variable  </li>
+</ul>
+<h3 id="41-les-correlations-entre-les-variables">4.1) Les corrélations entre les variables<a class="headerlink" href="#41-les-correlations-entre-les-variables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>le fait que 2 variables varient simultanément ne certifie pas qu'ils sont corrélés  </li>
+<li>Il faut utiliser le coefficient de corrélation ou de Pearson, indicateur numérique  </li>
+<li>le signe de coefficient indique le sens de la liaison  </li>
+<li>positif: même sens  </li>
+<li>négatif: sens opposées  </li>
+<li>la valeur absolue indique l'intensité de la liaison (entre 0 et 1)  </li>
+<li>proche de 1: liaison forte  </li>
+<li>proche de 0: liaison faible  </li>
+<li>On peut s'aider de la visualisation en point de nuage pour voir une corrélation, sans en être sûr  </li>
+<li>Si l'on a plusieurs valeurs, on peut calculer la corrélation une à une et les rassembler sous forme d'une <font color="#ff0000">matrice de corrélation</font>.<br />
+<img alt="400" src="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%206.png" />  </li>
+<li>Pour le cas de variables qualitatives  </li>
+<li>On se focalise sur les effectifs, la question est donc de savoir si les effectifs sont reliées.  </li>
+<li>On utilise un tableau de contingence que l'on calcule avec un test de Khi2  </li>
+</ul>
+<h3 id="42-etapes-dune-analyse-statistique-exhaustive-univariee">4.2) Etapes d'une analyse statistique exhaustive univariée<a class="headerlink" href="#42-etapes-dune-analyse-statistique-exhaustive-univariee" title="Permanent link">&para;</a></h3>
+<ul>
+<li>dimension de nos données  </li>
+<li>nom et signification des variables  </li>
+<li>types de variables  </li>
+<li>présence de valeurs manquantes ou nulles  </li>
+<li>caractéristiques de forme/position/distribution avec les visualisation adéquates  </li>
+</ul>
+<h3 id="43-exercice-2">4.3) Exercice 2<a class="headerlink" href="#43-exercice-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="./image/EXO2_clients_marketing.xlsx.md#">EXO2_clients_marketing.xlsx</a>  </li>
+</ul>
+<h2 id="5-test-du-khi2">5) Test du Khi2<a class="headerlink" href="#5-test-du-khi2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Quand l'on travaille avec des variables qualitatives, on ne peut plus calculer le coefficient de corrélation  </li>
+<li>
+<p>On utiliser donc le test du Khi2, et un tableau de contingence  </p>
+</li>
+<li>
+<p>On pose 2 hypothèses:  </p>
+<ul>
+<li>H0: les deux variables sont indépendantes  </li>
+<li>H1: les variables sont dépendantes  </li>
+</ul>
+</li>
+<li>
+<p>l'hypuyhèse nulle est considéré comme vrai tout au long du test, on le rejette si l'on a suffisamment de preuve  </p>
+</li>
+<li>
+<p>On commence par calculer les totaux de chaque lignes et colonnes;  </p>
+</li>
+<li><img alt="800" src="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%207.png" />  </li>
+<li>Si les variables sont indépendantes, on devrait retrouver les même proportion des lignes et des colonnes entre elles  </li>
+<li>Ensuite on calcule combien on devrait en avoir si cela était respecté  </li>
+<li><img alt="800" src="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%208.png" />  </li>
+<li><img alt="800" src="Revision%20des%20cours%20data%20-%20image%20-%201.png#" />  </li>
+<li>On compare ensuite les fréquences théoriques et comparées  </li>
+<li>On calcule ensuite le lien avec le Khi2, qui calcule l'écart global entre les fréquences observées et celles attendues  </li>
+<li><img alt="600" src="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%2010.png" />  </li>
+<li>Les loi du Khi2 possède 2 paramètres:  <ul>
+<li>degré de liberté = nombre de ligne - 1 * nombre de colonne - 1  </li>
+<li>seuil de significativité: probabilité du risque que l'on est prêt à assumer en rejetant l'hypothqèse nulle = ɑ  <ul>
+<li>souvent fixé à 5%  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>On compare ensuite la statistique Khi2 à la critique de distribution du Khi2 de référence , avec la table de référence  </p>
+<ul>
+<li>Si <font color="#ff0000">Khi2</font> &gt; <font color="#ff0000">Khi2</font> <font color="#ff0000">critique</font> : <font color="#ff0000">on rejette l'hypthèse H0</font>  </li>
+<li>Si <font color="#ff0000">Khi2</font> &lt; <font color="#ff0000">Khi2</font> <font color="#ff0000">critique</font> : <font color="#ff0000">on accepte l'hypothèse H1</font>  </li>
+</ul>
+</li>
+<li>
+<p>Template: <a href="./image/Template%20Test%20Khi2.xlsx.md#">Template Test Khi2.xlsx</a>  </p>
+</li>
+</ul>
+<h2 id="6-exercice-4">6) Exercice 4<a class="headerlink" href="#6-exercice-4" title="Permanent link">&para;</a></h2>
+<p><a href="./image/EXO4_donnees_bancaires.xlsx.md#">EXO4_donnees_bancaires.xlsx</a><br />
+<a href="./image/exercice_stat.pdf#">exercice_stat.pdf</a>  </p>
+<h2 id="7-exercice-methode-kmeans-et-cah">7) Exercice méthode Kmeans et CAH<a class="headerlink" href="#7-exercice-methode-kmeans-et-cah" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> a rendre au format word + rajouter les autres travail , sur le campus CEFIM 📅 2023-06-01 ✅ 2023-06-04<br />
+mail barbara: barbarafraenckel@gmail.com  </li>
+</ul>
+<p>%%<br />
+parent:: <a href="../CEFIM%20note%20principale.md#">Cefim note principale</a><br />
+image:: <a href="./image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%201.jpg#">image - 🎯 Cours Statistiques  - 1.jpg</a>, <a href="./image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%202.png#">image - 🎯 Cours Statistiques  - 2.png</a>, <a href="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%203.png">image - 🎯 Cours Statistiques  - 3.png</a>, <a href="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%204.png">image - 🎯 Cours Statistiques  - 4.png</a>, <a href="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%205.png">image - 🎯 Cours Statistiques  - 5.png</a>, <a href="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%206.png">image - 🎯 Cours Statistiques  - 6.png</a>, <a href="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%207.png">image - 🎯 Cours Statistiques  - 7.png</a>, <a href="../image/image%20-%20%F0%9F%8E%AF%20Cours%20Statistiques%20%20-%208.png">image - 🎯 Cours Statistiques  - 8.png</a>, <a href="../Drawing%20Types%20de%20variables.excalidraw.md#">Drawing Types de variables.excalidraw</a>, <a href="Revision%20des%20cours%20data%20-%20image%20-%201.png#">Revision des cours data - image - 1.png</a><br />
+exemple:: <a href="./image/EXO2_clients_marketing.xlsx.md#">EXO2_clients_marketing.xlsx</a>, <a href="./image/EXO4_donnees_bancaires.xlsx.md#">EXO4_donnees_bancaires.xlsx</a>, <a href="./image/exercice_stat.pdf#">exercice_stat.pdf</a><br />
+%%  </p>
+<hr />
+<p><a href="../CEFIM%20note%20principale.md#">Cefim note principale</a>  </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

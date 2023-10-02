@@ -1,0 +1,2306 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%F0%9F%93%8A%20Cours%20DataViz/">
+      
+      
+        <link rel="next" href="../%F0%9F%93%93%20guide%20de%20formation/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>📑 Cours Excel - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-principes-de-bases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📑 Cours Excel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-principes-de-bases" class="md-nav__link">
+    1) Principes de bases
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Principes de bases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-plages-de-valeurs" class="md-nav__link">
+    1.1) Plages de valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-adressage" class="md-nav__link">
+    1.2) Adressage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-calcul-et-fonctions" class="md-nav__link">
+    2) Calcul et fonctions
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Calcul et fonctions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fonctions-statistiques" class="md-nav__link">
+    2.1) Fonctions statistiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-fonctions-de-recherche" class="md-nav__link">
+    2.2) Fonctions de recherche
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2) Fonctions de recherche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-recherche-avec-un-intervalle" class="md-nav__link">
+    2.2.1) Recherche avec un intervalle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-recherche-precise" class="md-nav__link">
+    2.2.2) Recherche précise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-equiv" class="md-nav__link">
+    2.2.3) EQUIV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-index" class="md-nav__link">
+    2.2.4) Index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-fonctions-logiques" class="md-nav__link">
+    2.3) Fonctions logiques
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3) Fonctions logiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-si" class="md-nav__link">
+    2.3.1) Si
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-etounon" class="md-nav__link">
+    2.3.2) Et/Ou/Non
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-fonctions-dinformation" class="md-nav__link">
+    2.4) Fonctions d'information
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4) Fonctions d'information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-esterreur" class="md-nav__link">
+    2.4.1) EstErreur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-sierreur" class="md-nav__link">
+    2.4.2) SiErreur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-fonctions-dagregations" class="md-nav__link">
+    2.5) Fonctions d'agrégations
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5) Fonctions d'agrégations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-nbsisommesimoyennesi" class="md-nav__link">
+    2.5.1) NbSi/SommeSi/MoyenneSi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-nbsienssommesiens" class="md-nav__link">
+    2.5.2) NbSiEns/SommeSiEns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-sommeprod" class="md-nav__link">
+    2.5.3) SommeProd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254-rang" class="md-nav__link">
+    2.5.4) Rang
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-formatage" class="md-nav__link">
+    3) Formatage
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Formatage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-formatage-personnalise" class="md-nav__link">
+    3.1.1) Formatage personnalisé
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mise-en-forme-conditionnelle" class="md-nav__link">
+    3.2) Mise en forme conditionnelle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-faciliter-lusage-du-classeur" class="md-nav__link">
+    4) Faciliter l'usage du classeur
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Faciliter l'usage du classeur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-limiter-les-choix-de-lutilisateur" class="md-nav__link">
+    4.1) Limiter les choix de l'utilisateur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-nommer-une-cellule-ou-une-plage-de-valeur" class="md-nav__link">
+    4.2) Nommer une cellule ou une plage de valeur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-les-tableaux-croises-dynamiques" class="md-nav__link">
+    5) Les Tableaux croisés dynamiques
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Les Tableaux croisés dynamiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-prerequis" class="md-nav__link">
+    5.1) Prérequis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-champs-calcules" class="md-nav__link">
+    5.2) Champs calculés
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-analyse-des-donnees" class="md-nav__link">
+    6) Analyse des données
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Analyse des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-trier" class="md-nav__link">
+    6.1) Trier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-filtrer" class="md-nav__link">
+    6.2) Filtrer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-visualisations" class="md-nav__link">
+    7) Visualisations
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Visualisations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-changement-dans-la-duree" class="md-nav__link">
+    7.1) Changement dans la durée
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-comparer-et-classer-des-donnees" class="md-nav__link">
+    7.2) Comparer et classer des données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-visualiser-une-representation-en-pourcentage" class="md-nav__link">
+    7.3) Visualiser une représentation en pourcentage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-autres-graphiques-utiles" class="md-nav__link">
+    7.4) Autres graphiques utiles
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4) Autres graphiques utiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-graphiques-avec-hierarchierayons-de-soleils" class="md-nav__link">
+    7.4.1) Graphiques avec hiérarchie/rayons de soleils
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#742-combinaison-de-graphiques" class="md-nav__link">
+    7.4.2) Combinaison de graphiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#743-visualisation-geographique" class="md-nav__link">
+    7.4.3) Visualisation géographique
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-dashboard" class="md-nav__link">
+    8) Dashboard
+  </a>
+  
+    <nav class="md-nav" aria-label="8) Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-slicers-et-timeline" class="md-nav__link">
+    8.1) Slicers et timeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-bonnes-pratiques" class="md-nav__link">
+    8.2) Bonnes pratiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-construire-la-structure-du-dashboard" class="md-nav__link">
+    8.3) Construire la structure du dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-kpi" class="md-nav__link">
+    8.4) KPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-ajouter-les-graphiques" class="md-nav__link">
+    8.5) Ajouter les graphiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ressource" class="md-nav__link">
+    9) Ressource
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-principes-de-bases" class="md-nav__link">
+    1) Principes de bases
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Principes de bases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-plages-de-valeurs" class="md-nav__link">
+    1.1) Plages de valeurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-adressage" class="md-nav__link">
+    1.2) Adressage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-calcul-et-fonctions" class="md-nav__link">
+    2) Calcul et fonctions
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Calcul et fonctions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fonctions-statistiques" class="md-nav__link">
+    2.1) Fonctions statistiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-fonctions-de-recherche" class="md-nav__link">
+    2.2) Fonctions de recherche
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2) Fonctions de recherche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-recherche-avec-un-intervalle" class="md-nav__link">
+    2.2.1) Recherche avec un intervalle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-recherche-precise" class="md-nav__link">
+    2.2.2) Recherche précise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-equiv" class="md-nav__link">
+    2.2.3) EQUIV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-index" class="md-nav__link">
+    2.2.4) Index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-fonctions-logiques" class="md-nav__link">
+    2.3) Fonctions logiques
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3) Fonctions logiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-si" class="md-nav__link">
+    2.3.1) Si
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-etounon" class="md-nav__link">
+    2.3.2) Et/Ou/Non
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-fonctions-dinformation" class="md-nav__link">
+    2.4) Fonctions d'information
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4) Fonctions d'information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-esterreur" class="md-nav__link">
+    2.4.1) EstErreur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-sierreur" class="md-nav__link">
+    2.4.2) SiErreur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-fonctions-dagregations" class="md-nav__link">
+    2.5) Fonctions d'agrégations
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5) Fonctions d'agrégations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-nbsisommesimoyennesi" class="md-nav__link">
+    2.5.1) NbSi/SommeSi/MoyenneSi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-nbsienssommesiens" class="md-nav__link">
+    2.5.2) NbSiEns/SommeSiEns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-sommeprod" class="md-nav__link">
+    2.5.3) SommeProd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254-rang" class="md-nav__link">
+    2.5.4) Rang
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-formatage" class="md-nav__link">
+    3) Formatage
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Formatage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-formatage-personnalise" class="md-nav__link">
+    3.1.1) Formatage personnalisé
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mise-en-forme-conditionnelle" class="md-nav__link">
+    3.2) Mise en forme conditionnelle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-faciliter-lusage-du-classeur" class="md-nav__link">
+    4) Faciliter l'usage du classeur
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Faciliter l'usage du classeur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-limiter-les-choix-de-lutilisateur" class="md-nav__link">
+    4.1) Limiter les choix de l'utilisateur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-nommer-une-cellule-ou-une-plage-de-valeur" class="md-nav__link">
+    4.2) Nommer une cellule ou une plage de valeur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-les-tableaux-croises-dynamiques" class="md-nav__link">
+    5) Les Tableaux croisés dynamiques
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Les Tableaux croisés dynamiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-prerequis" class="md-nav__link">
+    5.1) Prérequis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-champs-calcules" class="md-nav__link">
+    5.2) Champs calculés
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-analyse-des-donnees" class="md-nav__link">
+    6) Analyse des données
+  </a>
+  
+    <nav class="md-nav" aria-label="6) Analyse des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-trier" class="md-nav__link">
+    6.1) Trier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-filtrer" class="md-nav__link">
+    6.2) Filtrer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-visualisations" class="md-nav__link">
+    7) Visualisations
+  </a>
+  
+    <nav class="md-nav" aria-label="7) Visualisations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-changement-dans-la-duree" class="md-nav__link">
+    7.1) Changement dans la durée
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-comparer-et-classer-des-donnees" class="md-nav__link">
+    7.2) Comparer et classer des données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-visualiser-une-representation-en-pourcentage" class="md-nav__link">
+    7.3) Visualiser une représentation en pourcentage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-autres-graphiques-utiles" class="md-nav__link">
+    7.4) Autres graphiques utiles
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4) Autres graphiques utiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-graphiques-avec-hierarchierayons-de-soleils" class="md-nav__link">
+    7.4.1) Graphiques avec hiérarchie/rayons de soleils
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#742-combinaison-de-graphiques" class="md-nav__link">
+    7.4.2) Combinaison de graphiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#743-visualisation-geographique" class="md-nav__link">
+    7.4.3) Visualisation géographique
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-dashboard" class="md-nav__link">
+    8) Dashboard
+  </a>
+  
+    <nav class="md-nav" aria-label="8) Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-slicers-et-timeline" class="md-nav__link">
+    8.1) Slicers et timeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-bonnes-pratiques" class="md-nav__link">
+    8.2) Bonnes pratiques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-construire-la-structure-du-dashboard" class="md-nav__link">
+    8.3) Construire la structure du dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-kpi" class="md-nav__link">
+    8.4) KPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-ajouter-les-graphiques" class="md-nav__link">
+    8.5) Ajouter les graphiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ressource" class="md-nav__link">
+    9) Ressource
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>📑 Cours Excel</h1>
+
+<p><img alt="banner" src="../image/image%20-%20%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel.png" />  </p>
+<p><a href="../CEFIM%20note%20principale.md#">Cefim note principale</a>  </p>
+<hr />
+<p><a href="https://linen-safflower-595.notion.site/Formation-Tableurs-7bc273c2e2ce482ca4b4f73ab94e85de">Cours sur internet</a> ^01489d  </p>
+<blockquote>
+<p>[!SUMMARY]+<br />
+<div class="highlight"><pre><span></span><code>
+</code></pre></div></p>
+</blockquote>
+<h2 id="1-principes-de-bases">1) Principes de bases<a class="headerlink" href="#1-principes-de-bases" title="Permanent link">&para;</a></h2>
+<h3 id="11-plages-de-valeurs">1.1) Plages de valeurs<a class="headerlink" href="#11-plages-de-valeurs" title="Permanent link">&para;</a></h3>
+<p><strong>vecteur</strong>: liste de valeurs(ligne ou colonne), l'adresse est définie par ses 2 cellules extrêmes séparées de deux points[:]<br />
+<strong>matrice</strong>: table de valeurs, caractérisée par les deux cellules extrêmes (haut-gauche et bas-droite)  </p>
+<h3 id="12-adressage">1.2) Adressage<a class="headerlink" href="#12-adressage" title="Permanent link">&para;</a></h3>
+<p><strong>adressage relatif</strong>: adressage par défaut, <code>C5*D5</code> <br><strong>adressage absolu</strong>: bloque le décalage d'une ou plusieurs cellules, précédé d'un dollar,  <code>$C$5*$D$5</code><br><strong>adressage mixte</strong>: seule une partie de la référence est fixe, <code>C$5</code><br />
+<strong><span style="background:#fff88f">raccourci</span></strong>:  F4 quand on sélectionne une cellule pour rapidement changer l'adressage  </p>
+<h2 id="2-calcul-et-fonctions">2) Calcul et fonctions<a class="headerlink" href="#2-calcul-et-fonctions" title="Permanent link">&para;</a></h2>
+<h3 id="21-fonctions-statistiques">2.1) Fonctions statistiques<a class="headerlink" href="#21-fonctions-statistiques" title="Permanent link">&para;</a></h3>
+<p><strong>somme</strong><br />
+<strong>moyenne</strong><br />
+<strong>min</strong><br />
+<strong>max</strong><br />
+<strong>médiane</strong><br />
+<strong>nb</strong>, nombre de nombre<br />
+<strong>nbval</strong>, nombre de cellules non vides<br />
+<strong>ecartype</strong><br />
+<strong>nb.vide</strong>, nombre de cellules vides  </p>
+<h3 id="22-fonctions-de-recherche">2.2) Fonctions de recherche<a class="headerlink" href="#22-fonctions-de-recherche" title="Permanent link">&para;</a></h3>
+<p><strong>recherchev</strong> et <strong>rechercheh</strong> s'utilisent de la même manière  </p>
+<h4 id="221-recherche-avec-un-intervalle">2.2.1) Recherche avec un intervalle<a class="headerlink" href="#221-recherche-avec-un-intervalle" title="Permanent link">&para;</a></h4>
+<p>syntaxe: =recherchev(valeur que l'on cherche; matrice ou l'on cherche; numéro de colonne dans la matrice de la valeur à renvoyer; VRAI )<br />
+ Exemple:<br />
+<img alt="📑 Aide mémoire Excel - image - 1.png" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%201.png#" /><br />
+ Commentaire=<code>RECHERCHEV(D8; $J$8:$K$12; 2; VRAI)</code>  </p>
+<h4 id="222-recherche-precise">2.2.2) Recherche précise<a class="headerlink" href="#222-recherche-precise" title="Permanent link">&para;</a></h4>
+<p>syntaxe: =recherchev(valeur que l'on cherche; matrice ou l'on cherche; numéro de colonne dans la matrice de la valeur à renvoyer; FAUX )<br />
+Exemple:<br />
+<img alt="📑 Aide mémoire Excel - image - 2.png" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%202.png#" /><br />
+Prénom=<code>RECHERCHEV(H7; B3:D6; 3; FAUX)</code><br />
+Exemple avec If:<br />
+<img alt="600" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%203.png#" />  </p>
+<h4 id="223-equiv">2.2.3) EQUIV<a class="headerlink" href="#223-equiv" title="Permanent link">&para;</a></h4>
+<p>Permet de recherche un élément spécifique dans une plage de cellule puis renvoie la position relative de l'élement dans la plage.<br />
+syntaxe: <code>MATCH(valeur que l'on cherche; matrice où l'on cherche; type(0 en cas normal, -1 ou +1 pour des cas particuliers))</code>  </p>
+<p>Exemple:<br />
+<img alt="📑 Aide mémoire Excel - image - 4.png" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%204.png#" /><br />
+Rang=<code>MATCH(G3; C4:C10; 0</code>  </p>
+<h4 id="224-index">2.2.4) Index<a class="headerlink" href="#224-index" title="Permanent link">&para;</a></h4>
+<p>renvoie une valeur d'un tableau avec les numéros de lignes et de colonnes<br />
+syntaxe:<code>INDEX(matrice où l'on cherche; numéro de ligne; numéro de colonne)</code><br />
+Exemple:<br />
+<img alt="📑 Aide mémoire Excel - image - 5.png" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%205.png#" />  </p>
+<h3 id="23-fonctions-logiques">2.3) Fonctions logiques<a class="headerlink" href="#23-fonctions-logiques" title="Permanent link">&para;</a></h3>
+<h4 id="231-si">2.3.1) Si<a class="headerlink" href="#231-si" title="Permanent link">&para;</a></h4>
+<p>La fonction si simple permet d'avoir 2 résultats, le premier est appliqué si la comparaison est vérifié, sinon c'est le deuxième.<br />
+syntaxe:=<code>SI(test logique; resultat si vrai; resultat si faux</code>  </p>
+<p>opérateur de comparaisons disponibles: =, &gt;, &lt;, &gt;=, &lt;=, &lt;&gt;  </p>
+<h4 id="232-etounon">2.3.2) Et/Ou/Non<a class="headerlink" href="#232-etounon" title="Permanent link">&para;</a></h4>
+<p>On ne peut pas écrire plusieurs comparaison dans un test logique. Pour écrire 12 &lt; A2 &lt; 16 , on doit donc écrire <code>ET(12&lt;A2; A2&lt;16)</code>.  </p>
+<h3 id="24-fonctions-dinformation">2.4) Fonctions d'information<a class="headerlink" href="#24-fonctions-dinformation" title="Permanent link">&para;</a></h3>
+<h4 id="241-esterreur">2.4.1) EstErreur<a class="headerlink" href="#241-esterreur" title="Permanent link">&para;</a></h4>
+<p>Renvoie True si une valeur renvoie une erreur( /#NA, /#Value, /#REF, /#DIV/0, /#NUM, /#NAME?, /#NULL!)<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%206.png#" />  </p>
+<h4 id="242-sierreur">2.4.2) SiErreur<a class="headerlink" href="#242-sierreur" title="Permanent link">&para;</a></h4>
+<p>Renvoie le résultat de la formule s'il n'y a pas d'erreur, ou une autre valeur s'il y a un problème<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%207.png#" />  </p>
+<h3 id="25-fonctions-dagregations">2.5) Fonctions d'agrégations<a class="headerlink" href="#25-fonctions-dagregations" title="Permanent link">&para;</a></h3>
+<h4 id="251-nbsisommesimoyennesi">2.5.1) NbSi/SommeSi/MoyenneSi<a class="headerlink" href="#251-nbsisommesimoyennesi" title="Permanent link">&para;</a></h4>
+<p>Permet de compter les cellules, la moyenne ou la somme des cellules qui correspondent à un critère.<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%208.png#" />  </p>
+<blockquote>
+<p>[!hint|c-yellow c-p-sm]-<br />
+quand on souhaite faire intervenir la valeur d’une cellule dans le critère il faut réaliser une concaténation avec &amp; entre le signe et la référence.<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%209.png#" />  </p>
+</blockquote>
+<h4 id="252-nbsienssommesiens">2.5.2) NbSiEns/SommeSiEns<a class="headerlink" href="#252-nbsienssommesiens" title="Permanent link">&para;</a></h4>
+<p>Fonction similaire mais avec plusieurs conditions  </p>
+<h4 id="253-sommeprod">2.5.3) SommeProd<a class="headerlink" href="#253-sommeprod" title="Permanent link">&para;</a></h4>
+<p>renvoie la somme des produits de 2 matrices de même forme<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2010.png#" />  </p>
+<h4 id="254-rang">2.5.4) Rang<a class="headerlink" href="#254-rang" title="Permanent link">&para;</a></h4>
+<p>renvoie le rang d'une valeur numérique dans une liste de valeur données  </p>
+<blockquote>
+<p>[!hint|c-yellow c-p-sm]-<br />
+Si on imbrique beaucoup de fonctions les unes dans les autres, on peut étirer la zone d'écriture pour gagner en lisibilité<br />
+<img alt="400" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2011.png#" /><br />
+<img alt="400" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2012.png#" />  </p>
+</blockquote>
+<h2 id="3-formatage">3) Formatage<a class="headerlink" href="#3-formatage" title="Permanent link">&para;</a></h2>
+<p>le <strong>format</strong> fait référence à la police, au remplissage, à l'alignement, au bordures et au nombre  </p>
+<h4 id="311-formatage-personnalise">3.1.1) Formatage personnalisé<a class="headerlink" href="#311-formatage-personnalise" title="Permanent link">&para;</a></h4>
+<p>On peut créer ses propres format de données. Quelques exemples utiles:<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2013.png#" />  </p>
+<blockquote>
+<p>[!attention] Penser à mettre les espaces entre " " sinon Excel les interprète comme division par 1000  </p>
+</blockquote>
+<h3 id="32-mise-en-forme-conditionnelle">3.2) Mise en forme conditionnelle<a class="headerlink" href="#32-mise-en-forme-conditionnelle" title="Permanent link">&para;</a></h3>
+<p>Permet de mettre en évidence les éléments dans vos données à partir de règles qui déterminent le format des cellules en fonctions de leurs valeurs<br />
+- format par contenu de cellules<br />
+- échelle de couleurs par échelle de valeurs<br />
+- règles personnalisés, avec notre propre formule  </p>
+<blockquote>
+<p>[!TIP] On peut copier un formatage conditionnel avec le pinceau de format  </p>
+</blockquote>
+<h2 id="4-faciliter-lusage-du-classeur">4) Faciliter l'usage du classeur<a class="headerlink" href="#4-faciliter-lusage-du-classeur" title="Permanent link">&para;</a></h2>
+<p>Le classeur doit être pensé pour deux types de personnes:<br />
+- Utilisateurs: minimiser le risque d'erreurs, on fait en sorte que l'utilisateur utilise le tableau comme on le souhaite (data validation)<br />
+- Développeur: de façon à ce qu'un autre développeur puisse le reprendre et comprendre sa construction, ses fonctions  </p>
+<h3 id="41-limiter-les-choix-de-lutilisateur">4.1) Limiter les choix de l'utilisateur<a class="headerlink" href="#41-limiter-les-choix-de-lutilisateur" title="Permanent link">&para;</a></h3>
+<p>Grâce à la validation de données, l'utilisateur ne peut pas rentrer de données qui marquerait des erreurs.<br />
+On peut utiliser une liste prédéterminée, ou une échelle de valeur  </p>
+<h3 id="42-nommer-une-cellule-ou-une-plage-de-valeur">4.2) Nommer une cellule ou une plage de valeur<a class="headerlink" href="#42-nommer-une-cellule-ou-une-plage-de-valeur" title="Permanent link">&para;</a></h3>
+<p>En remplaçant en haut à gauche la référence de cellule par un nom, pour pouvoir l'utiliser de façon plus naturel<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2014.png#" /><br />
+Il vaut mieux limiter l'usage des plages de données le plus possible  </p>
+<h2 id="5-les-tableaux-croises-dynamiques">5) Les Tableaux croisés dynamiques<a class="headerlink" href="#5-les-tableaux-croises-dynamiques" title="Permanent link">&para;</a></h2>
+<p>Un tableau croisé dynamique est un tableau de valeurs groupées qui regroupe les éléments individuels d'un tableau plus étendu ( ex: d'une base de données ) dans une ou plusieurs catégories distinctes. Ce résumé peut inclure des sommes, des moyennes ou d'autres statistiques, que le tableau croisé dynamique regroupe à l'aide d'une fonction d'agrégation choisie appliquée aux valeurs groupées.<br />
+Il ne se met pas automatiquement à jour à chaque changement de la base de données.  </p>
+<h3 id="51-prerequis">5.1) Prérequis<a class="headerlink" href="#51-prerequis" title="Permanent link">&para;</a></h3>
+<p>Il faut une base de données relationnelle: lignes représentant un enregistrement et colonnes représentant un champs de données avec des en-têtes de colonnes dans la première ligne.  </p>
+<h3 id="52-champs-calcules">5.2) Champs calculés<a class="headerlink" href="#52-champs-calcules" title="Permanent link">&para;</a></h3>
+<p>Cela permet d'ajouter un champ directement dans le TCD avec une formule, faite avec des champs qui existent déjà. Il est toujours calculé au niveau de détail du TCD  </p>
+<h2 id="6-analyse-des-donnees">6) Analyse des données<a class="headerlink" href="#6-analyse-des-donnees" title="Permanent link">&para;</a></h2>
+<h3 id="61-trier">6.1) Trier<a class="headerlink" href="#61-trier" title="Permanent link">&para;</a></h3>
+<p>On peut trier du texte, des nombres et des dates, il faut avant vérifier que les valeurs sont au bon format.  </p>
+<h3 id="62-filtrer">6.2) Filtrer<a class="headerlink" href="#62-filtrer" title="Permanent link">&para;</a></h3>
+<p>Permet d'afficher ou de masquer des valeurs dans une ou plusieurs colonnes. On peut utiliser diverses conditions préconfigurés ou en créer une.  </p>
+<h2 id="7-visualisations">7) Visualisations<a class="headerlink" href="#7-visualisations" title="Permanent link">&para;</a></h2>
+<p>pivot chart: issu d'un TCD  </p>
+<h3 id="71-changement-dans-la-duree">7.1) Changement dans la durée<a class="headerlink" href="#71-changement-dans-la-duree" title="Permanent link">&para;</a></h3>
+<p>avec une courbe<br />
+exemple:<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2015.png#" /><br />
+Ce graphique répond aux questions:<br />
+- Comment cette mesure a-t-elle évolué au cours de l'année passé ?<br />
+- Quand cette mesure a-t-elle changé ?<br />
+- Avec quelle rapidité cette mesure a-t-elle changé ?  </p>
+<h3 id="72-comparer-et-classer-des-donnees">7.2) Comparer et classer des données<a class="headerlink" href="#72-comparer-et-classer-des-donnees" title="Permanent link">&para;</a></h3>
+<p>avec des barres/histogrammes<br />
+exemple:<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2016.png#" /><br />
+Ce graphique répond aux questions:<br />
+- Quel membre de cette dimension présente la mesure la plus élevée ?<br />
+- Y a-t-til des dimensions exceptionnelles ?<br />
+- Quelle est l'étendue de l'écart entre la mesure la plus basse et la plus élevée entre ces deux dimensions ?  </p>
+<p>On peut aussi choisir entre utiliser un graphique en barre groupé ou un graphique en barre superposé.  </p>
+<h3 id="73-visualiser-une-representation-en-pourcentage">7.3) Visualiser une représentation en pourcentage<a class="headerlink" href="#73-visualiser-une-representation-en-pourcentage" title="Permanent link">&para;</a></h3>
+<p>avec un camembert ou donut, pour montrer ce qu'un élément individuel représente dans un tout<br />
+exemple:<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2017.png#" /><br />
+Ce graphique répond aux questions:<br />
+- Quelle est la contribution de cette valeur au total ?<br />
+- Comment la répartition des frais change-t-elle chaque année ?<br />
+- Les différents articles apportent ils différents montants de ventes par région ?   </p>
+<h3 id="74-autres-graphiques-utiles">7.4) Autres graphiques utiles<a class="headerlink" href="#74-autres-graphiques-utiles" title="Permanent link">&para;</a></h3>
+<p>qui ne sont pas accessibles directement avec les TCD  </p>
+<p>Pour cela, on peut recopier le TCD a coté, en mettant <code>\=première cellule</code> dans une cellule, puis en continuant avec la poignée de recopie.  </p>
+<h4 id="741-graphiques-avec-hierarchierayons-de-soleils">7.4.1) Graphiques avec hiérarchie/rayons de soleils<a class="headerlink" href="#741-graphiques-avec-hierarchierayons-de-soleils" title="Permanent link">&para;</a></h4>
+<p>pour mettre en avant un rapport hiérarchique<br />
+exemple:<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2018.png#" />  </p>
+<h4 id="742-combinaison-de-graphiques">7.4.2) Combinaison de graphiques<a class="headerlink" href="#742-combinaison-de-graphiques" title="Permanent link">&para;</a></h4>
+<p>pour montrer comment évoluent différentes mesures ensembles<br />
+exemple:<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2019.png#" />  </p>
+<h4 id="743-visualisation-geographique">7.4.3) Visualisation géographique<a class="headerlink" href="#743-visualisation-geographique" title="Permanent link">&para;</a></h4>
+<p>pour les intégrer dans une carte<br />
+exemple:<br />
+<img alt="300" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2020.png#" />  </p>
+<h2 id="8-dashboard">8) Dashboard<a class="headerlink" href="#8-dashboard" title="Permanent link">&para;</a></h2>
+<h3 id="81-slicers-et-timeline">8.1) Slicers et timeline<a class="headerlink" href="#81-slicers-et-timeline" title="Permanent link">&para;</a></h3>
+<p>Ce sont des filtres simplifiés pour les dashboards  </p>
+<blockquote>
+<p>[!WARNING] Attention, tous les TCD et éléments que l'ont veut filtrer doivent être exactement sur les mêmes plages de la base de données, donc faire attention à ce que la base de données soit un tableau avant de réaliser des TCD  </p>
+</blockquote>
+<h3 id="82-bonnes-pratiques">8.2) Bonnes pratiques<a class="headerlink" href="#82-bonnes-pratiques" title="Permanent link">&para;</a></h3>
+<p>Un tableau de bord bien conçu peut harmoniser les efforts de votre organisation, contribuer à<br />
+révéler des informations majeures et accélérer le processus décisionnaire.  </p>
+<ul>
+<li>Connaître votre objectif et votre public  <ul>
+<li>Quel message veut-on transmettre ?  </li>
+<li>Conclusion ou question clé ?  </li>
+<li>Public novice ou qui maîtrise le sujet ?  </li>
+<li>De quel type de repère a-t-il besoin ?  </li>
+</ul>
+</li>
+<li>Exploiter l'endroit le plus visité  <ul>
+<li>partie supérieur gauche  </li>
+</ul>
+</li>
+<li>Limiter le nombre de graphique  <ul>
+<li>2 ou 3 max  </li>
+</ul>
+</li>
+<li>Désencombrer la vue  <ul>
+<li>1 ou 2 palette de couleurs max  </li>
+<li>supprimer les textes, lignes, trames de fond, légendes, qui ne fournissent pas d'informations  </li>
+</ul>
+</li>
+<li>Limiter les couleurs  </li>
+</ul>
+<h3 id="83-construire-la-structure-du-dashboard">8.3) Construire la structure du dashboard<a class="headerlink" href="#83-construire-la-structure-du-dashboard" title="Permanent link">&para;</a></h3>
+<p>exemple:<br />
+<img alt="400" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2021.png#" />  </p>
+<p>Pour obtenir ceci, on peut commencer par créer les formes avec des rectangles, et bien les aligner  </p>
+<h3 id="84-kpi">8.4) KPI<a class="headerlink" href="#84-kpi" title="Permanent link">&para;</a></h3>
+<p>Une KPI est un chiffre clé qui sera dynamique<br />
+exemple:<br />
+<img alt="200" src="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2022.png#" /><br />
+On peut utiliser 2 formes, et rajouter la référence à la formule dans la 2ème forme avec la barre de formule<br />
+On peut ensuite grouper les 2 boites et les dupliquer  </p>
+<h3 id="85-ajouter-les-graphiques">8.5) Ajouter les graphiques<a class="headerlink" href="#85-ajouter-les-graphiques" title="Permanent link">&para;</a></h3>
+<p>Il ne reste alors plus qu'a ajouter les graphiques en les copiant-collant  </p>
+<p>Avec Google Sheets, tous les éléments doivent être sur la même feuille et l'on ne pourra pas faire des copier-coller. Les TCD seront sur la même feuille que le dashboard et il faudra donc les cacher en cachant des lignes.  </p>
+<p>Enfin, pour bien terminer un dashboard, on peut enlever les barres de formules et références; cacher les onglets inutiles voir les verrouiller, et grouper tous le dashboard  </p>
+<h2 id="9-ressource">9) Ressource<a class="headerlink" href="#9-ressource" title="Permanent link">&para;</a></h2>
+<iframe title="Excel Pivot Tables EXPLAINED in 10 Minutes (Productivity tips included!)" src="https://www.youtube.com/embed/UsdedFoTA68?feature=oembed" height="113" width="200" style="aspect-ratio: 1.76991 / 1; width: 80%; height: 80%;" allowfullscreen="" allow="fullscreen"></iframe>
+
+<p>%%<br />
+parent:: <a href="../CEFIM%20note%20principale.md#">Cefim note principale</a><br />
+image:: <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%201.png#">📑 Aide mémoire Excel - image - 1.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%202.png#">📑 Aide mémoire Excel - image - 2.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%203.png#">📑 Aide mémoire Excel - image - 3.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%204.png#">📑 Aide mémoire Excel - image - 4.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%205.png,%20%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%206.png#">📑 Aide mémoire Excel - image - 5.png, 📑 Aide mémoire Excel - image - 6.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%207.png#">📑 Aide mémoire Excel - image - 7.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%208.png#">📑 Aide mémoire Excel - image - 8.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%209.png#">📑 Aide mémoire Excel - image - 9.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2010.png#">📑 Aide mémoire Excel - image - 10.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2011.png#">📑 Aide mémoire Excel - image - 11.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2012.png#">📑 Aide mémoire Excel - image - 12.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2013.png#">📑 Aide mémoire Excel - image - 13.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2014.png#">📑 Aide mémoire Excel - image - 14.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2015.png#">📑 Aide mémoire Excel - image - 15.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2016.png#">📑 Aide mémoire Excel - image - 16.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2017.png#">📑 Aide mémoire Excel - image - 17.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2018.png#">📑 Aide mémoire Excel - image - 18.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2019.png#">📑 Aide mémoire Excel - image - 19.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2020.png#">📑 Aide mémoire Excel - image - 20.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2021.png#">📑 Aide mémoire Excel - image - 21.png</a>, <a href="%F0%9F%93%91%20Aide%20m%C3%A9moire%20Excel%20-%20image%20-%2022.png#">📑 Aide mémoire Excel - image - 22.png</a>, <br />
+%%  </p>
+<hr />
+<p><a href="../CEFIM%20note%20principale.md#">Cefim note principale</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

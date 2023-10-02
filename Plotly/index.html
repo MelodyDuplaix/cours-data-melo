@@ -1,0 +1,2057 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Petits%20projets%20python%20pour%20apprendre/">
+      
+      
+        <link rel="next" href="../Projet%20Streamlit/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Plotly - cours data melo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-base-des-diagrammes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="cours data melo" class="md-header__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cours data melo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plotly
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="cours data melo" class="md-nav__button md-logo" aria-label="cours data melo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    cours data melo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Machine%20Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cours%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-base-des-diagrammes" class="md-nav__link">
+    1) Base des diagrammes
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Base des diagrammes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-import-des-bibliotheques" class="md-nav__link">
+    1.1) Import des bibliothèques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-barres" class="md-nav__link">
+    1.2) Barres
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2) Barres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-pour-rajouter-un-titre-au-graphique" class="md-nav__link">
+    1.2.1) Pour rajouter un titre au graphique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-pour-rajouter-les-titres-des-axes-au-graphique" class="md-nav__link">
+    1.2.2) Pour rajouter les titres des axes au graphique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-pour-modifier-les-couleurs" class="md-nav__link">
+    1.2.3) Pour modifier les couleurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-pour-rajouter-des-etiquettes" class="md-nav__link">
+    1.2.4) Pour rajouter des étiquettes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.2.5) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-histogramme" class="md-nav__link">
+    1.3) Histogramme
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3) Histogramme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.3.1) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-pour-modifier-lechelle-des-axes" class="md-nav__link">
+    1.3.2) Pour modifier l'échelle des axes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-distribution" class="md-nav__link">
+    1.4) Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4) Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.4.1) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-pour-retirer-une-partie-des-graphiques" class="md-nav__link">
+    1.4.2) Pour retirer une partie des graphiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-nuage-de-points" class="md-nav__link">
+    1.5) Nuage de points
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5) Nuage de points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.5.1) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-courbes" class="md-nav__link">
+    1.6) Courbes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6) Courbes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-pour-rajouter-des-arguments" class="md-nav__link">
+    1.6.1) Pour rajouter des arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-boite-a-moustache" class="md-nav__link">
+    1.7) Boite à moustache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-separer-les-graphiques" class="md-nav__link">
+    1.8) Séparer les graphiques
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8) Séparer les graphiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-combiner-les-axes-des-graphiques" class="md-nav__link">
+    Pour combiner les axes des graphiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    N
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            N
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Button%20behavior%20and%20examples%20-%20Streamlit%20Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button behavior and examples   Streamlit Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Cours%20Flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Cours%20Power%20BI%20et%20Microsoft/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours Power BI et Microsoft
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Petits%20projets%20python%20pour%20apprendre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Petits projets python pour apprendre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/Projet%20Streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%C2%AE%EF%B8%8F%20Cours%20R%20et%20Rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ®️ Cours R et Rstudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%E2%9C%8D%EF%B8%8F%20Projet%20Base%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ✍️ Projet Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8E%A8%20Cours%20Design%20Thinking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎨 Cours Design Thinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8E%AF%20Cours%20Statistiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🎯 Cours Statistiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%8F%9B%EF%B8%8F%20Atelier%20RGPD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏛️ Atelier RGPD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%90%8D%20Projet%20python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🐍 Projet python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%91%80%20Aide-m%C3%A9moire%20des%20cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    👀 Aide mémoire des cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%87%20Cours%20python%20-%20Bases%20de%20donn%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📇 Cours python   Bases de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%8A%20Cours%20DataViz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📊 Cours DataViz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%91%20Cours%20Excel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📑 Cours Excel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%93%20guide%20de%20formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 guide de formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../n/%F0%9F%93%B2%20Cours%20Tableau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📲 Cours Tableau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-base-des-diagrammes" class="md-nav__link">
+    1) Base des diagrammes
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Base des diagrammes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-import-des-bibliotheques" class="md-nav__link">
+    1.1) Import des bibliothèques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-barres" class="md-nav__link">
+    1.2) Barres
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2) Barres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-pour-rajouter-un-titre-au-graphique" class="md-nav__link">
+    1.2.1) Pour rajouter un titre au graphique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-pour-rajouter-les-titres-des-axes-au-graphique" class="md-nav__link">
+    1.2.2) Pour rajouter les titres des axes au graphique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-pour-modifier-les-couleurs" class="md-nav__link">
+    1.2.3) Pour modifier les couleurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-pour-rajouter-des-etiquettes" class="md-nav__link">
+    1.2.4) Pour rajouter des étiquettes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.2.5) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-histogramme" class="md-nav__link">
+    1.3) Histogramme
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3) Histogramme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.3.1) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-pour-modifier-lechelle-des-axes" class="md-nav__link">
+    1.3.2) Pour modifier l'échelle des axes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-distribution" class="md-nav__link">
+    1.4) Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4) Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.4.1) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-pour-retirer-une-partie-des-graphiques" class="md-nav__link">
+    1.4.2) Pour retirer une partie des graphiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-nuage-de-points" class="md-nav__link">
+    1.5) Nuage de points
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5) Nuage de points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-pour-comparer-plusieurs-series-de-donnees" class="md-nav__link">
+    1.5.1) Pour comparer plusieurs séries de données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-courbes" class="md-nav__link">
+    1.6) Courbes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6) Courbes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-pour-rajouter-des-arguments" class="md-nav__link">
+    1.6.1) Pour rajouter des arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-boite-a-moustache" class="md-nav__link">
+    1.7) Boite à moustache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-separer-les-graphiques" class="md-nav__link">
+    1.8) Séparer les graphiques
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8) Séparer les graphiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-combiner-les-axes-des-graphiques" class="md-nav__link">
+    Pour combiner les axes des graphiques
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Plotly</h1>
+
+<p><a href="../Cours%20python/">Cours python</a>  </p>
+<hr />
+<blockquote>
+<p>[!summary]+<br />
+<pre class="dataview dataview-error">Evaluation Error: SyntaxError: Unexpected end of input<br />
+    at DataviewInlineApi.eval (plugin:dataview:18404:21)<br />
+    at evalInContext (plugin:dataview:18405:7)<br />
+    at asyncEvalInContext (plugin:dataview:18415:32)<br />
+    at DataviewJSRenderer.render (plugin:dataview:18436:19)<br />
+    at DataviewJSRenderer.onload (plugin:dataview:18020:14)<br />
+    at e.load (app://obsidian.md/app.js:1:720143)<br />
+    at DataviewApi.executeJs (plugin:dataview:18954:18)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:28:2026)<br />
+    at Generator.next (&lt;anonymous&gt;)<br />
+    at eval (plugin:obsidian-mkdocs-publisher:2:871)</pre><br />
+</p>
+</blockquote>
+<h2 id="1-base-des-diagrammes">1) Base des diagrammes<a class="headerlink" href="#1-base-des-diagrammes" title="Permanent link">&para;</a></h2>
+<h3 id="11-import-des-bibliotheques">1.1) Import des bibliothèques<a class="headerlink" href="#11-import-des-bibliotheques" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">iplot</span>  
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>  
+</code></pre></div>
+<h3 id="12-barres">1.2) Barres<a class="headerlink" href="#12-barres" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>[!Attention] <strong>Infos</strong><br />
+<font color="#974806"><strong>variable_graphique = go.Bar(x=, y=, ( marker=Dictionnaire, text=liste, name=string)</strong></font><br />
+<font color="#974806"><strong>variable_affichage_graphique = go.Figure(data=<em>Dataframe</em>, layout=<em>Dictionnaire</em>)</strong></font>  </p>
+</blockquote>
+<p>Je définis mes données<br />
+<div class="highlight"><pre><span></span><code><span class="n">eleves</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Amour&quot;</span><span class="p">,</span><span class="s2">&quot;Gloire&quot;</span><span class="p">,</span><span class="s2">&quot;Beauté&quot;</span><span class="p">]</span>  
+<span class="n">moyennes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>  
+</code></pre></div></p>
+<p>Je crée une variable qui contient le graphique<br />
+<div class="highlight"><pre><span></span><code><span class="n">graphique</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">eleves</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">moyennes</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>Je crée un emplacement qui contient mon graphique<br />
+<div class="highlight"><pre><span></span><code><span class="n">mon_premier_graphique</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">graphique</span><span class="p">)</span>  
+</code></pre></div></p>
+<p>J'affiche le graphique<br />
+<div class="highlight"><pre><span></span><code><span class="n">iplot</span><span class="p">(</span><span class="n">mon_premier_graphique</span><span class="p">)</span>  
+</code></pre></div>
+<img alt="image - Plotly-1.png" src="../image/image%20-%20Plotly-1.png" />  </p>
+<h4 id="121-pour-rajouter-un-titre-au-graphique">1.2.1) Pour rajouter un titre au graphique<a class="headerlink" href="#121-pour-rajouter-un-titre-au-graphique" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Je définis un titre sous forme de dictionnaire.  </span>
+<span class="c1"># ATTENTION : la clé doit être title !  </span>
+
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note des 3 élèves de la promotion D2SM&quot;</span><span class="p">,</span> <span class="s2">&quot;title_x&quot;</span> <span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>  
+<span class="n">representation</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">titre_graphique</span><span class="p">)</span>  
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="122-pour-rajouter-les-titres-des-axes-au-graphique">1.2.2) Pour rajouter les titres des axes au graphique<a class="headerlink" href="#122-pour-rajouter-les-titres-des-axes-au-graphique" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Je complète le graphique avec les intitulés des axes :   </span>
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note des 3 élèves de la promotion D2SM&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prénom&quot;</span><span class="p">},</span>  
+                   <span class="s2">&quot;yaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note&quot;</span><span class="p">}}</span>  
+
+<span class="n">representation</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">titre_graphique</span><span class="p">)</span>  
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="123-pour-modifier-les-couleurs">1.2.3) Pour modifier les couleurs<a class="headerlink" href="#123-pour-modifier-les-couleurs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Je peux modifier la couleur, directement dans le jeu de données.  </span>
+<span class="c1"># ATTENTION : marker et color sont des mots-clés  </span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Albert&quot;</span><span class="p">,</span> <span class="s2">&quot;Georges&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>  
+               <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">]))</span>  
+
+
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note des 3 élèves de la promotion D2SM&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prénom&quot;</span><span class="p">,</span> <span class="s2">&quot;tickangle&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">},</span>  
+                   <span class="s2">&quot;yaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note&quot;</span><span class="p">}}</span>  
+
+<span class="n">representation</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">titre_graphique</span><span class="p">)</span>  
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="124-pour-rajouter-des-etiquettes">1.2.4) Pour rajouter des étiquettes<a class="headerlink" href="#124-pour-rajouter-des-etiquettes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Je peux aussi rajouter des textes dans les barres.  </span>
+<span class="c1"># ATTENTION : marker et color sont des mots-clés  </span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Albert&quot;</span><span class="p">,</span> <span class="s2">&quot;Georges&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>  
+               <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">]),</span>  
+               <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Moyen&quot;</span><span class="p">,</span> <span class="s2">&quot;Bon&quot;</span><span class="p">,</span> <span class="s2">&quot;Très bon&quot;</span><span class="p">])</span>  
+
+
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note des 3 élèves de la promotion D2SM&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prénom&quot;</span><span class="p">,</span> <span class="s2">&quot;tickangle&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">},</span>  
+                   <span class="s2">&quot;yaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note&quot;</span><span class="p">}}</span>  
+
+<span class="n">representation</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">titre_graphique</span><span class="p">)</span>  
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="125-pour-comparer-plusieurs-series-de-donnees">1.2.5) Pour comparer plusieurs séries de données<a class="headerlink" href="#125-pour-comparer-plusieurs-series-de-donnees" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">prenoms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s2">&quot;Albert&quot;</span><span class="p">,</span> <span class="s2">&quot;Georges&quot;</span><span class="p">]</span>  
+<span class="n">moyennes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>  
+<span class="n">avis</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Moyen&quot;</span><span class="p">,</span> <span class="s2">&quot;Bon&quot;</span><span class="p">,</span> <span class="s2">&quot;Très bon&quot;</span><span class="p">]</span>  
+
+<span class="c1"># Je créé les 2 graphes.  </span>
+<span class="c1"># Je leur donne un nom. Ce nom apparaîtra comme légende cliquable.  </span>
+<span class="c1"># Je retire les couleurs, car elles seront peut pertinentes en termes de représentation.  </span>
+<span class="n">graph_1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">prenoms</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">moyennes</span><span class="p">,</span>  
+               <span class="n">text</span> <span class="o">=</span> <span class="n">avis</span><span class="p">,</span>  
+               <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;2021&quot;</span><span class="p">)</span>  
+<span class="n">graph_2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">prenoms</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">moyennes</span><span class="p">,</span>  
+               <span class="n">text</span> <span class="o">=</span> <span class="n">avis</span><span class="p">,</span>  
+               <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;2022&quot;</span><span class="p">)</span>  
+
+<span class="c1"># L&#39;argument barmode indique le mode de représentation : group, stack  </span>
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note des 3 élèves de la promotion D2SM&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prénom&quot;</span><span class="p">,</span> <span class="s2">&quot;tickangle&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">30</span><span class="p">},</span>  
+                   <span class="s2">&quot;yaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Note&quot;</span><span class="p">},</span>  
+                   <span class="s2">&quot;barmode&quot;</span> <span class="p">:</span> <span class="s2">&quot;group&quot;</span><span class="p">}</span>  
+
+
+<span class="n">representation</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">graph_1</span><span class="p">,</span> <span class="n">graph_2</span><span class="p">],</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">titre_graphique</span><span class="p">)</span>  
+
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<h3 id="13-histogramme">1.3) Histogramme<a class="headerlink" href="#13-histogramme" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>[!Attention] <strong>Infos</strong><br />
+<font color="#974806"><strong>variable_graphique = go.Histogram(x=, (name=string, opacity=nombre, xbins=Dictionnaire))</strong></font><br />
+<font color="#974806"><strong>variable_affichage_graphique = go.Figure(data=<em>Dataframe</em>, layout=<em>Dictionnaire</em>)</strong></font>  </p>
+</blockquote>
+<p>avec ces dataframe:<br />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>  
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">iplot</span>  
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>  
+
+<span class="n">pays</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;Italie&quot;</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">salaire</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">2300</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Pays&quot;</span> <span class="p">:</span> <span class="n">pays</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span> <span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;Salaire&quot;</span> <span class="p">:</span> <span class="n">salaire</span><span class="p">})</span>  
+
+<span class="n">allemagne</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">]</span>  
+<span class="n">italie</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Italie&quot;</span><span class="p">]</span>  
+<span class="n">france</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;France&quot;</span><span class="p">]</span>  
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">histogramme</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Pays</span><span class="p">)</span>  
+
+<span class="c1">#donnees = [histogramme]  </span>
+
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Répartition par pays&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Pays des personnes de l&#39;échantillon&quot;</span><span class="p">}}</span>  
+
+<span class="n">representation</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">histogramme</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">titre_graphique</span><span class="p">)</span>  
+
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<img alt="image - Plotly2-1.png" src="../image/image%20-%20Plotly2-1.png" />  </p>
+<h4 id="131-pour-comparer-plusieurs-series-de-donnees">1.3.1) Pour comparer plusieurs séries de données<a class="headerlink" href="#131-pour-comparer-plusieurs-series-de-donnees" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">histogramme_allemagne</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                                     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span>  
+                                     <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>  
+<span class="n">histogramme_italie</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">italie</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                                     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Italie&quot;</span><span class="p">)</span>  
+<span class="n">histogramme_france</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                                     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span>  
+                                     <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">histogramme_allemagne</span><span class="p">,</span> <span class="n">histogramme_italie</span><span class="p">,</span> <span class="n">histogramme_france</span><span class="p">]</span>  
+
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Répartition par pays&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Pays des personnes de l&#39;échantillon&quot;</span><span class="p">},</span>  
+                   <span class="s2">&quot;barmode&quot;</span> <span class="p">:</span> <span class="s2">&quot;overlay&quot;</span><span class="p">}</span>  
+
+<span class="c1"># IL est aussi possible de ne pas créer de variable pour le graphique et de tout intégrer dans iplot.  </span>
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">donnees</span><span class="p">,</span> <span class="s2">&quot;layout&quot;</span> <span class="p">:</span> <span class="n">titre_graphique</span><span class="p">})</span>  
+</code></pre></div>
+<h4 id="132-pour-modifier-lechelle-des-axes">1.3.2) Pour modifier l'échelle des axes<a class="headerlink" href="#132-pour-modifier-lechelle-des-axes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">histogramme_allemagne</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                                     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span>  
+                                     <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>  
+                                    <span class="n">xbins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">500</span><span class="p">))</span>  
+<span class="n">histogramme_italie</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">italie</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                                     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Italie&quot;</span><span class="p">,</span>  
+                                     <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">xbins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">500</span><span class="p">))</span>  
+<span class="n">histogramme_france</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                                     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span>  
+                                     <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>  
+                                 <span class="n">xbins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">500</span><span class="p">))</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">histogramme_allemagne</span><span class="p">,</span> <span class="n">histogramme_italie</span><span class="p">,</span> <span class="n">histogramme_france</span><span class="p">]</span>  
+
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Répartition par pays&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Pays des personnes de l&#39;échantillon&quot;</span><span class="p">},</span>  
+                   <span class="s2">&quot;barmode&quot;</span> <span class="p">:</span> <span class="s2">&quot;overlay&quot;</span><span class="p">}</span>  
+
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">donnees</span><span class="p">,</span> <span class="s2">&quot;layout&quot;</span> <span class="p">:</span> <span class="n">titre_graphique</span><span class="p">})</span>  
+</code></pre></div>
+<h3 id="14-distribution">1.4) Distribution<a class="headerlink" href="#14-distribution" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>[!Attention] <strong>Infos</strong><br />
+</p>
+</blockquote>
+<p>avec ces dataframes:<br />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>  
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">iplot</span>  
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>  
+
+<span class="c1"># figure_factury ajoute des méthodes pour construire des visualisations plus complexes.  </span>
+<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>  
+
+<span class="n">pays</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;Italie&quot;</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">salaire</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">2300</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Pays&quot;</span> <span class="p">:</span> <span class="n">pays</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span> <span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;Salaire&quot;</span> <span class="p">:</span> <span class="n">salaire</span><span class="p">})</span>  
+
+<span class="n">allemagne</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">]</span>  
+<span class="n">italie</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Italie&quot;</span><span class="p">]</span>  
+<span class="n">france</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;France&quot;</span><span class="p">]</span>  
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># donnees = [df.Salaire.values.tolist()]  </span>
+
+<span class="n">representation</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_distplot</span><span class="p">(</span><span class="n">hist_data</span><span class="o">=</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Salaire</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()],</span>  
+                                    <span class="n">group_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Dispersion des salaires&quot;</span><span class="p">],</span>  
+                                    <span class="n">bin_size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span>  
+
+<span class="n">representation</span><span class="p">[</span><span class="s2">&quot;layout&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Répartition des salaires&quot;</span><span class="p">,</span> <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>  
+
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<img alt="image - Plotly-2.png" src="../image/image%20-%20Plotly-2.png" />  </p>
+<h4 id="141-pour-comparer-plusieurs-series-de-donnees">1.4.1) Pour comparer plusieurs séries de données<a class="headerlink" href="#141-pour-comparer-plusieurs-series-de-donnees" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">representation</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_distplot</span><span class="p">(</span><span class="n">hist_data</span><span class="o">=</span><span class="p">[</span><span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">italie</span><span class="o">.</span><span class="n">Salaire</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">france</span><span class="o">.</span><span class="n">Salaire</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()],</span>  
+                                    <span class="n">group_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alemagne&quot;</span><span class="p">,</span><span class="s2">&quot;Italie&quot;</span><span class="p">,</span><span class="s2">&quot;France&quot;</span><span class="p">],</span>  
+                                    <span class="n">bin_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>  
+                                    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">])</span>  
+
+<span class="n">representation</span><span class="p">[</span><span class="s2">&quot;layout&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Répartition des salaires par pays&quot;</span><span class="p">,</span> <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>  
+
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<h4 id="142-pour-retirer-une-partie-des-graphiques">1.4.2) Pour retirer une partie des graphiques<a class="headerlink" href="#142-pour-retirer-une-partie-des-graphiques" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">donnees_pays</span> <span class="o">=</span> <span class="p">[</span><span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">france</span><span class="o">.</span><span class="n">Salaire</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">italie</span><span class="o">.</span><span class="n">Salaire</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>  
+<span class="n">etiquettes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Italie&quot;</span><span class="p">]</span>  
+
+<span class="n">representation</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_distplot</span><span class="p">(</span><span class="n">donnees_pays</span><span class="p">,</span> <span class="n">etiquettes</span><span class="p">,</span>   
+                                    <span class="n">bin_size</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>  
+                                    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">],</span>  
+                                    <span class="n">show_hist</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  
+                                    <span class="n">show_rug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  
+
+<span class="n">iplot</span><span class="p">(</span><span class="n">representation</span><span class="p">)</span>  
+</code></pre></div>
+<h3 id="15-nuage-de-points">1.5) Nuage de points<a class="headerlink" href="#15-nuage-de-points" title="Permanent link">&para;</a></h3>
+<p>avec ces dataframes:<br />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>  
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">iplot</span>  
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>  
+
+<span class="n">pays</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;Italie&quot;</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">salaire</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">2300</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Pays&quot;</span> <span class="p">:</span> <span class="n">pays</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span> <span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;Salaire&quot;</span> <span class="p">:</span> <span class="n">salaire</span><span class="p">})</span>  
+
+<span class="n">allemagne</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">]</span>  
+<span class="n">italie</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Italie&quot;</span><span class="p">]</span>  
+<span class="n">france</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;France&quot;</span><span class="p">]</span>  
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">nuage_de_points</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                             <span class="n">y</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>  
+                             <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>  
+                             <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>   
+                                           <span class="n">color</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                                           <span class="n">colorscale</span> <span class="o">=</span> <span class="s2">&quot;rainbow&quot;</span><span class="p">,</span>  
+                                           <span class="n">showscale</span> <span class="o">=</span> <span class="kc">True</span><span class="p">))</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">nuage_de_points</span><span class="p">]</span>  
+
+<span class="n">titre_graphique</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Répartition des salaires en Allemagne&quot;</span><span class="p">,</span>  
+                   <span class="s2">&quot;xaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Salaires&quot;</span><span class="p">},</span>  
+                   <span class="s2">&quot;yaxis&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Ages&quot;</span><span class="p">}}</span>  
+
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">donnees</span><span class="p">,</span> <span class="s2">&quot;layout&quot;</span> <span class="p">:</span> <span class="n">titre_graphique</span><span class="p">})</span>  
+</code></pre></div>
+<img alt="image - Plotly-3.png" src="../image/image%20-%20Plotly-3.png" />]  </p>
+<h4 id="151-pour-comparer-plusieurs-series-de-donnees">1.5.1) Pour comparer plusieurs séries de données<a class="headerlink" href="#151-pour-comparer-plusieurs-series-de-donnees" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nuage_de_points_allemagne</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                             <span class="n">y</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>  
+                             <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>  
+                             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">)</span>  
+<span class="n">nuage_de_points_france</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                             <span class="n">y</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>  
+                             <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>  
+                             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span><span class="p">)</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">nuage_de_points_allemagne</span><span class="p">,</span> <span class="n">nuage_de_points_france</span><span class="p">]</span>  
+
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">donnees</span><span class="p">})</span>  
+</code></pre></div>
+<h3 id="16-courbes">1.6) Courbes<a class="headerlink" href="#16-courbes" title="Permanent link">&para;</a></h3>
+<p>avec ces données:<br />
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">iplot</span>  
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>  
+
+<span class="n">mois</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Janvier&quot;</span><span class="p">,</span> <span class="s2">&quot;Février&quot;</span><span class="p">,</span> <span class="s2">&quot;Mars&quot;</span><span class="p">,</span> <span class="s2">&quot;Avril&quot;</span><span class="p">,</span> <span class="s2">&quot;Mai&quot;</span><span class="p">,</span> <span class="s2">&quot;Juin&quot;</span><span class="p">]</span>  
+<span class="n">nb_etudiants</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">ligne</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mois</span><span class="p">,</span>  
+                   <span class="n">y</span> <span class="o">=</span> <span class="n">nb_etudiants</span><span class="p">,</span>  
+                   <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;lines&quot;</span><span class="p">)</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">ligne</span><span class="p">]</span>  
+
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">donnees</span><span class="p">})</span>  
+</code></pre></div>
+<img alt="image - Plotly-4.png" src="../image/image%20-%20Plotly-4.png" />  </p>
+<h4 id="161-pour-rajouter-des-arguments">1.6.1) Pour rajouter des arguments<a class="headerlink" href="#161-pour-rajouter-des-arguments" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">ligne</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mois</span><span class="p">,</span>  
+                   <span class="n">y</span> <span class="o">=</span> <span class="n">nb_etudiants</span><span class="p">,</span>  
+                   <span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;tozerox&quot;</span><span class="p">,</span>  
+                   <span class="n">fillcolor</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span>  
+                   <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;lines+markers&quot;</span><span class="p">,</span>  
+                   <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">),</span>  
+                   <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>  
+                               <span class="n">width</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>  
+                               <span class="n">dash</span> <span class="o">=</span> <span class="s2">&quot;dash&quot;</span><span class="p">,</span>  
+                               <span class="n">shape</span> <span class="o">=</span> <span class="s2">&quot;spline&quot;</span><span class="p">))</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">ligne</span><span class="p">]</span>  
+
+<span class="n">titre</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Vente sur le &lt;b&gt;dernier trimestre&lt;b&gt;&quot;</span><span class="p">}</span>  
+
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">donnees</span><span class="p">,</span> <span class="s2">&quot;layout&quot;</span> <span class="p">:</span> <span class="n">titre</span><span class="p">})</span>  
+</code></pre></div>
+<h3 id="17-boite-a-moustache">1.7) Boite à moustache<a class="headerlink" href="#17-boite-a-moustache" title="Permanent link">&para;</a></h3>
+<p>avec ces données:<br />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>  
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">iplot</span>  
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>  
+
+<span class="n">pays</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;Italie&quot;</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">salaire</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">2300</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Pays&quot;</span> <span class="p">:</span> <span class="n">pays</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span> <span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;Salaire&quot;</span> <span class="p">:</span> <span class="n">salaire</span><span class="p">})</span>  
+
+<span class="n">allemagne</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">]</span>  
+<span class="n">italie</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Italie&quot;</span><span class="p">]</span>  
+<span class="n">france</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;France&quot;</span><span class="p">]</span>  
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">donnees</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                 <span class="n">boxmean</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>  
+
+<span class="n">iplot</span><span class="p">([</span><span class="n">donnees</span><span class="p">])</span>  
+</code></pre></div>
+<img alt="image - Plotly-1 1.png" src="../image/image%20-%20Plotly-1%201.png" />  </p>
+<h3 id="18-separer-les-graphiques">1.8) Séparer les graphiques<a class="headerlink" href="#18-separer-les-graphiques" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>  
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">iplot</span>  
+<span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>  
+
+<span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">subplots</span>  
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">pays</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;Italie&quot;</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="n">salaire</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">2300</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Pays&quot;</span> <span class="p">:</span> <span class="n">pays</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span> <span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;Salaire&quot;</span> <span class="p">:</span> <span class="n">salaire</span><span class="p">})</span>  
+
+<span class="n">allemagne</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">]</span>  
+<span class="n">italie</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;Italie&quot;</span><span class="p">]</span>  
+<span class="n">france</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Pays</span> <span class="o">==</span> <span class="s2">&quot;France&quot;</span><span class="p">]</span>  
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">nuage_de_points_allemagne</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                             <span class="n">y</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>  
+                             <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>  
+                             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">)</span>  
+<span class="n">nuage_de_points_france</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                             <span class="n">y</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>  
+                             <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>  
+                             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span><span class="p">)</span>  
+
+<span class="c1"># Je créé ma figure avec 1 ligne et 2 colonnes  </span>
+<span class="n">separation_graphique</span> <span class="o">=</span> <span class="n">subplots</span><span class="o">.</span><span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>  
+                                           <span class="n">cols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>  
+                                           <span class="n">subplot_titles</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">))</span>  
+<span class="c1"># Je définis quel graphique est dans quelle colonne  </span>
+<span class="n">separation_graphique</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">nuage_de_points_allemagne</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">separation_graphique</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">nuage_de_points_france</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">nuage_de_points_allemagne</span><span class="p">,</span> <span class="n">nuage_de_points_france</span><span class="p">]</span>  
+
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">separation_graphique</span><span class="p">})</span>  
+</code></pre></div>
+<p><img alt="image - Plotly-2 1.png" src="../image/image%20-%20Plotly-2%201.png" />  </p>
+<h4 id="pour-combiner-les-axes-des-graphiques">Pour combiner les axes des graphiques<a class="headerlink" href="#pour-combiner-les-axes-des-graphiques" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">nuage_de_points_allemagne</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                             <span class="n">y</span> <span class="o">=</span> <span class="n">allemagne</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>  
+                             <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>  
+                             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Allemagne&quot;</span><span class="p">)</span>  
+<span class="n">nuage_de_points_france</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Salaire</span><span class="p">,</span>  
+                             <span class="n">y</span> <span class="o">=</span> <span class="n">france</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span>  
+                             <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;markers&quot;</span><span class="p">,</span>  
+                             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;France&quot;</span><span class="p">)</span>  
+
+<span class="c1"># Je créé ma figure avec 1 ligne et 2 colonnes  </span>
+<span class="c1"># Dans ce cas, les 2 représentations partagent l&#39;axe des y  </span>
+<span class="n">separation_graphique</span> <span class="o">=</span> <span class="n">subplots</span><span class="o">.</span><span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>  
+                                           <span class="n">cols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>  
+                                           <span class="n">subplot_titles</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Allemagne&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">),</span>  
+                                            <span class="n">shared_yaxes</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>  
+<span class="c1"># Je définis quel graphique est dans quelle colonne  </span>
+<span class="n">separation_graphique</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">nuage_de_points_allemagne</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">separation_graphique</span><span class="o">.</span><span class="n">append_trace</span><span class="p">(</span><span class="n">nuage_de_points_france</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+
+<span class="n">donnees</span> <span class="o">=</span> <span class="p">[</span><span class="n">nuage_de_points_allemagne</span><span class="p">,</span> <span class="n">nuage_de_points_france</span><span class="p">]</span>  
+
+<span class="n">iplot</span><span class="p">({</span><span class="s2">&quot;data&quot;</span> <span class="p">:</span> <span class="n">separation_graphique</span><span class="p">})</span>  
+</code></pre></div>
+<p><img alt="image - Plotly-1 2.png" src="../image/image%20-%20Plotly-1%202.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
